@@ -1,0 +1,70 @@
+---
+aid: university-of-waterloo
+name: University of Waterloo
+description: >-
+  The University of Waterloo is a public research university in Waterloo, Ontario,
+  Canada, ranked #115 in the QS World University Rankings 2025 and known for its
+  cooperative education programs and strength in mathematics, engineering, and
+  computer science. Its developer footprint is centered on the University of
+  Waterloo Open Data API (the Open Data Initiative), a public, key-authenticated
+  REST API exposing authoritative academic, campus, and student-information
+  datasets. Official code, documentation, and datasets are published under the
+  verified uWaterloo GitHub organization.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/university-of-waterloo/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Open Data
+  - Canada
+  - Research
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: university-of-waterloo:open-data-api
+    name: University of Waterloo Open Data API (v3)
+    description: >-
+      Public REST API powered by the University of Waterloo Open Data Initiative,
+      providing access to authoritative, approved datasets covering academic,
+      campus, and student information (such as subjects and course-related data).
+      Version 3 is the current release; access requires a free API key passed via
+      an X-API-KEY request header. Version 2 was deprecated at the end of 2020.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags: [ Open Data, Education, Higher Education, REST, Academic ]
+    properties:
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: SignUp
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+common:
+  - type: Website
+    url: https://uwaterloo.ca/
+  - type: DeveloperPortal
+    url: https://uwaterloo.ca/api/
+  - type: GitHub
+    url: https://github.com/uWaterloo
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/university-of-waterloo/
+  - type: SourceCode
+    url: https://github.com/uWaterloo/Datasets
+  - type: Plans
+    url: plans/university-of-waterloo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/university-of-waterloo-rate-limits.yml
+  - type: FinOps
+    url: finops/university-of-waterloo-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

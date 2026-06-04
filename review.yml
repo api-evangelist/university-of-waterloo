@@ -1,0 +1,38 @@
+---
+name: University of Waterloo
+description: University of Waterloo public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/university-of-waterloo/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 4
+    summary: >-
+      Verified a real, well-documented public developer footprint. The University
+      of Waterloo Open Data API (v3) is live with Swagger documentation, a
+      verified official uWaterloo GitHub organization, and a documented API-key
+      sign-up flow using an X-API-KEY header against the
+      https://openapi.data.uwaterloo.ca/v3/ base URL. No endpoints were fabricated;
+      data endpoints (e.g. subjects) are confirmed only from official docs. No
+      separate library (Alma/Primo), IIIF, OAI-PMH, or institutional-repository API
+      was confirmed in this review. LinkedIn returns HTTP 999 due to bot blocking,
+      which is expected and not a dead link.
+    endpoints:
+      - url: https://uwaterloo.ca/api/
+        status: 200
+        note: Official Open Data API developer portal landing page.
+      - url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+        status: 200
+        note: Live Swagger / OpenAPI documentation for the v3 API.
+      - url: https://github.com/uWaterloo
+        status: 200
+        note: Verified official University of Waterloo GitHub organization.
+      - url: https://github.com/uWaterloo/api-documentation
+        status: 200
+        note: API documentation repo (archived) under the official org.
+      - url: https://uwaterloo.ca/
+        status: 200
+        note: Official institutional website.
+      - url: https://www.linkedin.com/school/university-of-waterloo/
+        status: 999
+        note: Official LinkedIn school page; 999 is LinkedIn bot blocking, page exists.
