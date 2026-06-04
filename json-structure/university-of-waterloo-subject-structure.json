@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-structure/university-of-waterloo-subject-structure.json",
+  "name": "Subject",
+  "type": "object",
+  "description": "An academic Subject at Waterloo describes an area that a Course can be in",
+  "properties": {
+    "code": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "descriptionAbbreviated": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "associatedAcademicOrgCode": {
+      "type": "string"
+    }
+  }
+}

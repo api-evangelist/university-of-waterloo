@@ -1,0 +1,16 @@
+[
+  {
+    "code": "CS",
+    "name": "Computer Science",
+    "descriptionAbbreviated": "CS",
+    "description": "Computer Science",
+    "associatedAcademicOrgCode": "CS"
+  },
+  {
+    "code": "MATH",
+    "name": "Mathematics",
+    "descriptionAbbreviated": "MATH",
+    "description": "Mathematics",
+    "associatedAcademicOrgCode": "MATH"
+  }
+]

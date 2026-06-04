@@ -1,0 +1,12 @@
+{
+  "buildingId": "MC",
+  "buildingCode": "MC",
+  "parentBuildingCode": null,
+  "buildingName": "Mathematics & Computer Building",
+  "alternateBuildingNames": [
+    "Math and Computer",
+    "MC"
+  ],
+  "latitude": 43.47273,
+  "longitude": -80.54515
+}

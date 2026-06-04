@@ -1,0 +1,53 @@
+---
+# Spectral ruleset encoding observed patterns in the University of Waterloo
+# OpenData API (v3). Derived from the live OpenAPI 3.0.4 description at
+# https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+formats:
+  - oas3
+rules:
+  uw-info-title-waterloo:
+    description: API title should reference Waterloo OpenData.
+    severity: warn
+    given: $.info
+    then:
+      field: title
+      function: pattern
+      functionOptions:
+        match: "(?i)waterloo"
+
+  uw-api-key-security:
+    description: API uses a custom x-api-key header security scheme.
+    severity: error
+    given: $.components.securitySchemes
+    then:
+      field: apiKey
+      function: truthy
+
+  uw-paths-versioned-v3:
+    description: All paths should be under the /v3/ version prefix.
+    severity: error
+    given: $.paths
+    then:
+      function: schema
+      functionOptions:
+        schema:
+          type: object
+          propertyNames:
+            pattern: "^/v3/"
+
+  uw-operations-read-only:
+    description: >-
+      Open data operations are predominantly read-only (GET); flag any
+      non-account write operations for review.
+    severity: hint
+    given: $.paths[?(!@property.match(/Account/))][put,delete,patch]
+    then:
+      function: undefined
+
+  uw-schema-no-additional-properties:
+    description: Response object schemas disallow additionalProperties.
+    severity: warn
+    given: $.components.schemas[*]
+    then:
+      field: additionalProperties
+      function: defined

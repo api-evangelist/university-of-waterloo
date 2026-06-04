@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-schema/university-of-waterloo-academicorganization-schema.json",
+  "title": "AcademicOrganization",
+  "description": "An Academic Organization at Waterloo is similar to a department",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unique Code of this Academic Organization"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Name for this Academic Organization, most often the display name"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The short description for this Academic Organization"
+    },
+    "descriptionFormal": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The formal description for this Academic Organization, most often used in official capacity"
+    },
+    "associatedCampusCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Code for the Campus that this Academic Organization is assigned to"
+    }
+  },
+  "additionalProperties": false
+}

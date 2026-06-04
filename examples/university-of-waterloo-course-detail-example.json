@@ -1,0 +1,21 @@
+{
+  "courseId": "007873",
+  "courseOfferNumber": 1,
+  "termCode": "1255",
+  "termName": "Spring 2025",
+  "associatedAcademicCareer": "UG",
+  "associatedAcademicGroupCode": "MAT",
+  "associatedAcademicOrgCode": "CS",
+  "subjectCode": "CS",
+  "catalogNumber": "135",
+  "title": "Designing Functional Programs",
+  "descriptionAbbreviated": "Designing Functional Programs",
+  "description": "An introduction to the fundamentals of computer science through the application of elementary programming patterns in the functional style of programming.",
+  "gradingBasis": "NUM",
+  "courseComponentCode": "LEC",
+  "enrollConsentCode": "N",
+  "enrollConsentDescription": "No Special Consent Required",
+  "dropConsentCode": "N",
+  "dropConsentDescription": "No Special Consent Required",
+  "requirementsDescription": "Prereq: Not open to students who have completed CS 116, 138, 145 or 146."
+}

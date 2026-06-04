@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-schema/university-of-waterloo-term-schema.json",
+  "title": "Term",
+  "description": "An academic Term at Waterloo, a defined period of time that is used by classes and similar",
+  "type": "object",
+  "properties": {
+    "termCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Code that describes this Term"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Name for this Term, most often the displayed name"
+    },
+    "nameShort": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The short form name for this Term"
+    },
+    "termBeginDate": {
+      "type": "string",
+      "description": "The date and time from which the Term begins, inclusive",
+      "format": "date-time"
+    },
+    "termEndDate": {
+      "type": "string",
+      "description": "The date and time on which the Term ends, inclusive",
+      "format": "date-time"
+    },
+    "sixtyPercentCompleteDate": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The date and time at which the term is 60% complete, used for standing, withdrawal, and penalties",
+      "format": "date-time"
+    },
+    "associatedAcademicYear": {
+      "type": "integer",
+      "description": "The academic year to which this Term belongs",
+      "format": "int32"
+    }
+  },
+  "additionalProperties": false
+}

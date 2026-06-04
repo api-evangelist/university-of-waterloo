@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-schema/university-of-waterloo-location-schema.json",
+  "title": "Location",
+  "description": "Model representing a Location for the Buildings dataset",
+  "type": "object",
+  "properties": {
+    "buildingId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unique identifier for this building"
+    },
+    "buildingCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Alpha-numeric building code"
+    },
+    "parentBuildingCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Unofficial, alpha-numeric building code that represents the parent location"
+    },
+    "buildingName": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Display name of the building"
+    },
+    "alternateBuildingNames": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "description": "Unofficial, collection of alternate building display names"
+    },
+    "latitude": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Latitude co-ordinate of this location",
+      "format": "double"
+    },
+    "longitude": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "description": "Longitude co-ordinate of this location",
+      "format": "double"
+    }
+  },
+  "additionalProperties": false
+}

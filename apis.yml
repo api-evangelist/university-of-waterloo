@@ -46,6 +46,20 @@ apis:
         url: https://github.com/uWaterloo/OpenData
       - type: Authentication
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-open-data-api.yaml
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
 common:
   - type: Website
     url: https://uwaterloo.ca/

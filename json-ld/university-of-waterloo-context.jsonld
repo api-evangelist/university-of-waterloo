@@ -1,0 +1,45 @@
+{
+  "@context": {
+    "schema": "https://schema.org/",
+    "uw": "https://openapi.data.uwaterloo.ca/v3/vocab#",
+    "@vocab": "https://openapi.data.uwaterloo.ca/v3/vocab#",
+
+    "University": "schema:CollegeOrUniversity",
+    "name": "schema:name",
+    "url": "schema:url",
+    "description": "schema:description",
+
+    "Course": "schema:Course",
+    "courseId": "schema:courseCode",
+    "subjectCode": "uw:subjectCode",
+    "catalogNumber": "uw:catalogNumber",
+    "title": "schema:name",
+    "requirementsDescription": "schema:coursePrerequisites",
+
+    "Subject": "uw:Subject",
+    "code": "schema:identifier",
+    "associatedAcademicOrgCode": "uw:associatedAcademicOrgCode",
+
+    "Term": "schema:CourseInstance",
+    "termCode": "uw:termCode",
+    "termBeginDate": "schema:startDate",
+    "termEndDate": "schema:endDate",
+    "associatedAcademicYear": "uw:associatedAcademicYear",
+
+    "AcademicOrganization": "schema:CollegeOrUniversity",
+    "descriptionFormal": "schema:legalName",
+    "associatedCampusCode": "uw:associatedCampusCode",
+
+    "Location": "schema:Place",
+    "buildingCode": "schema:identifier",
+    "buildingName": "schema:name",
+    "latitude": "schema:latitude",
+    "longitude": "schema:longitude",
+
+    "FoodServicesOutlet": "schema:FoodEstablishment",
+    "FoodServicesFranchise": "schema:FoodEstablishment"
+  },
+  "@type": "University",
+  "name": "University of Waterloo",
+  "url": "https://uwaterloo.ca/"
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-structure/university-of-waterloo-location-structure.json",
+  "name": "Location",
+  "type": "object",
+  "description": "A campus Location (building) in the Waterloo Buildings dataset",
+  "properties": {
+    "buildingId": {
+      "type": "string"
+    },
+    "buildingCode": {
+      "type": "string"
+    },
+    "buildingName": {
+      "type": "string"
+    },
+    "alternateBuildingNames": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "latitude": {
+      "type": "double"
+    },
+    "longitude": {
+      "type": "double"
+    }
+  }
+}

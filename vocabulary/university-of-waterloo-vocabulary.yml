@@ -1,0 +1,55 @@
+---
+vocabulary:
+  name: University of Waterloo OpenData API Vocabulary
+  description: >-
+    Controlled vocabulary of the core domain terms exposed by the University of
+    Waterloo OpenData API (v3), derived from the live OpenAPI 3.0.4 description.
+    Terms cover academic structure, scheduling, campus locations, and food
+    services datasets.
+  version: v3
+  terms:
+    - term: AcademicOrganization
+      definition: An academic organization at Waterloo, similar to a department.
+      tags: [academic, organization]
+    - term: Subject
+      definition: An academic subject describing an area that a Course can be in.
+      tags: [academic, catalog]
+    - term: Course
+      definition: An academic course at Waterloo that can be scheduled to become a Class.
+      tags: [academic, catalog]
+    - term: Class
+      definition: A scheduled instance of a Course offered within a Term.
+      tags: [academic, scheduling]
+    - term: ClassSchedule
+      definition: The schedule (meeting times and instructors) for a Class in a Term.
+      tags: [scheduling]
+    - term: Term
+      definition: A defined academic period used by classes, identified by a term code.
+      tags: [academic, calendar]
+    - term: termCode
+      definition: Waterloo term code identifying the academic term for a record.
+      tags: [identifier, calendar]
+    - term: Exam
+      definition: A final exam schedule entry for a Course offering.
+      tags: [scheduling, exams]
+    - term: ImportantDate
+      definition: An important academic-calendar date for a given year.
+      tags: [calendar]
+    - term: PaidHoliday
+      definition: A university paid-holiday date, optionally exported as ICS.
+      tags: [calendar, holidays]
+    - term: Location
+      definition: A campus building with code, name, and geo-coordinates.
+      tags: [campus, geospatial]
+    - term: FoodServicesOutlet
+      definition: A campus food-services outlet with hours and location.
+      tags: [campus, food-services]
+    - term: FoodServicesFranchise
+      definition: A food-services franchise and its associated menu.
+      tags: [campus, food-services]
+    - term: Site
+      definition: A WCMS site whose latest news, events, and blog posts are exposed.
+      tags: [wcms, content]
+    - term: apiKey
+      definition: Custom API key passed via the x-api-key request header for authentication.
+      tags: [authentication, security]

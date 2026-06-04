@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-structure/university-of-waterloo-term-structure.json",
+  "name": "Term",
+  "type": "object",
+  "description": "An academic Term at Waterloo, a defined period of time used by classes",
+  "properties": {
+    "termCode": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "nameShort": {
+      "type": "string"
+    },
+    "termBeginDate": {
+      "type": "datetime"
+    },
+    "termEndDate": {
+      "type": "datetime"
+    },
+    "sixtyPercentCompleteDate": {
+      "type": [
+        "datetime",
+        "null"
+      ]
+    },
+    "associatedAcademicYear": {
+      "type": "int32"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-structure/university-of-waterloo-course-structure.json",
+  "name": "Course",
+  "type": "object",
+  "description": "An academic Course at Waterloo, a Course can be scheduled to become a Class",
+  "properties": {
+    "courseId": {
+      "type": "string"
+    },
+    "courseOfferNumber": {
+      "type": "int32"
+    },
+    "termCode": {
+      "type": "string"
+    },
+    "termName": {
+      "type": "string"
+    },
+    "subjectCode": {
+      "type": "string"
+    },
+    "catalogNumber": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "gradingBasis": {
+      "type": "string"
+    },
+    "courseComponentCode": {
+      "type": "string"
+    },
+    "requirementsDescription": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api-evangelist.github.io/university-of-waterloo/json-schema/university-of-waterloo-subject-schema.json",
+  "title": "Subject",
+  "description": "An academic Subject at Waterloo describes an area that a Course can be in",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Code that identifies this Subject"
+    },
+    "name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The Name for this Subject, most often the displayed name"
+    },
+    "descriptionAbbreviated": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "The short description of this subject, often same as Code"
+    },
+    "description": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Description of the Subject"
+    },
+    "associatedAcademicOrgCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Code for the Academic Organization that is associated to this Subject"
+    }
+  },
+  "additionalProperties": false
+}
