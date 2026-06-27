@@ -40,7 +40,7 @@ apis:
     properties:
       - type: Documentation
         url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-      - type: SignUp
+      - type: Signup
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
       - type: GitHub
         url: https://github.com/uWaterloo/OpenData
