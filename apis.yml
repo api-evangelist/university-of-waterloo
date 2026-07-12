@@ -61,6 +61,12 @@ apis:
       - type: JSONLD
         url: json-ld/university-of-waterloo-context.jsonld
 common:
+  - type: VulnerabilityDisclosure
+    url: security/university-of-waterloo-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/university-of-waterloo-domain-security.yml
+  - type: Authentication
+    url: authentication/university-of-waterloo-authentication.yml
   - type: Website
     url: https://uwaterloo.ca/
   - type: DeveloperPortal
@@ -79,6 +85,8 @@ common:
     url: finops/university-of-waterloo-finops.yml
   - type: Review
     url: review.yml
+  - type: Blog
+    url: https://uwaterloo.ca/news/rss.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
