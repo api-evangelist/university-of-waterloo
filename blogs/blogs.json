@@ -1,0 +1,13 @@
+{
+  "repo": "university-of-waterloo",
+  "feeds": [
+    {
+      "source": "https://uwaterloo.ca/news/rss.xml",
+      "feed_url": "https://uwaterloo.ca/news/rss.xml",
+      "title": "Waterloo News",
+      "saved": 5
+    }
+  ],
+  "fetched": "2026-07-11T11:43:46Z",
+  "post_count": 15
+}
