@@ -1,0 +1,1213 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations FoodServices API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: FoodServices
+paths:
+  /v3/FoodServices/outlets:
+    get:
+      tags:
+      - FoodServices
+      summary: Get all food service Outlet data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesOutlets'
+  /v3/FoodServices/outlets/{id}:
+    get:
+      tags:
+      - FoodServices
+      summary: Get specific food services Outlet data by Id
+      parameters:
+      - name: id
+        in: path
+        description: WCMS object ID representing the Outlet
+        required: true
+        schema:
+          minimum: 0
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesOutlet'
+  /v3/FoodServices/outlets/{name}:
+    get:
+      tags:
+      - FoodServices
+      summary: Get specific food services Outlet data by Outlet name
+      parameters:
+      - name: name
+        in: path
+        description: Name to filter Outlet by
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesOutlet'
+  /v3/FoodServices/franchises:
+    get:
+      tags:
+      - FoodServices
+      summary: Get all food service Franchise data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesFranchises'
+  /v3/FoodServices/franchises/{id}:
+    get:
+      tags:
+      - FoodServices
+      summary: Get specific food sercices Franchise data by Id
+      parameters:
+      - name: id
+        in: path
+        description: WCMS object ID representing the Franchise
+        required: true
+        schema:
+          minimum: 0
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesFranchise'
+  /v3/FoodServices/franchises/{name}:
+    get:
+      tags:
+      - FoodServices
+      summary: Get specific food services Franchise data by Franchise name
+      parameters:
+      - name: name
+        in: path
+        description: Name to filter Franchise by
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FoodServicesFranchise'
+components:
+  schemas:
+    Metatags:
+      type: object
+      properties:
+        en:
+          $ref: '#/components/schemas/En1'
+      additionalProperties: false
+    Workbench_Moderation:
+      type: object
+      properties:
+        current:
+          $ref: '#/components/schemas/Current'
+        published:
+          $ref: '#/components/schemas/Published'
+        my_revision:
+          $ref: '#/components/schemas/My_Revision'
+      additionalProperties: false
+    OutletLocation:
+      type: object
+      properties:
+        lid:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        street:
+          type: string
+          nullable: true
+        additional:
+          type: string
+          nullable: true
+        city:
+          type: string
+          nullable: true
+        province:
+          type: string
+          nullable: true
+        postal_code:
+          type: string
+          nullable: true
+        country:
+          type: string
+          nullable: true
+        latitude:
+          type: string
+          nullable: true
+        longitude:
+          type: string
+          nullable: true
+        source:
+          type: string
+          nullable: true
+        is_primary:
+          type: string
+          nullable: true
+        locpick:
+          $ref: '#/components/schemas/Locpick'
+        province_name:
+          type: string
+          nullable: true
+        country_name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    PaymentAccepted:
+      type: object
+      properties:
+        tid:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Uid:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OpeningHour:
+      type: object
+      properties:
+        day:
+          type: string
+          nullable: true
+        starthours:
+          type: string
+          nullable: true
+        endhours:
+          type: string
+          nullable: true
+        comment:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Title:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    Name:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    Published:
+      type: object
+      properties:
+        hid:
+          type: string
+          nullable: true
+        vid:
+          type: string
+          nullable: true
+        nid:
+          type: string
+          nullable: true
+        from_state:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        stamp:
+          type: string
+          nullable: true
+        published:
+          type: string
+          nullable: true
+        is_current:
+          type: integer
+          format: int32
+        title:
+          type: string
+          nullable: true
+        timestamp:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Path:
+      type: object
+      properties:
+        pid:
+          type: string
+          nullable: true
+        source:
+          type: string
+          nullable: true
+        alias:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        pathauto:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Value:
+      type: object
+      properties:
+        index:
+          type: integer
+          format: int32
+        follow:
+          type: integer
+          format: int32
+        noindex:
+          type: integer
+          format: int32
+        nofollow:
+          type: integer
+          format: int32
+        noarchive:
+          type: integer
+          format: int32
+        nosnippet:
+          type: integer
+          format: int32
+        noodp:
+          type: integer
+          format: int32
+        noydir:
+          type: integer
+          format: int32
+        noimageindex:
+          type: integer
+          format: int32
+        notranslate:
+          type: integer
+          format: int32
+      additionalProperties: false
+    FoodServicesFranchise:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        self:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        logo:
+          $ref: '#/components/schemas/Logo'
+        combos:
+          type: array
+          items:
+            $ref: '#/components/schemas/Combo'
+          nullable: true
+        individualitems:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndividualItem'
+          nullable: true
+        addons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Addon'
+          nullable: true
+      additionalProperties: false
+    Data:
+      type: object
+      properties:
+        en:
+          $ref: '#/components/schemas/En2'
+      additionalProperties: false
+    Current:
+      type: object
+      properties:
+        hid:
+          type: string
+          nullable: true
+        vid:
+          type: string
+          nullable: true
+        nid:
+          type: string
+          nullable: true
+        from_state:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        stamp:
+          type: string
+          nullable: true
+        published:
+          type: string
+          nullable: true
+        is_current:
+          type: integer
+          format: int32
+        title:
+          type: string
+          nullable: true
+        timestamp:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Robots:
+      type: object
+      properties:
+        value:
+          $ref: '#/components/schemas/Value'
+      additionalProperties: false
+    My_Revision:
+      type: object
+      properties:
+        hid:
+          type: string
+          nullable: true
+        vid:
+          type: string
+          nullable: true
+        nid:
+          type: string
+          nullable: true
+        from_state:
+          type: string
+          nullable: true
+        state:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        stamp:
+          type: string
+          nullable: true
+        published:
+          type: string
+          nullable: true
+        is_current:
+          type: integer
+          format: int32
+        title:
+          type: string
+          nullable: true
+        timestamp:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FoodServicesOutletPhoto:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Rdf_Mapping:
+      type: object
+      properties:
+        rdftype:
+          type: array
+          items:
+            type: string
+          nullable: true
+        title:
+          $ref: '#/components/schemas/Title'
+        created:
+          $ref: '#/components/schemas/Created'
+        changed:
+          $ref: '#/components/schemas/Changed'
+        body:
+          $ref: '#/components/schemas/Body'
+        uid:
+          $ref: '#/components/schemas/Uid'
+        name:
+          $ref: '#/components/schemas/Name'
+        comment_count:
+          $ref: '#/components/schemas/Comment_Count'
+        last_activity:
+          $ref: '#/components/schemas/Last_Activity'
+      additionalProperties: false
+    En:
+      type: object
+      properties:
+        value:
+          type: string
+          nullable: true
+        format:
+          nullable: true
+        safe_value:
+          type: string
+          nullable: true
+      additionalProperties: false
+    OutletType:
+      type: object
+      properties:
+        tid:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Comment_Count:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+        datatype:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FoodServicesFranchisesSelf:
+      type: object
+      properties:
+        title:
+          type: string
+          nullable: true
+        href:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Combo:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        image:
+          $ref: '#/components/schemas/ComboImage'
+        options:
+          type: string
+          nullable: true
+        item:
+          type: string
+          nullable: true
+        price:
+          type: string
+          nullable: true
+        calories:
+          nullable: true
+      additionalProperties: false
+    IndividualItemPhoto:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      additionalProperties: false
+    En1:
+      type: object
+      properties:
+        robots:
+          $ref: '#/components/schemas/Robots'
+      additionalProperties: false
+    Closed:
+      type: object
+      properties:
+        value:
+          type: string
+          format: date-time
+        value2:
+          type: string
+          format: date-time
+        timezone_db:
+          type: string
+          nullable: true
+        date_type:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FoodServicesOutlets:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/FoodServicesOutlet'
+          nullable: true
+        count:
+          type: integer
+          format: int32
+        self:
+          $ref: '#/components/schemas/FoodServicesOutletsSelf'
+      additionalProperties: false
+    FoodServicesOutlet:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        self:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        image:
+          type: array
+          items:
+            $ref: '#/components/schemas/FoodServicesOutletImage'
+          nullable: true
+        photo:
+          $ref: '#/components/schemas/FoodServicesOutletPhoto'
+        features:
+          type: string
+          nullable: true
+        outlettype:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutletType'
+          nullable: true
+        outletlocation:
+          type: string
+          nullable: true
+        locationlink:
+          $ref: '#/components/schemas/LocationLink'
+        description:
+          type: string
+          nullable: true
+        location:
+          type: array
+          items:
+            $ref: '#/components/schemas/OutletLocation'
+          nullable: true
+        summary:
+          type: string
+          nullable: true
+        cuisine:
+          type: array
+          items:
+            $ref: '#/components/schemas/Cuisine'
+          nullable: true
+        openinghours:
+          type: array
+          items:
+            $ref: '#/components/schemas/OpeningHour'
+          nullable: true
+        paymentaccepted:
+          type: array
+          items:
+            $ref: '#/components/schemas/PaymentAccepted'
+          nullable: true
+        closed:
+          type: array
+          items:
+            $ref: '#/components/schemas/Closed'
+          nullable: true
+        hourschange:
+          type: array
+          items:
+            $ref: '#/components/schemas/HoursChange'
+          nullable: true
+        notice:
+          type: string
+          nullable: true
+        franchisemenu:
+          type: array
+          items:
+            $ref: '#/components/schemas/FranchiseMenu'
+          nullable: true
+        sticky:
+          type: string
+          nullable: true
+        created:
+          type: string
+          nullable: true
+      additionalProperties: false
+    IndividualItem:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        photo:
+          $ref: '#/components/schemas/IndividualItemPhoto'
+        price:
+          type: string
+          nullable: true
+        calories:
+          nullable: true
+      additionalProperties: false
+    Addon:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        photo:
+          nullable: true
+        price:
+          type: string
+          nullable: true
+        calories:
+          nullable: true
+      additionalProperties: false
+    FranchiseMenu:
+      type: object
+      properties:
+        vid:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        log:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        comment:
+          type: string
+          nullable: true
+        promote:
+          type: string
+          nullable: true
+        sticky:
+          type: string
+          nullable: true
+        vuuid:
+          type: string
+          nullable: true
+        nid:
+          type: string
+          nullable: true
+        type:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        created:
+          type: string
+          nullable: true
+        changed:
+          type: string
+          nullable: true
+        tnid:
+          type: string
+          nullable: true
+        translate:
+          type: string
+          nullable: true
+        uuid:
+          type: string
+          nullable: true
+        revision_timestamp:
+          type: string
+          nullable: true
+        revision_uid:
+          type: string
+          nullable: true
+        field_addons:
+          nullable: true
+        field_combos:
+          $ref: '#/components/schemas/Field_Combos'
+        field_franchise_logo:
+          $ref: '#/components/schemas/Field_Franchise_Logo'
+        field_individual_items:
+          nullable: true
+        title_field:
+          $ref: '#/components/schemas/Title_Field'
+        metatags:
+          $ref: '#/components/schemas/Metatags'
+        rdf_mapping:
+          $ref: '#/components/schemas/Rdf_Mapping'
+        path:
+          $ref: '#/components/schemas/Path'
+        translations:
+          $ref: '#/components/schemas/Translations'
+        title_original:
+          type: string
+          nullable: true
+        entity_translation_handler_id:
+          type: string
+          nullable: true
+        title_language:
+          type: string
+          nullable: true
+        cid:
+          type: string
+          nullable: true
+        last_comment_timestamp:
+          type: string
+          nullable: true
+        last_comment_name:
+          nullable: true
+        last_comment_uid:
+          type: string
+          nullable: true
+        comment_count:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        picture:
+          type: string
+          nullable: true
+        data:
+          type: string
+          nullable: true
+        uw_page_settings_node_enable:
+          type: string
+          nullable: true
+        workbench_moderation:
+          $ref: '#/components/schemas/Workbench_Moderation'
+      additionalProperties: false
+    Translations:
+      type: object
+      properties:
+        original:
+          type: string
+          nullable: true
+        data:
+          $ref: '#/components/schemas/Data'
+      additionalProperties: false
+    Cuisine:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        self:
+          type: string
+          nullable: true
+        name:
+          type: string
+          nullable: true
+        description:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Logo:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Last_Activity:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+        datatype:
+          type: string
+          nullable: true
+        callback:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Created:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+        datatype:
+          type: string
+          nullable: true
+        callback:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Locpick:
+      type: object
+      properties:
+        user_latitude:
+          type: string
+          nullable: true
+        user_longitude:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Title_Field:
+      type: object
+      properties:
+        en:
+          type: array
+          items:
+            $ref: '#/components/schemas/En'
+          nullable: true
+      additionalProperties: false
+    Changed:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+        datatype:
+          type: string
+          nullable: true
+        callback:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Field_Franchise_Logo:
+      type: object
+      properties:
+        und:
+          type: array
+          items:
+            $ref: '#/components/schemas/Und1'
+          nullable: true
+      additionalProperties: false
+    FoodServicesOutletImage:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Field_Combos:
+      type: object
+      properties:
+        und:
+          type: array
+          items:
+            $ref: '#/components/schemas/Und'
+          nullable: true
+      additionalProperties: false
+    En2:
+      type: object
+      properties:
+        entity_type:
+          type: string
+          nullable: true
+        entity_id:
+          type: string
+          nullable: true
+        revision_id:
+          type: string
+          nullable: true
+        language:
+          type: string
+          nullable: true
+        source:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        translate:
+          type: string
+          nullable: true
+        created:
+          type: string
+          nullable: true
+        changed:
+          type: string
+          nullable: true
+      additionalProperties: false
+    ComboImage:
+      type: object
+      properties:
+        id:
+          type: string
+          nullable: true
+        url:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FoodServicesFranchises:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/FoodServicesFranchise'
+          nullable: true
+        count:
+          type: integer
+          format: int32
+        self:
+          $ref: '#/components/schemas/FoodServicesFranchisesSelf'
+      additionalProperties: false
+    Und1:
+      type: object
+      properties:
+        fid:
+          type: string
+          nullable: true
+        uid:
+          type: string
+          nullable: true
+        filename:
+          type: string
+          nullable: true
+        uri:
+          type: string
+          nullable: true
+        filemime:
+          type: string
+          nullable: true
+        filesize:
+          type: string
+          nullable: true
+        status:
+          type: string
+          nullable: true
+        timestamp:
+          type: string
+          nullable: true
+        uuid:
+          type: string
+          nullable: true
+        rdf_mapping:
+          type: array
+          items: {}
+          nullable: true
+        focal_point:
+          type: string
+          nullable: true
+        alt:
+          type: string
+          nullable: true
+        title:
+          type: string
+          nullable: true
+        width:
+          type: string
+          nullable: true
+        height:
+          type: string
+          nullable: true
+      additionalProperties: false
+    LocationLink:
+      type: object
+      properties:
+        url:
+          type: string
+          nullable: true
+        title:
+          nullable: true
+        attributes:
+          type: array
+          items: {}
+          nullable: true
+        original_title:
+          nullable: true
+        original_url:
+          type: string
+          nullable: true
+      additionalProperties: false
+    Body:
+      type: object
+      properties:
+        predicates:
+          type: array
+          items:
+            type: string
+          nullable: true
+      additionalProperties: false
+    Und:
+      type: object
+      properties:
+        value:
+          type: string
+          nullable: true
+        revision_id:
+          type: string
+          nullable: true
+      additionalProperties: false
+    FoodServicesOutletsSelf:
+      type: object
+      properties:
+        title:
+          type: string
+          nullable: true
+        href:
+          type: string
+          nullable: true
+      additionalProperties: false
+    HoursChange:
+      type: object
+      properties:
+        value:
+          type: string
+          format: date-time
+        value2:
+          type: string
+          format: date-time
+        timezone_db:
+          type: string
+          nullable: true
+        date_type:
+          type: string
+          nullable: true
+      additionalProperties: false
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

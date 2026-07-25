@@ -1,0 +1,114 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations Account API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: Account
+paths:
+  /v3/Account/Register:
+    post:
+      tags:
+      - Account
+      summary: Use this method to request an API key and begin your registration process
+      parameters:
+      - name: email
+        in: query
+        description: A unique email that we can use to identify you and contact you. We will ask to confirm it.
+        schema:
+          type: string
+      - name: project
+        in: query
+        description: A name and description of your project
+        schema:
+          type: string
+      - name: uri
+        in: query
+        description: 'The web address of your project: it''s live location, app store entry, or similar'
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /v3/Account/{email}:
+    get:
+      tags:
+      - Account
+      summary: Use this method to see if an email has already been registered for an API key
+      parameters:
+      - name: email
+        in: path
+        description: Email address to check
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /v3/Account/{email}/notify:
+    get:
+      tags:
+      - Account
+      summary: Use this method to have us re-send the confirmation email to an account pending confirmation, if it exists. The activation code will be reset in the process.
+      parameters:
+      - name: email
+        in: path
+        description: Email address to re-send confirmation email to
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /v3/Account/{email}/{apiKey}/reset:
+    get:
+      tags:
+      - Account
+      summary: User this method to put your account in pending confirmation status and generate a new API key. Your old key will no longer grant access. The account will need to be confirmed again before the new key grants access.
+      parameters:
+      - name: email
+        in: path
+        description: Email address of associated account to reset
+        required: true
+        schema:
+          type: string
+      - name: apiKey
+        in: path
+        description: Current API account key
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /v3/Account/Confirm:
+    post:
+      tags:
+      - Account
+      summary: Use this method to confirm your email and activate your account
+      parameters:
+      - name: email
+        in: query
+        description: Email address you used to register
+        schema:
+          type: string
+      - name: code
+        in: query
+        description: Activation code we sent you in the confirmation email
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

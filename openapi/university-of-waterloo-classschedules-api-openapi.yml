@@ -1,0 +1,287 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations ClassSchedules API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: ClassSchedules
+paths:
+  /v3/ClassSchedules/{termCode}:
+    get:
+      tags:
+      - ClassSchedules
+      summary: Get the Course IDs that have one or more active and associated schedules in the given Term
+      parameters:
+      - name: termCode
+        in: path
+        description: Waterloo Term code to filter on
+        required: true
+        schema:
+          maxLength: 4
+          minLength: 4
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+  /v3/ClassSchedules/{termCode}/{courseId}:
+    get:
+      tags:
+      - ClassSchedules
+      summary: Get Class data for a scheduled Course by Course ID, in a specific Term
+      parameters:
+      - name: termCode
+        in: path
+        description: Waterloo Term code to filter on
+        required: true
+        schema:
+          maxLength: 4
+          minLength: 4
+          type: string
+      - name: courseId
+        in: path
+        description: Course ID to filter on
+        required: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Class'
+  /v3/ClassSchedules/{termCode}/{subject}/{catalogNumber}:
+    get:
+      tags:
+      - ClassSchedules
+      summary: Get Class data for a scheduled Course by Subject and catalog number, in a specific Term
+      parameters:
+      - name: termCode
+        in: path
+        description: Waterloo Term code to filter on
+        required: true
+        schema:
+          maxLength: 4
+          minLength: 4
+          type: string
+      - name: subject
+        in: path
+        description: Academic Subject code to filter ron
+        required: true
+        schema:
+          pattern: ^[A-Za-z]*$
+          type: string
+      - name: catalogNumber
+        in: path
+        description: Catalog number to filter on
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Class'
+components:
+  schemas:
+    Class:
+      type: object
+      properties:
+        courseId:
+          type: string
+          description: Course identifier number, not unique
+          nullable: true
+        courseOfferNumber:
+          type: integer
+          description: Course offer number identifier for this class
+          format: int32
+        sessionCode:
+          type: string
+          description: Session code for this class
+          nullable: true
+        classSection:
+          type: integer
+          description: Number identifying the section of this class
+          format: int32
+        termCode:
+          type: string
+          description: Waterloo academic term code
+          nullable: true
+        classNumber:
+          type: integer
+          description: Class number identifier for this class
+          format: int32
+        courseComponent:
+          type: string
+          description: Course component code for this class
+          nullable: true
+        associatedClassCode:
+          type: integer
+          description: Associated class code for this class
+          format: int32
+        maxEnrollmentCapacity:
+          type: integer
+          description: Indicates the maximum number of students that can enroll in this class
+          format: int32
+        enrolledStudents:
+          type: integer
+          description: Indicates the current number of students enrolled in this class
+          format: int32
+        enrollConsentCode:
+          type: string
+          description: Code describing whether No, Instructor, or Department consent to enroll is required. Overrides Course level information if different.
+          nullable: true
+        enrollConsentDescription:
+          type: string
+          description: Description of the enroll requirement. Overrides Course level information if different.
+          nullable: true
+          readOnly: true
+        dropConsentCode:
+          type: string
+          description: Code describing whether No, Instructor, or Department consent to drop is required. Overrides Course level information if different.
+          nullable: true
+        dropConsentDescription:
+          type: string
+          description: Description of the drop requirement. Overrides Course level information if different.
+          nullable: true
+          readOnly: true
+        scheduleData:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassSchedule'
+          description: Schedule data for this class
+          nullable: true
+        instructorData:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClassInstructor'
+          description: Instructor data for this class
+          nullable: true
+      additionalProperties: false
+      description: Represents an Academic class, which is a scheduled instance of a Course
+    ClassSchedule:
+      type: object
+      properties:
+        courseId:
+          type: string
+          description: Course identifier number, not unique
+          nullable: true
+        courseOfferNumber:
+          type: integer
+          description: Course offer number identifier for this class
+          format: int32
+        sessionCode:
+          type: string
+          description: Session code number for this class
+          nullable: true
+        classSection:
+          type: integer
+          description: Number identifying the section of this class
+          format: int32
+        termCode:
+          type: string
+          description: Waterloo academic term code
+          nullable: true
+        classMeetingNumber:
+          type: integer
+          description: Identifier for the class meeting this schedule data relates to
+          format: int32
+        scheduleStartDate:
+          type: string
+          description: The date this schedule begins
+          format: date-time
+        scheduleEndDate:
+          type: string
+          description: The date this schedule ends
+          format: date-time
+        classMeetingStartTime:
+          type: string
+          description: The start time of this class
+          format: date-time
+          nullable: true
+        classMeetingEndTime:
+          type: string
+          description: The end time of this class
+          format: date-time
+          nullable: true
+        classMeetingDayPatternCode:
+          type: string
+          description: A code representing the days the class schedule takes place during the week
+          nullable: true
+        classMeetingWeekPatternCode:
+          type: string
+          description: A Y|N per day representation of the class schedule taking place during the week
+          nullable: true
+        locationName:
+          type: string
+          description: REMOVED for privacy. Building and room name for the location of this class schedule
+          nullable: true
+      additionalProperties: false
+      description: Data describing scheduling and availability data for a Class
+    ClassInstructor:
+      type: object
+      properties:
+        courseId:
+          type: string
+          description: Course identifier number, not unique
+          nullable: true
+        courseOfferNumber:
+          type: integer
+          description: Course offer number identifier for this class
+          format: int32
+        sessionCode:
+          type: string
+          description: Session code number for this class
+          nullable: true
+        classSection:
+          type: integer
+          description: Number identifying the section of this class
+          format: int32
+        termCode:
+          type: string
+          description: Waterloo academic term code
+          nullable: true
+        instructorRoleCode:
+          type: string
+          description: REMOVED for privacy. The code designation for the instructor's role in this class
+          nullable: true
+        instructorFirstName:
+          type: string
+          description: REMOVED for privacy. The Instructors preferred first name
+          nullable: true
+        instructorLastName:
+          type: string
+          description: REMOVED for privacy. The Instructors preferred last name
+          nullable: true
+        instructorUniqueIdentifier:
+          type: string
+          description: REMOVED for privacy. A unique identifier that persists through name changes. Not guaranteed, but likely to be immutable for instructor.
+          nullable: true
+        classMeetingNumber:
+          type: integer
+          description: Identifier for the class meeting this instructor is for
+          format: int32
+      additionalProperties: false
+      description: A person instructing a Class
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

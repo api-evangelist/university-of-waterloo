@@ -1,0 +1,434 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations Wcms API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: Wcms
+paths:
+  /v3/Wcms:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves information about all active and published WCMS sites
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Site'
+  /v3/Wcms/{id}:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves information about a specific WCMS site by Site Id
+      parameters:
+      - name: id
+        in: path
+        description: Unique site Id
+        required: true
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Site'
+  /v3/Wcms/latestnews/{maxItems}:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves the latest news items across all WCMS sites, ordered by posted date
+      parameters:
+      - name: maxItems
+        in: path
+        description: Number of items to retrieve, default 15, maximum 25
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 15
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteNews'
+  /v3/Wcms/latestevents/{maxItems}:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves the latest events items across all WCMS sites, ordered by event start date
+      parameters:
+      - name: maxItems
+        in: path
+        description: Number of items to retrieve, default 15, maximum 25
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 15
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteEvent'
+  /v3/Wcms/latestposts/{maxItems}:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves the latest blog post items across all WCMS sites, ordered by posted date
+      parameters:
+      - name: maxItems
+        in: path
+        description: Number of items to retrieve, default 15, maximum 25
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 15
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteBlogPost'
+  /v3/Wcms/{id}/news:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves all news items for a specific WCMS site by Site Id
+      parameters:
+      - name: id
+        in: path
+        description: Unique Id for the Site
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: maxItems
+        in: query
+        description: (Optional) Maximum amount of items to retrieve
+        schema:
+          type: integer
+          format: int32
+      - name: newestFirst
+        in: query
+        description: (Optional) Requires maxItems parameter, sorts items by created date, newest first
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteNews'
+  /v3/Wcms/{id}/posts:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves all blog post items for a specific WCMS site by Site Id
+      parameters:
+      - name: id
+        in: path
+        description: Unique Id for the Site
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: maxItems
+        in: query
+        description: (Optional) Maximum amount of items to retrieve
+        schema:
+          type: integer
+          format: int32
+      - name: newestFirst
+        in: query
+        description: (Optional) Requires maxItems parameter, sorts items by created date, newest first
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteBlogPost'
+  /v3/Wcms/{id}/events:
+    get:
+      tags:
+      - Wcms
+      summary: Retrieves all event items for a specific WCMS site by Site Id
+      parameters:
+      - name: id
+        in: path
+        description: Unique Id for the Site
+        required: true
+        schema:
+          type: integer
+          format: int32
+      - name: maxItems
+        in: query
+        description: (Optional) Maximum amount of items to retrieve
+        schema:
+          type: integer
+          format: int32
+      - name: newestFirst
+        in: query
+        description: (Optional) Requires maxItems parameter, sorts items by created date, newest first
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SiteEvent'
+components:
+  schemas:
+    SiteNews:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID of the Site this news originates from
+          format: int32
+        uniqueKey:
+          type: string
+          description: Unique Id of this news item
+          nullable: true
+        title:
+          type: string
+          description: Title of the news item
+          nullable: true
+        postedDate:
+          type: string
+          description: Content created or posted date
+          format: date-time
+          nullable: true
+        updatedDate:
+          type: string
+          description: Content updated date
+          format: date-time
+          nullable: true
+        itemUri:
+          type: string
+          description: URI to the news item in WCMS
+          nullable: true
+        audience:
+          type: string
+          description: Intended audience tag(s)
+          nullable: true
+        content:
+          type: string
+          description: News item content, often with HTML markup
+          nullable: true
+      additionalProperties: false
+      description: Model representing News data associated to a Site in the WCMS
+    SiteBlogPost:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        uniqueKey:
+          type: string
+          description: Unique Id of this post item
+          nullable: true
+        title:
+          type: string
+          description: Title of the blog post
+          nullable: true
+        postedDate:
+          type: string
+          description: Content created or posted date
+          format: date-time
+          nullable: true
+        updatedDate:
+          type: string
+          description: Content updated date
+          format: date-time
+          nullable: true
+        itemUri:
+          type: string
+          description: URI to the item in WCMS
+          nullable: true
+        audience:
+          type: string
+          description: Intended audience tag(s)
+          nullable: true
+        content:
+          type: string
+          description: Blog post content, often with HTML markup
+          nullable: true
+        delegatedAuthorName:
+          type: string
+          description: Display name of the delegated author for this blog post
+          nullable: true
+        delegatedAuthorUri:
+          type: string
+          description: Link to the WCMS profiel of the delegated author
+          nullable: true
+        publisherUsername:
+          type: string
+          description: Username of the person publishing the content, not necessarily the author
+          nullable: true
+      additionalProperties: false
+      description: Model representing a WCMS blog post item
+    Site:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        relativeUri:
+          type: string
+          description: Relative URI of the site from the root uWaterloo CMS domain
+          nullable: true
+        name:
+          type: string
+          description: Display name of the Site
+          nullable: true
+        completeUri:
+          type: string
+          description: Complete URI of the site, including root domain
+          nullable: true
+        ownerUnitCode:
+          type: string
+          description: If available, the department owner code for this Site. Can loosely map to Academic Groups.
+          nullable: true
+        ownerUnitNameShort:
+          type: string
+          description: Short name of the department owner for this Site. See OwnerUnitCode for more.
+          nullable: true
+        ownerUnitNameFull:
+          type: string
+          description: Full name of the department owner for this Site. See OwnerUnitCode for more.
+          nullable: true
+        ownerGroupCode:
+          type: string
+          description: If available, the faculty owner code for this Site. Can loosely map to Academic Organization.
+          nullable: true
+        ownerType:
+          type: string
+          description: The tag describing the association of the owner department, such as academic, research, and more.
+          nullable: true
+      additionalProperties: false
+      description: Model representing a Site on the Waterloo CMS
+    SiteEvent:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        uniqueKey:
+          type: string
+          description: Unique Id of this evevnt item
+          nullable: true
+        title:
+          type: string
+          description: Title of the event
+          nullable: true
+        eventStartDate:
+          type: string
+          description: Start date of the event
+          format: date-time
+          nullable: true
+        eventEndDate:
+          type: string
+          description: End date of the event
+          format: date-time
+          nullable: true
+        recurRule:
+          type: string
+          description: Description of the event recurrence rule
+          nullable: true
+        eventTimezone:
+          type: string
+          description: Time zone description of the event dates
+          nullable: true
+        itemUri:
+          type: string
+          description: Link to the Event
+          nullable: true
+        eventTags:
+          type: string
+          description: Tag(s) representing the event
+          nullable: true
+        eventType:
+          type: string
+          description: Type of the event
+          nullable: true
+        eventWebsite:
+          type: string
+          description: Supplemental URI for the event
+          nullable: true
+        audience:
+          type: string
+          description: Tag(s) representing the intended audience for the event
+          nullable: true
+        cost:
+          type: string
+          description: Cost of the event
+          nullable: true
+        host:
+          type: string
+          description: Event host information
+          nullable: true
+        locationId:
+          type: integer
+          description: Unique Id of the location hosting the event
+          format: int32
+          nullable: true
+        locationName:
+          type: string
+          description: Display name of the location hosting the event
+          nullable: true
+        updatedDate:
+          type: string
+          description: Date item last updated
+          format: date-time
+          nullable: true
+        content:
+          type: string
+          description: Description content for the event, often includes HTML markup
+          nullable: true
+      additionalProperties: false
+      description: Model representing a WCMS Event item
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

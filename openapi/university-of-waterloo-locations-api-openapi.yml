@@ -1,0 +1,208 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations Locations API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: Locations
+paths:
+  /v3/Locations:
+    get:
+      tags:
+      - Locations
+      summary: Get all building location data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+  /v3/Locations/geojson:
+    get:
+      tags:
+      - Locations
+      summary: Get all building location data as GEO JSON
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationGeo'
+  /v3/Locations/{locationCode}:
+    get:
+      tags:
+      - Locations
+      summary: Gets building by matched building code, case insensitive
+      parameters:
+      - name: locationCode
+        in: path
+        description: Building code to match
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+  /v3/Locations/{locationCode}/geojson:
+    get:
+      tags:
+      - Locations
+      summary: Gets building by matched building code, case insensitive, as GEO JSON
+      parameters:
+      - name: locationCode
+        in: path
+        description: Building code to match
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationGeo'
+  /v3/Locations/search/{locationName}:
+    get:
+      tags:
+      - Locations
+      summary: Gets buildings by matched building name, contains, case insensitive
+      parameters:
+      - name: locationName
+        in: path
+        description: Text to match in building name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+  /v3/Locations/search/{locationName}/geojson:
+    get:
+      tags:
+      - Locations
+      summary: Gets buildings by matched building name, contains, case insensitive, as GEO JSON
+      parameters:
+      - name: locationName
+        in: path
+        description: Text to match in building name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationGeo'
+components:
+  schemas:
+    Location:
+      type: object
+      properties:
+        buildingId:
+          type: string
+          description: Unique identifier for this building
+          nullable: true
+        buildingCode:
+          type: string
+          description: Alpha-numeric building code
+          nullable: true
+        parentBuildingCode:
+          type: string
+          description: Unofficial, alpha-numeric building code that represents the parent location
+          nullable: true
+        buildingName:
+          type: string
+          description: Display name of the building
+          nullable: true
+        alternateBuildingNames:
+          type: array
+          items:
+            type: string
+          description: Unofficial, collection of alternate building display names
+          nullable: true
+        latitude:
+          type: number
+          description: Latitude co-ordinate of this location
+          format: double
+          nullable: true
+        longitude:
+          type: number
+          description: Longitude co-ordinate of this location
+          format: double
+          nullable: true
+      additionalProperties: false
+      description: Model representing a Location for the Buildings dataset
+    LocationGeo:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type property of GEO JSON collection
+          nullable: true
+          readOnly: true
+        features:
+          type: array
+          items:
+            $ref: '#/components/schemas/Feature'
+          description: Features of this collection
+          nullable: true
+      additionalProperties: false
+      description: Model representing a Location for the Buildings dataset in GEO JSON format
+    Feature:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of Feature
+          nullable: true
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Location'
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+      additionalProperties: false
+      description: Feature of location collection
+    Geometry:
+      type: object
+      properties:
+        type:
+          type: string
+          description: Type of geometry
+          nullable: true
+          readOnly: true
+        coordinates:
+          type: array
+          items:
+            type: number
+            format: double
+          description: Latitude and Longitude collection of this location
+          nullable: true
+      additionalProperties: false
+      description: Represents Geometry data of the Feature
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

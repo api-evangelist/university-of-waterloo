@@ -1,0 +1,102 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations ExamSchedules API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: ExamSchedules
+paths:
+  /v3/ExamSchedules:
+    get:
+      tags:
+      - ExamSchedules
+      summary: Returns Exam Schedule data for the current Term
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exam'
+  /v3/ExamSchedules/{code}:
+    get:
+      tags:
+      - ExamSchedules
+      summary: Returns Exam Schedule data for the requested Term
+      parameters:
+      - name: code
+        in: path
+        description: Waterloo Term code
+        required: true
+        schema:
+          maxLength: 4
+          minLength: 4
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Exam'
+components:
+  schemas:
+    Exam:
+      type: object
+      properties:
+        examDisplayName:
+          type: string
+          description: The name of the Exam, representative of the Course name
+          nullable: true
+        sections:
+          type: string
+          description: Sections of the Class this Exam schedule is applicable to
+          nullable: true
+        isOnlineDescription:
+          type: string
+          description: Indicates whether this Exam is held online, or provides an alternate description
+          nullable: true
+        day:
+          type: string
+          description: Day name on which this Exam is scheduled to take place
+          nullable: true
+        location:
+          type: string
+          description: Description of the location of the Exam
+          nullable: true
+        examWindowStartDate:
+          type: string
+          description: The date the Exam is scheduled for
+          nullable: true
+        examWindowStartTime:
+          type: string
+          description: The time the Exam is scheduled to start
+          nullable: true
+        examDuration:
+          type: string
+          description: The scheduled duration of the Exam
+          nullable: true
+        notes:
+          type: string
+          description: Additional notes about this Exam schedule
+          nullable: true
+        termCode:
+          type: string
+          description: Term Code for the Term this Exam is associated with
+          nullable: true
+      additionalProperties: false
+      description: Represents a scheduled Exam for a Class
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

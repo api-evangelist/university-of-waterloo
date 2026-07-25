@@ -1,0 +1,101 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations Subjects API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: Subjects
+paths:
+  /v3/Subjects:
+    get:
+      tags:
+      - Subjects
+      summary: Gets all Subject data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subject'
+  /v3/Subjects/{code}:
+    get:
+      tags:
+      - Subjects
+      summary: Gets Subject data filtered by Subject code
+      parameters:
+      - name: code
+        in: path
+        description: Specific Subject code
+        required: true
+        schema:
+          pattern: ^[A-Za-z]*$
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Subject'
+  /v3/Subjects/associatedto/{organizationCode}:
+    get:
+      tags:
+      - Subjects
+      summary: Gets Subject data for Subjects associated to an Academic Organization by Organization code
+      parameters:
+      - name: organizationCode
+        in: path
+        description: Academic Organization Code that associates to the Subjects
+        required: true
+        schema:
+          pattern: ^[A-Za-z]*$
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Subject'
+components:
+  schemas:
+    Subject:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Code that identifies this Subject
+          nullable: true
+        name:
+          type: string
+          description: The Name for this Subject, most often the displayed name
+          nullable: true
+        descriptionAbbreviated:
+          type: string
+          description: The short description of this subject, often same as Code
+          nullable: true
+        description:
+          type: string
+          description: Description of the Subject
+          nullable: true
+        associatedAcademicOrgCode:
+          type: string
+          description: Code for the Academic Organization that is associated to this Subject
+          nullable: true
+      additionalProperties: false
+      description: An academic Subject at Waterloo describes an area that a Course can be in
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

@@ -1,0 +1,78 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations HolidayDates API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: HolidayDates
+paths:
+  /v3/HolidayDates/paidholidays:
+    get:
+      tags:
+      - HolidayDates
+      summary: Retrieves data for all paid holidays as published by Human Resources
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaidHoliday'
+  /v3/HolidayDates/paidholidays/{year}:
+    get:
+      tags:
+      - HolidayDates
+      summary: Retrieves data for paid holidays associated to the given year as published by Human Resources
+      parameters:
+      - name: year
+        in: path
+        required: true
+        schema:
+          maximum: 2050
+          minimum: 2000
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PaidHoliday'
+  /v3/HolidayDates/paidholidays/ics:
+    get:
+      tags:
+      - HolidayDates
+      summary: Retrieves data for all paid holidays as published by Human Resources, as an ICS format feed. Allows anonymous access.
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    PaidHoliday:
+      type: object
+      properties:
+        holidayDate:
+          type: string
+          description: Date of the paid holiday event
+          format: date-time
+        name:
+          type: string
+          description: Name of the paid holiday
+          nullable: true
+      additionalProperties: false
+      description: Data object representing a University of Waterloo paid holiday
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header

@@ -1,0 +1,79 @@
+openapi: 3.0.4
+info:
+  title: Waterloo OpenData AcademicOrganizations API
+  version: v3
+servers:
+- url: https://openapi.data.uwaterloo.ca
+  description: University of Waterloo OpenData API v3
+security:
+- apiKey: []
+tags:
+- name: AcademicOrganizations
+paths:
+  /v3/AcademicOrganizations:
+    get:
+      tags:
+      - AcademicOrganizations
+      summary: Gets all Academic Organization data
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AcademicOrganization'
+  /v3/AcademicOrganizations/{organizationCode}:
+    get:
+      tags:
+      - AcademicOrganizations
+      summary: Gets Academic Organization data for a specific entry by the Organization code
+      parameters:
+      - name: organizationCode
+        in: path
+        description: Unique Academic Organization code
+        required: true
+        schema:
+          pattern: ^[A-Za-z]*$
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AcademicOrganization'
+components:
+  schemas:
+    AcademicOrganization:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Unique Code of this Academic Organization
+          nullable: true
+        name:
+          type: string
+          description: The Name for this Academic Organization, most often the display name
+          nullable: true
+        description:
+          type: string
+          description: The short description for this Academic Organization
+          nullable: true
+        descriptionFormal:
+          type: string
+          description: The formal description for this Academic Organization, most often used in official capacity
+          nullable: true
+        associatedCampusCode:
+          type: string
+          description: The Code for the Campus that this Academic Organization is assigned to
+          nullable: true
+      additionalProperties: false
+      description: An Academic Organization at Waterloo is similar to a department
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      description: Custom API key authentication
+      name: x-api-key
+      in: header
