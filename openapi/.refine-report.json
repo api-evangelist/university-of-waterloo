@@ -1,0 +1,36 @@
+{
+  "provider": "university-of-waterloo",
+  "sources": [
+    "university-of-waterloo-academicorganizations-api-openapi.yml",
+    "university-of-waterloo-account-api-openapi.yml",
+    "university-of-waterloo-classschedules-api-openapi.yml",
+    "university-of-waterloo-courses-api-openapi.yml",
+    "university-of-waterloo-examschedules-api-openapi.yml",
+    "university-of-waterloo-foodservices-api-openapi.yml",
+    "university-of-waterloo-holidaydates-api-openapi.yml",
+    "university-of-waterloo-importantdates-api-openapi.yml",
+    "university-of-waterloo-locations-api-openapi.yml",
+    "university-of-waterloo-subjects-api-openapi.yml",
+    "university-of-waterloo-terms-api-openapi.yml",
+    "university-of-waterloo-wcms-api-openapi.yml"
+  ],
+  "outputs": [
+    "university-of-waterloo-academicorganizations-api-openapi.yml",
+    "university-of-waterloo-account-api-openapi.yml",
+    "university-of-waterloo-classschedules-api-openapi.yml",
+    "university-of-waterloo-courses-api-openapi.yml",
+    "university-of-waterloo-examschedules-api-openapi.yml",
+    "university-of-waterloo-foodservices-api-openapi.yml",
+    "university-of-waterloo-holidaydates-api-openapi.yml",
+    "university-of-waterloo-importantdates-api-openapi.yml",
+    "university-of-waterloo-locations-api-openapi.yml",
+    "university-of-waterloo-subjects-api-openapi.yml",
+    "university-of-waterloo-terms-api-openapi.yml",
+    "university-of-waterloo-wcms-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
