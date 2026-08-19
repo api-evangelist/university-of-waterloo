@@ -1,0 +1,620 @@
+{
+  "item": [
+    {
+      "id": "0364e364-6798-47ae-8a6b-1cfe34257384",
+      "name": "Courses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fa631472-4f5a-401e-aab6-9f278829f4ef",
+          "name": "Get all Course data for a Term",
+          "request": {
+            "name": "Get all Course data for a Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Courses",
+                ":termCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "54cf5a05-a307-4ccf-b391-1eb73f5eac47",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Courses",
+                    ":termCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 3219,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 8316,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b364f77-52a2-4b38-88e2-4a77da39754d",
+          "name": "Get Course catalog data filtered by Term and Course ID, multiple Courses are usually cross listed",
+          "request": {
+            "name": "Get Course catalog data filtered by Term and Course ID, multiple Courses are usually cross listed",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Courses",
+                ":termCode",
+                ":courseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "courseId",
+                  "description": "(Required) Course ID to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c2a10238-c462-4808-9d43-0e88d21d9b5d",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Courses",
+                    ":termCode",
+                    ":courseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "courseId",
+                      "description": "(Required) Course ID to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 3219,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 8316,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "10e98208-9050-4000-8853-84ebf69c5f64",
+          "name": "Get Course catalog data filtered by Term, Course ID, and offer number",
+          "request": {
+            "name": "Get Course catalog data filtered by Term, Course ID, and offer number",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Courses",
+                ":termCode",
+                ":courseId",
+                ":offerNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "courseId",
+                  "description": "(Required) Course ID to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "offerNumber",
+                  "description": "(Required) Offer number to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "9b468f1d-7b28-4716-8a38-6d45de716e8b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Courses",
+                    ":termCode",
+                    ":courseId",
+                    ":offerNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "courseId",
+                      "description": "(Required) Course ID to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "offerNumber",
+                      "description": "(Required) Offer number to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"courseId\": \"string\",\n  \"courseOfferNumber\": 3951,\n  \"termCode\": \"string\",\n  \"termName\": \"string\",\n  \"associatedAcademicCareer\": \"string\",\n  \"associatedAcademicGroupCode\": \"string\",\n  \"associatedAcademicOrgCode\": \"string\",\n  \"subjectCode\": \"string\",\n  \"catalogNumber\": \"string\",\n  \"title\": \"string\",\n  \"descriptionAbbreviated\": \"string\",\n  \"description\": \"string\",\n  \"gradingBasis\": \"string\",\n  \"courseComponentCode\": \"string\",\n  \"enrollConsentCode\": \"string\",\n  \"enrollConsentDescription\": \"string\",\n  \"dropConsentCode\": \"string\",\n  \"dropConsentDescription\": \"string\",\n  \"requirementsDescription\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "71aa98f9-0f35-40da-b7aa-5ba460adc394",
+          "name": "Get Course catalog data filtered by Term and Subject code",
+          "request": {
+            "name": "Get Course catalog data filtered by Term and Subject code",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Courses",
+                ":termCode",
+                ":subject"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subject",
+                  "description": "(Required) Academic Subject code to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e06d1076-0399-4868-991b-e2e3e9dda537",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Courses",
+                    ":termCode",
+                    ":subject"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subject",
+                      "description": "(Required) Academic Subject code to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 3219,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 8316,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cac3c592-456c-44d1-bfde-d8d4b97d1ee7",
+          "name": "Get Course catalog data filtered by Term, Subject, and catalog number",
+          "request": {
+            "name": "Get Course catalog data filtered by Term, Subject, and catalog number",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Courses",
+                ":termCode",
+                ":subject",
+                ":catalogNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subject",
+                  "description": "(Required) Academic Subject code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogNumber",
+                  "description": "(Required) Course catalog number to filter on, ie: 101, 111W, 239"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75ef1606-7f4f-4311-b9a7-831b1d33691e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Courses",
+                    ":termCode",
+                    ":subject",
+                    ":catalogNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subject",
+                      "description": "(Required) Academic Subject code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogNumber",
+                      "description": "(Required) Course catalog number to filter on, ie: 101, 111W, 239"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 3219,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 8316,\n    \"termCode\": \"string\",\n    \"termName\": \"string\",\n    \"associatedAcademicCareer\": \"string\",\n    \"associatedAcademicGroupCode\": \"string\",\n    \"associatedAcademicOrgCode\": \"string\",\n    \"subjectCode\": \"string\",\n    \"catalogNumber\": \"string\",\n    \"title\": \"string\",\n    \"descriptionAbbreviated\": \"string\",\n    \"description\": \"string\",\n    \"gradingBasis\": \"string\",\n    \"courseComponentCode\": \"string\",\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"requirementsDescription\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f70b2f6-3164-4ba7-99ff-40d598fce8a5",
+    "name": "Waterloo OpenData AcademicOrganizations Courses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

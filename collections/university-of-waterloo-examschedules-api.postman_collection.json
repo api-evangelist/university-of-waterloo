@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "5e12f913-350a-41f3-bbf0-acc7a2e5b55d",
+      "name": "ExamSchedules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7e644538-7aa5-4794-847f-83112ee095ce",
+          "name": "Returns Exam Schedule data for the current Term",
+          "request": {
+            "name": "Returns Exam Schedule data for the current Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ExamSchedules"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "14cb4ee0-c6c9-422c-a006-55907dbfba6e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ExamSchedules"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"examDisplayName\": \"string\",\n    \"sections\": \"string\",\n    \"isOnlineDescription\": \"string\",\n    \"day\": \"string\",\n    \"location\": \"string\",\n    \"examWindowStartDate\": \"string\",\n    \"examWindowStartTime\": \"string\",\n    \"examDuration\": \"string\",\n    \"notes\": \"string\",\n    \"termCode\": \"string\"\n  },\n  {\n    \"examDisplayName\": \"string\",\n    \"sections\": \"string\",\n    \"isOnlineDescription\": \"string\",\n    \"day\": \"string\",\n    \"location\": \"string\",\n    \"examWindowStartDate\": \"string\",\n    \"examWindowStartTime\": \"string\",\n    \"examDuration\": \"string\",\n    \"notes\": \"string\",\n    \"termCode\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d9da7252-8ee0-450b-b328-31c4eb2e9cb1",
+          "name": "Returns Exam Schedule data for the requested Term",
+          "request": {
+            "name": "Returns Exam Schedule data for the requested Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ExamSchedules",
+                ":code"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "code",
+                  "description": "(Required) Waterloo Term code"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e01d488-84c5-4fb6-9934-40e8934f0090",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ExamSchedules",
+                    ":code"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "code",
+                      "description": "(Required) Waterloo Term code"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"examDisplayName\": \"string\",\n    \"sections\": \"string\",\n    \"isOnlineDescription\": \"string\",\n    \"day\": \"string\",\n    \"location\": \"string\",\n    \"examWindowStartDate\": \"string\",\n    \"examWindowStartTime\": \"string\",\n    \"examDuration\": \"string\",\n    \"notes\": \"string\",\n    \"termCode\": \"string\"\n  },\n  {\n    \"examDisplayName\": \"string\",\n    \"sections\": \"string\",\n    \"isOnlineDescription\": \"string\",\n    \"day\": \"string\",\n    \"location\": \"string\",\n    \"examWindowStartDate\": \"string\",\n    \"examWindowStartTime\": \"string\",\n    \"examDuration\": \"string\",\n    \"notes\": \"string\",\n    \"termCode\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "a328cb86-68a7-48d4-9f46-337a693cfbc1",
+    "name": "Waterloo OpenData AcademicOrganizations ExamSchedules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations HolidayDates API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "HolidayDates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves data for all paid holidays as published by Human Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/HolidayDates/paidholidays"
+          },
+          "docs": "Retrieves data for all paid holidays as published by Human Resources"
+        },
+        {
+          "info": {
+            "name": "Retrieves data for paid holidays associated to the given year as published by Human Resources",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/HolidayDates/paidholidays/:year",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieves data for paid holidays associated to the given year as published by Human Resources"
+        },
+        {
+          "info": {
+            "name": "Retrieves data for all paid holidays as published by Human Resources, as an ICS format feed. Allows anonymous access.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/HolidayDates/paidholidays/ics"
+          },
+          "docs": "Retrieves data for all paid holidays as published by Human Resources, as an ICS format feed. Allows anonymous access."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

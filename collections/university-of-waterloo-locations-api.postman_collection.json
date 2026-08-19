@@ -1,0 +1,593 @@
+{
+  "item": [
+    {
+      "id": "3f6c433d-5b0f-411e-80bf-586b72a25a34",
+      "name": "Locations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "73c2a319-0d63-4b65-8b69-f26b603ebad7",
+          "name": "Get all building location data",
+          "request": {
+            "name": "Get all building location data",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e2f5bbdf-2104-4fa6-9edf-98c4eb39f8e6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"buildingId\": \"string\",\n    \"buildingCode\": \"string\",\n    \"parentBuildingCode\": \"string\",\n    \"buildingName\": \"string\",\n    \"alternateBuildingNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"latitude\": 1360.7189797760532,\n    \"longitude\": 2162.924335324227\n  },\n  {\n    \"buildingId\": \"string\",\n    \"buildingCode\": \"string\",\n    \"parentBuildingCode\": \"string\",\n    \"buildingName\": \"string\",\n    \"alternateBuildingNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"latitude\": 8864.990238050148,\n    \"longitude\": 5417.031132194541\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5e22a91c-3f9a-4b6b-9b94-e86a173e768f",
+          "name": "Get all building location data as GEO JSON",
+          "request": {
+            "name": "Get all building location data as GEO JSON",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations",
+                "geojson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d7f34048-a1b5-4383-a4fa-c3636dc9de91",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations",
+                    "geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"features\": [\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 6688.479214127741,\n        \"longitude\": 7923.560283354714\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          8050.291494252912,\n          6757.854759129853\n        ]\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 1632.254153330327,\n        \"longitude\": 5958.145297885281\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          5770.430163803795,\n          6949.312255992209\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4fc48da7-3200-476b-980b-41c1166ff023",
+          "name": "Gets building by matched building code, case insensitive",
+          "request": {
+            "name": "Gets building by matched building code, case insensitive",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations",
+                ":locationCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationCode",
+                  "description": "(Required) Building code to match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "85088804-1239-4d19-925e-83c5cb1e72e1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations",
+                    ":locationCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationCode",
+                      "description": "(Required) Building code to match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"buildingId\": \"string\",\n  \"buildingCode\": \"string\",\n  \"parentBuildingCode\": \"string\",\n  \"buildingName\": \"string\",\n  \"alternateBuildingNames\": [\n    \"string\",\n    \"string\"\n  ],\n  \"latitude\": 4848.5241739205385,\n  \"longitude\": 6309.633689277444\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6deca70e-319d-4874-a1e0-8a777fa6b823",
+          "name": "Gets building by matched building code, case insensitive, as GEO JSON",
+          "request": {
+            "name": "Gets building by matched building code, case insensitive, as GEO JSON",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations",
+                ":locationCode",
+                "geojson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationCode",
+                  "description": "(Required) Building code to match"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4cde8301-6091-4ca5-bce2-85d88e9b2ce5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations",
+                    ":locationCode",
+                    "geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationCode",
+                      "description": "(Required) Building code to match"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"features\": [\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 42.523975248952574,\n        \"longitude\": 9719.016527153353\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          4359.884155910764,\n          4435.224633640356\n        ]\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 3427.1934449138075,\n        \"longitude\": 1181.1035244552015\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          6365.301431908423,\n          7442.932703687666\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "06a43ae2-6c8c-40f8-9965-81a1db5e0f7e",
+          "name": "Gets buildings by matched building name, contains, case insensitive",
+          "request": {
+            "name": "Gets buildings by matched building name, contains, case insensitive",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations",
+                "search",
+                ":locationName"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationName",
+                  "description": "(Required) Text to match in building name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "93bfa99c-38e9-4ad1-8821-d0568f5185a6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations",
+                    "search",
+                    ":locationName"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationName",
+                      "description": "(Required) Text to match in building name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"buildingId\": \"string\",\n    \"buildingCode\": \"string\",\n    \"parentBuildingCode\": \"string\",\n    \"buildingName\": \"string\",\n    \"alternateBuildingNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"latitude\": 3538.857179200531,\n    \"longitude\": 5840.600499527252\n  },\n  {\n    \"buildingId\": \"string\",\n    \"buildingCode\": \"string\",\n    \"parentBuildingCode\": \"string\",\n    \"buildingName\": \"string\",\n    \"alternateBuildingNames\": [\n      \"string\",\n      \"string\"\n    ],\n    \"latitude\": 6810.5143251038235,\n    \"longitude\": 7751.048198158451\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "23ef95fd-c6ea-4992-b59d-6fc378b4f03b",
+          "name": "Gets buildings by matched building name, contains, case insensitive, as GEO JSON",
+          "request": {
+            "name": "Gets buildings by matched building name, contains, case insensitive, as GEO JSON",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Locations",
+                "search",
+                ":locationName",
+                "geojson"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "locationName",
+                  "description": "(Required) Text to match in building name"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "223b1128-6b8e-4fd8-8ecb-47cf01f18de9",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Locations",
+                    "search",
+                    ":locationName",
+                    "geojson"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "locationName",
+                      "description": "(Required) Text to match in building name"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"type\": \"string\",\n  \"features\": [\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 42.523975248952574,\n        \"longitude\": 9719.016527153353\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          4359.884155910764,\n          4435.224633640356\n        ]\n      }\n    },\n    {\n      \"type\": \"string\",\n      \"properties\": {\n        \"buildingId\": \"string\",\n        \"buildingCode\": \"string\",\n        \"parentBuildingCode\": \"string\",\n        \"buildingName\": \"string\",\n        \"alternateBuildingNames\": [\n          \"string\",\n          \"string\"\n        ],\n        \"latitude\": 3427.1934449138075,\n        \"longitude\": 1181.1035244552015\n      },\n      \"geometry\": {\n        \"type\": \"string\",\n        \"coordinates\": [\n          6365.301431908423,\n          7442.932703687666\n        ]\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "789e2efa-6c06-47ea-8759-d689b66fa2d0",
+    "name": "Waterloo OpenData AcademicOrganizations Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

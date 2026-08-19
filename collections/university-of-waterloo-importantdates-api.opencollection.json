@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations ImportantDates API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ImportantDates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Returns all current data for Important Dates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/ImportantDates"
+          },
+          "docs": "Returns all current data for Important Dates"
+        },
+        {
+          "info": {
+            "name": "Returns important date data related to academic year",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/ImportantDates/:year",
+            "params": [
+              {
+                "name": "year",
+                "value": "",
+                "type": "path",
+                "description": "Academic year to filter on"
+              }
+            ]
+          },
+          "docs": "Returns important date data related to academic year"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

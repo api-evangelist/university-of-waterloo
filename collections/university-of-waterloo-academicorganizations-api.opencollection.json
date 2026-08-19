@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "AcademicOrganizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets all Academic Organization data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/AcademicOrganizations"
+          },
+          "docs": "Gets all Academic Organization data"
+        },
+        {
+          "info": {
+            "name": "Gets Academic Organization data for a specific entry by the Organization code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/AcademicOrganizations/:organizationCode",
+            "params": [
+              {
+                "name": "organizationCode",
+                "value": "",
+                "type": "path",
+                "description": "Unique Academic Organization code"
+              }
+            ]
+          },
+          "docs": "Gets Academic Organization data for a specific entry by the Organization code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

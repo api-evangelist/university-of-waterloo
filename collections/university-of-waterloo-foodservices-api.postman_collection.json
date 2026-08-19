@@ -1,0 +1,595 @@
+{
+  "item": [
+    {
+      "id": "ec7b8a54-da7d-4a26-9f93-d57015cab5e2",
+      "name": "FoodServices",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "71afb718-1175-4de4-b396-cfda00f25fef",
+          "name": "Get all food service Outlet data",
+          "request": {
+            "name": "Get all food service Outlet data",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "outlets"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd713e00-9983-4666-b440-c6f5a3305a96",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "outlets"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 3826,\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"image\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"filemime\": \"string\",\n          \"filesize\": \"string\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"alt\": \"string\",\n          \"title\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"filemime\": \"string\",\n          \"filesize\": \"string\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"alt\": \"string\",\n          \"title\": \"string\"\n        }\n      ],\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"features\": \"string\",\n      \"outlettype\": [\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"outletlocation\": \"string\",\n      \"locationlink\": {\n        \"url\": \"string\",\n        \"title\": {},\n        \"original_title\": {},\n        \"original_url\": \"string\"\n      },\n      \"description\": \"string\",\n      \"location\": [\n        {\n          \"lid\": \"string\",\n          \"name\": \"string\",\n          \"street\": \"string\",\n          \"additional\": \"string\",\n          \"city\": \"string\",\n          \"province\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"latitude\": \"string\",\n          \"longitude\": \"string\",\n          \"source\": \"string\",\n          \"is_primary\": \"string\",\n          \"locpick\": {\n            \"user_latitude\": \"string\",\n            \"user_longitude\": \"string\"\n          },\n          \"province_name\": \"string\",\n          \"country_name\": \"string\"\n        },\n        {\n          \"lid\": \"string\",\n          \"name\": \"string\",\n          \"street\": \"string\",\n          \"additional\": \"string\",\n          \"city\": \"string\",\n          \"province\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"latitude\": \"string\",\n          \"longitude\": \"string\",\n          \"source\": \"string\",\n          \"is_primary\": \"string\",\n          \"locpick\": {\n            \"user_latitude\": \"string\",\n            \"user_longitude\": \"string\"\n          },\n          \"province_name\": \"string\",\n          \"country_name\": \"string\"\n        }\n      ],\n      \"summary\": \"string\",\n      \"cuisine\": [\n        {\n          \"id\": \"string\",\n          \"self\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"self\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"openinghours\": [\n        {\n          \"day\": \"string\",\n          \"starthours\": \"string\",\n          \"endhours\": \"string\",\n          \"comment\": \"string\"\n        },\n        {\n          \"day\": \"string\",\n          \"starthours\": \"string\",\n          \"endhours\": \"string\",\n          \"comment\": \"string\"\n        }\n      ],\n      \"paymentaccepted\": [\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"closed\": [\n        {\n          \"value\": \"2021-02-12T06:57:38.006Z\",\n          \"value2\": \"1970-12-17T05:05:06.914Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        },\n        {\n          \"value\": \"1986-06-28T22:35:08.849Z\",\n          \"value2\": \"1965-01-26T08:25:43.290Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        }\n      ],\n      \"hourschange\": [\n        {\n          \"value\": \"2014-03-30T04:20:51.002Z\",\n          \"value2\": \"1998-01-25T09:11:26.872Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        },\n        {\n          \"value\": \"1973-03-18T13:11:51.255Z\",\n          \"value2\": \"1990-06-09T06:02:30.712Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        }\n      ],\n      \"notice\": \"string\",\n      \"franchisemenu\": [\n        {\n          \"vid\": \"string\",\n          \"uid\": \"string\",\n          \"title\": \"string\",\n          \"log\": \"string\",\n          \"status\": \"string\",\n          \"comment\": \"string\",\n          \"promote\": \"string\",\n          \"sticky\": \"string\",\n          \"vuuid\": \"string\",\n          \"nid\": \"string\",\n          \"type\": \"string\",\n          \"language\": \"string\",\n          \"created\": \"string\",\n          \"changed\": \"string\",\n          \"tnid\": \"string\",\n          \"translate\": \"string\",\n          \"uuid\": \"string\",\n          \"revision_timestamp\": \"string\",\n          \"revision_uid\": \"string\",\n          \"field_addons\": {},\n          \"field_combos\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_franchise_logo\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_individual_items\": {},\n          \"title_field\": {\n            \"en\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"metatags\": {\n            \"en\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"rdf_mapping\": {\n            \"rdftype\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comment_count\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_activity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"path\": {\n            \"pid\": \"string\",\n            \"source\": \"string\",\n            \"alias\": \"string\",\n            \"language\": \"string\",\n            \"pathauto\": \"string\"\n          },\n          \"translations\": {\n            \"original\": \"string\",\n            \"data\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"title_original\": \"string\",\n          \"entity_translation_handler_id\": \"string\",\n          \"title_language\": \"string\",\n          \"cid\": \"string\",\n          \"last_comment_timestamp\": \"string\",\n          \"last_comment_name\": {},\n          \"last_comment_uid\": \"string\",\n          \"comment_count\": \"string\",\n          \"name\": \"string\",\n          \"picture\": \"string\",\n          \"data\": \"string\",\n          \"uw_page_settings_node_enable\": \"string\",\n          \"workbench_moderation\": {\n            \"current\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"published\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"my_revision\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"vid\": \"string\",\n          \"uid\": \"string\",\n          \"title\": \"string\",\n          \"log\": \"string\",\n          \"status\": \"string\",\n          \"comment\": \"string\",\n          \"promote\": \"string\",\n          \"sticky\": \"string\",\n          \"vuuid\": \"string\",\n          \"nid\": \"string\",\n          \"type\": \"string\",\n          \"language\": \"string\",\n          \"created\": \"string\",\n          \"changed\": \"string\",\n          \"tnid\": \"string\",\n          \"translate\": \"string\",\n          \"uuid\": \"string\",\n          \"revision_timestamp\": \"string\",\n          \"revision_uid\": \"string\",\n          \"field_addons\": {},\n          \"field_combos\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_franchise_logo\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_individual_items\": {},\n          \"title_field\": {\n            \"en\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"metatags\": {\n            \"en\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"rdf_mapping\": {\n            \"rdftype\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comment_count\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_activity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"path\": {\n            \"pid\": \"string\",\n            \"source\": \"string\",\n            \"alias\": \"string\",\n            \"language\": \"string\",\n            \"pathauto\": \"string\"\n          },\n          \"translations\": {\n            \"original\": \"string\",\n            \"data\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"title_original\": \"string\",\n          \"entity_translation_handler_id\": \"string\",\n          \"title_language\": \"string\",\n          \"cid\": \"string\",\n          \"last_comment_timestamp\": \"string\",\n          \"last_comment_name\": {},\n          \"last_comment_uid\": \"string\",\n          \"comment_count\": \"string\",\n          \"name\": \"string\",\n          \"picture\": \"string\",\n          \"data\": \"string\",\n          \"uw_page_settings_node_enable\": \"string\",\n          \"workbench_moderation\": {\n            \"current\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"published\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"my_revision\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"sticky\": \"string\",\n      \"created\": \"string\"\n    },\n    {\n      \"id\": 1509,\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"image\": [\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"filemime\": \"string\",\n          \"filesize\": \"string\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"alt\": \"string\",\n          \"title\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"url\": \"string\",\n          \"filemime\": \"string\",\n          \"filesize\": \"string\",\n          \"width\": \"string\",\n          \"height\": \"string\",\n          \"alt\": \"string\",\n          \"title\": \"string\"\n        }\n      ],\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"features\": \"string\",\n      \"outlettype\": [\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"outletlocation\": \"string\",\n      \"locationlink\": {\n        \"url\": \"string\",\n        \"title\": {},\n        \"original_title\": {},\n        \"original_url\": \"string\"\n      },\n      \"description\": \"string\",\n      \"location\": [\n        {\n          \"lid\": \"string\",\n          \"name\": \"string\",\n          \"street\": \"string\",\n          \"additional\": \"string\",\n          \"city\": \"string\",\n          \"province\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"latitude\": \"string\",\n          \"longitude\": \"string\",\n          \"source\": \"string\",\n          \"is_primary\": \"string\",\n          \"locpick\": {\n            \"user_latitude\": \"string\",\n            \"user_longitude\": \"string\"\n          },\n          \"province_name\": \"string\",\n          \"country_name\": \"string\"\n        },\n        {\n          \"lid\": \"string\",\n          \"name\": \"string\",\n          \"street\": \"string\",\n          \"additional\": \"string\",\n          \"city\": \"string\",\n          \"province\": \"string\",\n          \"postal_code\": \"string\",\n          \"country\": \"string\",\n          \"latitude\": \"string\",\n          \"longitude\": \"string\",\n          \"source\": \"string\",\n          \"is_primary\": \"string\",\n          \"locpick\": {\n            \"user_latitude\": \"string\",\n            \"user_longitude\": \"string\"\n          },\n          \"province_name\": \"string\",\n          \"country_name\": \"string\"\n        }\n      ],\n      \"summary\": \"string\",\n      \"cuisine\": [\n        {\n          \"id\": \"string\",\n          \"self\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"self\": \"string\",\n          \"name\": \"string\",\n          \"description\": \"string\"\n        }\n      ],\n      \"openinghours\": [\n        {\n          \"day\": \"string\",\n          \"starthours\": \"string\",\n          \"endhours\": \"string\",\n          \"comment\": \"string\"\n        },\n        {\n          \"day\": \"string\",\n          \"starthours\": \"string\",\n          \"endhours\": \"string\",\n          \"comment\": \"string\"\n        }\n      ],\n      \"paymentaccepted\": [\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"tid\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"closed\": [\n        {\n          \"value\": \"1957-09-02T07:42:46.698Z\",\n          \"value2\": \"1965-03-31T01:37:47.851Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        },\n        {\n          \"value\": \"1965-03-13T06:03:21.051Z\",\n          \"value2\": \"1948-07-10T06:48:11.575Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        }\n      ],\n      \"hourschange\": [\n        {\n          \"value\": \"2004-12-08T23:44:44.090Z\",\n          \"value2\": \"1950-10-04T23:45:06.870Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        },\n        {\n          \"value\": \"2023-06-06T17:04:32.321Z\",\n          \"value2\": \"1946-10-18T12:30:50.083Z\",\n          \"timezone_db\": \"string\",\n          \"date_type\": \"string\"\n        }\n      ],\n      \"notice\": \"string\",\n      \"franchisemenu\": [\n        {\n          \"vid\": \"string\",\n          \"uid\": \"string\",\n          \"title\": \"string\",\n          \"log\": \"string\",\n          \"status\": \"string\",\n          \"comment\": \"string\",\n          \"promote\": \"string\",\n          \"sticky\": \"string\",\n          \"vuuid\": \"string\",\n          \"nid\": \"string\",\n          \"type\": \"string\",\n          \"language\": \"string\",\n          \"created\": \"string\",\n          \"changed\": \"string\",\n          \"tnid\": \"string\",\n          \"translate\": \"string\",\n          \"uuid\": \"string\",\n          \"revision_timestamp\": \"string\",\n          \"revision_uid\": \"string\",\n          \"field_addons\": {},\n          \"field_combos\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_franchise_logo\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_individual_items\": {},\n          \"title_field\": {\n            \"en\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"metatags\": {\n            \"en\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"rdf_mapping\": {\n            \"rdftype\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comment_count\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_activity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"path\": {\n            \"pid\": \"string\",\n            \"source\": \"string\",\n            \"alias\": \"string\",\n            \"language\": \"string\",\n            \"pathauto\": \"string\"\n          },\n          \"translations\": {\n            \"original\": \"string\",\n            \"data\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"title_original\": \"string\",\n          \"entity_translation_handler_id\": \"string\",\n          \"title_language\": \"string\",\n          \"cid\": \"string\",\n          \"last_comment_timestamp\": \"string\",\n          \"last_comment_name\": {},\n          \"last_comment_uid\": \"string\",\n          \"comment_count\": \"string\",\n          \"name\": \"string\",\n          \"picture\": \"string\",\n          \"data\": \"string\",\n          \"uw_page_settings_node_enable\": \"string\",\n          \"workbench_moderation\": {\n            \"current\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"published\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"my_revision\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        },\n        {\n          \"vid\": \"string\",\n          \"uid\": \"string\",\n          \"title\": \"string\",\n          \"log\": \"string\",\n          \"status\": \"string\",\n          \"comment\": \"string\",\n          \"promote\": \"string\",\n          \"sticky\": \"string\",\n          \"vuuid\": \"string\",\n          \"nid\": \"string\",\n          \"type\": \"string\",\n          \"language\": \"string\",\n          \"created\": \"string\",\n          \"changed\": \"string\",\n          \"tnid\": \"string\",\n          \"translate\": \"string\",\n          \"uuid\": \"string\",\n          \"revision_timestamp\": \"string\",\n          \"revision_uid\": \"string\",\n          \"field_addons\": {},\n          \"field_combos\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_franchise_logo\": {\n            \"und\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"field_individual_items\": {},\n          \"title_field\": {\n            \"en\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ]\n          },\n          \"metatags\": {\n            \"en\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"rdf_mapping\": {\n            \"rdftype\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"title\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"body\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"name\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"comment_count\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"last_activity\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"path\": {\n            \"pid\": \"string\",\n            \"source\": \"string\",\n            \"alias\": \"string\",\n            \"language\": \"string\",\n            \"pathauto\": \"string\"\n          },\n          \"translations\": {\n            \"original\": \"string\",\n            \"data\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          \"title_original\": \"string\",\n          \"entity_translation_handler_id\": \"string\",\n          \"title_language\": \"string\",\n          \"cid\": \"string\",\n          \"last_comment_timestamp\": \"string\",\n          \"last_comment_name\": {},\n          \"last_comment_uid\": \"string\",\n          \"comment_count\": \"string\",\n          \"name\": \"string\",\n          \"picture\": \"string\",\n          \"data\": \"string\",\n          \"uw_page_settings_node_enable\": \"string\",\n          \"workbench_moderation\": {\n            \"current\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"published\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"my_revision\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      ],\n      \"sticky\": \"string\",\n      \"created\": \"string\"\n    }\n  ],\n  \"count\": 4362,\n  \"self\": {\n    \"title\": \"string\",\n    \"href\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dc0e9740-ab13-4cdd-ab92-e11d1fce42de",
+          "name": "Get specific food services Outlet data by Id",
+          "request": {
+            "name": "Get specific food services Outlet data by Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "outlets",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) WCMS object ID representing the Outlet"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a76b407b-146c-462c-92d6-33e1652080fd",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "outlets",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) WCMS object ID representing the Outlet"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 8757,\n  \"self\": \"string\",\n  \"name\": \"string\",\n  \"image\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"filemime\": \"string\",\n      \"filesize\": \"string\",\n      \"width\": \"string\",\n      \"height\": \"string\",\n      \"alt\": \"string\",\n      \"title\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"filemime\": \"string\",\n      \"filesize\": \"string\",\n      \"width\": \"string\",\n      \"height\": \"string\",\n      \"alt\": \"string\",\n      \"title\": \"string\"\n    }\n  ],\n  \"photo\": {\n    \"id\": \"string\",\n    \"url\": \"string\",\n    \"filemime\": \"string\",\n    \"filesize\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"alt\": \"string\",\n    \"title\": \"string\"\n  },\n  \"features\": \"string\",\n  \"outlettype\": [\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"outletlocation\": \"string\",\n  \"locationlink\": {\n    \"url\": \"string\",\n    \"title\": {},\n    \"original_title\": {},\n    \"original_url\": \"string\"\n  },\n  \"description\": \"string\",\n  \"location\": [\n    {\n      \"lid\": \"string\",\n      \"name\": \"string\",\n      \"street\": \"string\",\n      \"additional\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"source\": \"string\",\n      \"is_primary\": \"string\",\n      \"locpick\": {\n        \"user_latitude\": \"string\",\n        \"user_longitude\": \"string\"\n      },\n      \"province_name\": \"string\",\n      \"country_name\": \"string\"\n    },\n    {\n      \"lid\": \"string\",\n      \"name\": \"string\",\n      \"street\": \"string\",\n      \"additional\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"source\": \"string\",\n      \"is_primary\": \"string\",\n      \"locpick\": {\n        \"user_latitude\": \"string\",\n        \"user_longitude\": \"string\"\n      },\n      \"province_name\": \"string\",\n      \"country_name\": \"string\"\n    }\n  ],\n  \"summary\": \"string\",\n  \"cuisine\": [\n    {\n      \"id\": \"string\",\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"openinghours\": [\n    {\n      \"day\": \"string\",\n      \"starthours\": \"string\",\n      \"endhours\": \"string\",\n      \"comment\": \"string\"\n    },\n    {\n      \"day\": \"string\",\n      \"starthours\": \"string\",\n      \"endhours\": \"string\",\n      \"comment\": \"string\"\n    }\n  ],\n  \"paymentaccepted\": [\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"closed\": [\n    {\n      \"value\": \"1971-12-29T14:42:32.939Z\",\n      \"value2\": \"1987-06-20T10:51:20.891Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    },\n    {\n      \"value\": \"2014-04-12T22:47:37.087Z\",\n      \"value2\": \"2003-12-04T03:26:36.673Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    }\n  ],\n  \"hourschange\": [\n    {\n      \"value\": \"1963-03-01T08:01:05.538Z\",\n      \"value2\": \"2010-04-23T02:41:13.016Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    },\n    {\n      \"value\": \"2001-11-10T23:51:11.520Z\",\n      \"value2\": \"1966-07-09T23:49:23.264Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    }\n  ],\n  \"notice\": \"string\",\n  \"franchisemenu\": [\n    {\n      \"vid\": \"string\",\n      \"uid\": \"string\",\n      \"title\": \"string\",\n      \"log\": \"string\",\n      \"status\": \"string\",\n      \"comment\": \"string\",\n      \"promote\": \"string\",\n      \"sticky\": \"string\",\n      \"vuuid\": \"string\",\n      \"nid\": \"string\",\n      \"type\": \"string\",\n      \"language\": \"string\",\n      \"created\": \"string\",\n      \"changed\": \"string\",\n      \"tnid\": \"string\",\n      \"translate\": \"string\",\n      \"uuid\": \"string\",\n      \"revision_timestamp\": \"string\",\n      \"revision_uid\": \"string\",\n      \"field_addons\": {},\n      \"field_combos\": {\n        \"und\": [\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          }\n        ]\n      },\n      \"field_franchise_logo\": {\n        \"und\": [\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          },\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          }\n        ]\n      },\n      \"field_individual_items\": {},\n      \"title_field\": {\n        \"en\": [\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          }\n        ]\n      },\n      \"metatags\": {\n        \"en\": {\n          \"robots\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"rdf_mapping\": {\n        \"rdftype\": [\n          \"string\",\n          \"string\"\n        ],\n        \"title\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"created\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"changed\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"body\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"uid\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"comment_count\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\"\n        },\n        \"last_activity\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        }\n      },\n      \"path\": {\n        \"pid\": \"string\",\n        \"source\": \"string\",\n        \"alias\": \"string\",\n        \"language\": \"string\",\n        \"pathauto\": \"string\"\n      },\n      \"translations\": {\n        \"original\": \"string\",\n        \"data\": {\n          \"en\": {\n            \"entity_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entity_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"revision_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"language\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"translate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"title_original\": \"string\",\n      \"entity_translation_handler_id\": \"string\",\n      \"title_language\": \"string\",\n      \"cid\": \"string\",\n      \"last_comment_timestamp\": \"string\",\n      \"last_comment_name\": {},\n      \"last_comment_uid\": \"string\",\n      \"comment_count\": \"string\",\n      \"name\": \"string\",\n      \"picture\": \"string\",\n      \"data\": \"string\",\n      \"uw_page_settings_node_enable\": \"string\",\n      \"workbench_moderation\": {\n        \"current\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 6634,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"published\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 8204,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"my_revision\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 5111,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        }\n      }\n    },\n    {\n      \"vid\": \"string\",\n      \"uid\": \"string\",\n      \"title\": \"string\",\n      \"log\": \"string\",\n      \"status\": \"string\",\n      \"comment\": \"string\",\n      \"promote\": \"string\",\n      \"sticky\": \"string\",\n      \"vuuid\": \"string\",\n      \"nid\": \"string\",\n      \"type\": \"string\",\n      \"language\": \"string\",\n      \"created\": \"string\",\n      \"changed\": \"string\",\n      \"tnid\": \"string\",\n      \"translate\": \"string\",\n      \"uuid\": \"string\",\n      \"revision_timestamp\": \"string\",\n      \"revision_uid\": \"string\",\n      \"field_addons\": {},\n      \"field_combos\": {\n        \"und\": [\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          }\n        ]\n      },\n      \"field_franchise_logo\": {\n        \"und\": [\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          },\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          }\n        ]\n      },\n      \"field_individual_items\": {},\n      \"title_field\": {\n        \"en\": [\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          }\n        ]\n      },\n      \"metatags\": {\n        \"en\": {\n          \"robots\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"rdf_mapping\": {\n        \"rdftype\": [\n          \"string\",\n          \"string\"\n        ],\n        \"title\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"created\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"changed\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"body\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"uid\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"comment_count\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\"\n        },\n        \"last_activity\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        }\n      },\n      \"path\": {\n        \"pid\": \"string\",\n        \"source\": \"string\",\n        \"alias\": \"string\",\n        \"language\": \"string\",\n        \"pathauto\": \"string\"\n      },\n      \"translations\": {\n        \"original\": \"string\",\n        \"data\": {\n          \"en\": {\n            \"entity_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entity_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"revision_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"language\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"translate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"title_original\": \"string\",\n      \"entity_translation_handler_id\": \"string\",\n      \"title_language\": \"string\",\n      \"cid\": \"string\",\n      \"last_comment_timestamp\": \"string\",\n      \"last_comment_name\": {},\n      \"last_comment_uid\": \"string\",\n      \"comment_count\": \"string\",\n      \"name\": \"string\",\n      \"picture\": \"string\",\n      \"data\": \"string\",\n      \"uw_page_settings_node_enable\": \"string\",\n      \"workbench_moderation\": {\n        \"current\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 4966,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"published\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 7363,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"my_revision\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 1778,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        }\n      }\n    }\n  ],\n  \"sticky\": \"string\",\n  \"created\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6d3c2ebd-8e65-48b0-81a9-f2cd0e2230d9",
+          "name": "Get specific food services Outlet data by Outlet name",
+          "request": {
+            "name": "Get specific food services Outlet data by Outlet name",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "outlets",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name to filter Outlet by"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ff0ef4fa-6455-4b71-b4b9-868fedd87714",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "outlets",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name to filter Outlet by"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 2383,\n  \"self\": \"string\",\n  \"name\": \"string\",\n  \"image\": [\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"filemime\": \"string\",\n      \"filesize\": \"string\",\n      \"width\": \"string\",\n      \"height\": \"string\",\n      \"alt\": \"string\",\n      \"title\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"url\": \"string\",\n      \"filemime\": \"string\",\n      \"filesize\": \"string\",\n      \"width\": \"string\",\n      \"height\": \"string\",\n      \"alt\": \"string\",\n      \"title\": \"string\"\n    }\n  ],\n  \"photo\": {\n    \"id\": \"string\",\n    \"url\": \"string\",\n    \"filemime\": \"string\",\n    \"filesize\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"alt\": \"string\",\n    \"title\": \"string\"\n  },\n  \"features\": \"string\",\n  \"outlettype\": [\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"outletlocation\": \"string\",\n  \"locationlink\": {\n    \"url\": \"string\",\n    \"title\": {},\n    \"original_title\": {},\n    \"original_url\": \"string\"\n  },\n  \"description\": \"string\",\n  \"location\": [\n    {\n      \"lid\": \"string\",\n      \"name\": \"string\",\n      \"street\": \"string\",\n      \"additional\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"source\": \"string\",\n      \"is_primary\": \"string\",\n      \"locpick\": {\n        \"user_latitude\": \"string\",\n        \"user_longitude\": \"string\"\n      },\n      \"province_name\": \"string\",\n      \"country_name\": \"string\"\n    },\n    {\n      \"lid\": \"string\",\n      \"name\": \"string\",\n      \"street\": \"string\",\n      \"additional\": \"string\",\n      \"city\": \"string\",\n      \"province\": \"string\",\n      \"postal_code\": \"string\",\n      \"country\": \"string\",\n      \"latitude\": \"string\",\n      \"longitude\": \"string\",\n      \"source\": \"string\",\n      \"is_primary\": \"string\",\n      \"locpick\": {\n        \"user_latitude\": \"string\",\n        \"user_longitude\": \"string\"\n      },\n      \"province_name\": \"string\",\n      \"country_name\": \"string\"\n    }\n  ],\n  \"summary\": \"string\",\n  \"cuisine\": [\n    {\n      \"id\": \"string\",\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"description\": \"string\"\n    }\n  ],\n  \"openinghours\": [\n    {\n      \"day\": \"string\",\n      \"starthours\": \"string\",\n      \"endhours\": \"string\",\n      \"comment\": \"string\"\n    },\n    {\n      \"day\": \"string\",\n      \"starthours\": \"string\",\n      \"endhours\": \"string\",\n      \"comment\": \"string\"\n    }\n  ],\n  \"paymentaccepted\": [\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"tid\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"closed\": [\n    {\n      \"value\": \"1986-06-24T10:23:44.753Z\",\n      \"value2\": \"2024-06-11T09:26:14.986Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    },\n    {\n      \"value\": \"1995-07-30T22:01:23.058Z\",\n      \"value2\": \"1948-12-26T04:59:09.614Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    }\n  ],\n  \"hourschange\": [\n    {\n      \"value\": \"1993-07-21T06:39:39.580Z\",\n      \"value2\": \"1960-08-01T07:18:01.289Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    },\n    {\n      \"value\": \"1956-02-23T05:31:31.869Z\",\n      \"value2\": \"1978-03-21T18:47:53.581Z\",\n      \"timezone_db\": \"string\",\n      \"date_type\": \"string\"\n    }\n  ],\n  \"notice\": \"string\",\n  \"franchisemenu\": [\n    {\n      \"vid\": \"string\",\n      \"uid\": \"string\",\n      \"title\": \"string\",\n      \"log\": \"string\",\n      \"status\": \"string\",\n      \"comment\": \"string\",\n      \"promote\": \"string\",\n      \"sticky\": \"string\",\n      \"vuuid\": \"string\",\n      \"nid\": \"string\",\n      \"type\": \"string\",\n      \"language\": \"string\",\n      \"created\": \"string\",\n      \"changed\": \"string\",\n      \"tnid\": \"string\",\n      \"translate\": \"string\",\n      \"uuid\": \"string\",\n      \"revision_timestamp\": \"string\",\n      \"revision_uid\": \"string\",\n      \"field_addons\": {},\n      \"field_combos\": {\n        \"und\": [\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          }\n        ]\n      },\n      \"field_franchise_logo\": {\n        \"und\": [\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          },\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          }\n        ]\n      },\n      \"field_individual_items\": {},\n      \"title_field\": {\n        \"en\": [\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          }\n        ]\n      },\n      \"metatags\": {\n        \"en\": {\n          \"robots\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"rdf_mapping\": {\n        \"rdftype\": [\n          \"string\",\n          \"string\"\n        ],\n        \"title\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"created\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"changed\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"body\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"uid\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"comment_count\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\"\n        },\n        \"last_activity\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        }\n      },\n      \"path\": {\n        \"pid\": \"string\",\n        \"source\": \"string\",\n        \"alias\": \"string\",\n        \"language\": \"string\",\n        \"pathauto\": \"string\"\n      },\n      \"translations\": {\n        \"original\": \"string\",\n        \"data\": {\n          \"en\": {\n            \"entity_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entity_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"revision_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"language\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"translate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"title_original\": \"string\",\n      \"entity_translation_handler_id\": \"string\",\n      \"title_language\": \"string\",\n      \"cid\": \"string\",\n      \"last_comment_timestamp\": \"string\",\n      \"last_comment_name\": {},\n      \"last_comment_uid\": \"string\",\n      \"comment_count\": \"string\",\n      \"name\": \"string\",\n      \"picture\": \"string\",\n      \"data\": \"string\",\n      \"uw_page_settings_node_enable\": \"string\",\n      \"workbench_moderation\": {\n        \"current\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 4509,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"published\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 8134,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"my_revision\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 7834,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        }\n      }\n    },\n    {\n      \"vid\": \"string\",\n      \"uid\": \"string\",\n      \"title\": \"string\",\n      \"log\": \"string\",\n      \"status\": \"string\",\n      \"comment\": \"string\",\n      \"promote\": \"string\",\n      \"sticky\": \"string\",\n      \"vuuid\": \"string\",\n      \"nid\": \"string\",\n      \"type\": \"string\",\n      \"language\": \"string\",\n      \"created\": \"string\",\n      \"changed\": \"string\",\n      \"tnid\": \"string\",\n      \"translate\": \"string\",\n      \"uuid\": \"string\",\n      \"revision_timestamp\": \"string\",\n      \"revision_uid\": \"string\",\n      \"field_addons\": {},\n      \"field_combos\": {\n        \"und\": [\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"revision_id\": \"string\"\n          }\n        ]\n      },\n      \"field_franchise_logo\": {\n        \"und\": [\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          },\n          {\n            \"fid\": \"string\",\n            \"uid\": \"string\",\n            \"filename\": \"string\",\n            \"uri\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"status\": \"string\",\n            \"timestamp\": \"string\",\n            \"uuid\": \"string\",\n            \"rdf_mapping\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"focal_point\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\"\n          }\n        ]\n      },\n      \"field_individual_items\": {},\n      \"title_field\": {\n        \"en\": [\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          },\n          {\n            \"value\": \"string\",\n            \"format\": {},\n            \"safe_value\": \"string\"\n          }\n        ]\n      },\n      \"metatags\": {\n        \"en\": {\n          \"robots\": {\n            \"value\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"rdf_mapping\": {\n        \"rdftype\": [\n          \"string\",\n          \"string\"\n        ],\n        \"title\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"created\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"changed\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        },\n        \"body\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"uid\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"type\": \"string\"\n        },\n        \"name\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ]\n        },\n        \"comment_count\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\"\n        },\n        \"last_activity\": {\n          \"predicates\": [\n            \"string\",\n            \"string\"\n          ],\n          \"datatype\": \"string\",\n          \"callback\": \"string\"\n        }\n      },\n      \"path\": {\n        \"pid\": \"string\",\n        \"source\": \"string\",\n        \"alias\": \"string\",\n        \"language\": \"string\",\n        \"pathauto\": \"string\"\n      },\n      \"translations\": {\n        \"original\": \"string\",\n        \"data\": {\n          \"en\": {\n            \"entity_type\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"entity_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"revision_id\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"language\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"source\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"uid\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"status\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"translate\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"created\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"changed\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        }\n      },\n      \"title_original\": \"string\",\n      \"entity_translation_handler_id\": \"string\",\n      \"title_language\": \"string\",\n      \"cid\": \"string\",\n      \"last_comment_timestamp\": \"string\",\n      \"last_comment_name\": {},\n      \"last_comment_uid\": \"string\",\n      \"comment_count\": \"string\",\n      \"name\": \"string\",\n      \"picture\": \"string\",\n      \"data\": \"string\",\n      \"uw_page_settings_node_enable\": \"string\",\n      \"workbench_moderation\": {\n        \"current\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 9488,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"published\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 4192,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        },\n        \"my_revision\": {\n          \"hid\": \"string\",\n          \"vid\": \"string\",\n          \"nid\": \"string\",\n          \"from_state\": \"string\",\n          \"state\": \"string\",\n          \"uid\": \"string\",\n          \"stamp\": \"string\",\n          \"published\": \"string\",\n          \"is_current\": 9911,\n          \"title\": \"string\",\n          \"timestamp\": \"string\"\n        }\n      }\n    }\n  ],\n  \"sticky\": \"string\",\n  \"created\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "7b89d7a7-da12-4549-9662-a5391827910b",
+          "name": "Get all food service Franchise data",
+          "request": {
+            "name": "Get all food service Franchise data",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "franchises"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2f5cba94-3425-4cf0-943c-20d44bab85c0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "franchises"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"id\": 3849,\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"logo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"combos\": [\n        {\n          \"name\": \"string\",\n          \"image\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"options\": \"string\",\n          \"item\": \"string\",\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"image\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"options\": \"string\",\n          \"item\": \"string\",\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ],\n      \"individualitems\": [\n        {\n          \"name\": \"string\",\n          \"photo\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"photo\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ],\n      \"addons\": [\n        {\n          \"name\": \"string\",\n          \"photo\": {},\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"photo\": {},\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ]\n    },\n    {\n      \"id\": 4190,\n      \"self\": \"string\",\n      \"name\": \"string\",\n      \"logo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"combos\": [\n        {\n          \"name\": \"string\",\n          \"image\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"options\": \"string\",\n          \"item\": \"string\",\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"image\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"options\": \"string\",\n          \"item\": \"string\",\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ],\n      \"individualitems\": [\n        {\n          \"name\": \"string\",\n          \"photo\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"photo\": {\n            \"id\": \"string\",\n            \"url\": \"string\",\n            \"filemime\": \"string\",\n            \"filesize\": \"string\",\n            \"width\": \"string\",\n            \"height\": \"string\",\n            \"alt\": \"string\",\n            \"title\": \"string\"\n          },\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ],\n      \"addons\": [\n        {\n          \"name\": \"string\",\n          \"photo\": {},\n          \"price\": \"string\",\n          \"calories\": {}\n        },\n        {\n          \"name\": \"string\",\n          \"photo\": {},\n          \"price\": \"string\",\n          \"calories\": {}\n        }\n      ]\n    }\n  ],\n  \"count\": 4813,\n  \"self\": {\n    \"title\": \"string\",\n    \"href\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87465098-fb7b-4178-a9d4-59149149894e",
+          "name": "Get specific food sercices Franchise data by Id",
+          "request": {
+            "name": "Get specific food sercices Franchise data by Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "franchises",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) WCMS object ID representing the Franchise"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ca638338-d2a5-4dc8-b410-8920937329e6",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "franchises",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) WCMS object ID representing the Franchise"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4155,\n  \"self\": \"string\",\n  \"name\": \"string\",\n  \"logo\": {\n    \"id\": \"string\",\n    \"url\": \"string\",\n    \"filemime\": \"string\",\n    \"filesize\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"alt\": \"string\",\n    \"title\": \"string\"\n  },\n  \"combos\": [\n    {\n      \"name\": \"string\",\n      \"image\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"options\": \"string\",\n      \"item\": \"string\",\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"image\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"options\": \"string\",\n      \"item\": \"string\",\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ],\n  \"individualitems\": [\n    {\n      \"name\": \"string\",\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ],\n  \"addons\": [\n    {\n      \"name\": \"string\",\n      \"photo\": {},\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"photo\": {},\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8daea239-8c4b-4071-b847-07fcd5ebfd40",
+          "name": "Get specific food services Franchise data by Franchise name",
+          "request": {
+            "name": "Get specific food services Franchise data by Franchise name",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "FoodServices",
+                "franchises",
+                ":name"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "name",
+                  "description": "(Required) Name to filter Franchise by"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "1aa50667-86e6-42d3-b80a-8ab572486b63",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "FoodServices",
+                    "franchises",
+                    ":name"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "name",
+                      "description": "(Required) Name to filter Franchise by"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4155,\n  \"self\": \"string\",\n  \"name\": \"string\",\n  \"logo\": {\n    \"id\": \"string\",\n    \"url\": \"string\",\n    \"filemime\": \"string\",\n    \"filesize\": \"string\",\n    \"width\": \"string\",\n    \"height\": \"string\",\n    \"alt\": \"string\",\n    \"title\": \"string\"\n  },\n  \"combos\": [\n    {\n      \"name\": \"string\",\n      \"image\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"options\": \"string\",\n      \"item\": \"string\",\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"image\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"options\": \"string\",\n      \"item\": \"string\",\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ],\n  \"individualitems\": [\n    {\n      \"name\": \"string\",\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"photo\": {\n        \"id\": \"string\",\n        \"url\": \"string\",\n        \"filemime\": \"string\",\n        \"filesize\": \"string\",\n        \"width\": \"string\",\n        \"height\": \"string\",\n        \"alt\": \"string\",\n        \"title\": \"string\"\n      },\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ],\n  \"addons\": [\n    {\n      \"name\": \"string\",\n      \"photo\": {},\n      \"price\": \"string\",\n      \"calories\": {}\n    },\n    {\n      \"name\": \"string\",\n      \"photo\": {},\n      \"price\": \"string\",\n      \"calories\": {}\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "52bb79a7-c1f8-4e47-a402-c84d7e8c30b9",
+    "name": "Waterloo OpenData AcademicOrganizations FoodServices API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

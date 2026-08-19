@@ -1,0 +1,145 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations Account API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Account",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Use this method to request an API key and begin your registration process",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Account/Register",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "A unique email that we can use to identify you and contact you. We will ask to confirm it."
+              },
+              {
+                "name": "project",
+                "value": "",
+                "type": "query",
+                "description": "A name and description of your project"
+              },
+              {
+                "name": "uri",
+                "value": "",
+                "type": "query",
+                "description": "The web address of your project: it's live location, app store entry, or similar"
+              }
+            ]
+          },
+          "docs": "Use this method to request an API key and begin your registration process"
+        },
+        {
+          "info": {
+            "name": "Use this method to see if an email has already been registered for an API key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Account/:email",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path",
+                "description": "Email address to check"
+              }
+            ]
+          },
+          "docs": "Use this method to see if an email has already been registered for an API key"
+        },
+        {
+          "info": {
+            "name": "Use this method to have us re-send the confirmation email to an account pending confirmation, if it exists. The activation code will be reset in the process.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Account/:email/notify",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path",
+                "description": "Email address to re-send confirmation email to"
+              }
+            ]
+          },
+          "docs": "Use this method to have us re-send the confirmation email to an account pending confirmation, if it exists. The activation code will be reset in the process."
+        },
+        {
+          "info": {
+            "name": "User this method to put your account in pending confirmation status and generate a new API key. Your old key will no longer grant access. The account will need to be confirmed again before the new key grants access.",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Account/:email/:apiKey/reset",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "path",
+                "description": "Email address of associated account to reset"
+              },
+              {
+                "name": "apiKey",
+                "value": "",
+                "type": "path",
+                "description": "Current API account key"
+              }
+            ]
+          },
+          "docs": "User this method to put your account in pending confirmation status and generate a new API key. Your old key will no longer grant access. The account will need to be confirmed again before the new key grants access."
+        },
+        {
+          "info": {
+            "name": "Use this method to confirm your email and activate your account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Account/Confirm",
+            "params": [
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "Email address you used to register"
+              },
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "Activation code we sent you in the confirmation email"
+              }
+            ]
+          },
+          "docs": "Use this method to confirm your email and activate your account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

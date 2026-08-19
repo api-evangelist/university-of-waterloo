@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations Subjects API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Subjects",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Gets all Subject data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Subjects"
+          },
+          "docs": "Gets all Subject data"
+        },
+        {
+          "info": {
+            "name": "Gets Subject data filtered by Subject code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Subjects/:code",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path",
+                "description": "Specific Subject code"
+              }
+            ]
+          },
+          "docs": "Gets Subject data filtered by Subject code"
+        },
+        {
+          "info": {
+            "name": "Gets Subject data for Subjects associated to an Academic Organization by Organization code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Subjects/associatedto/:organizationCode",
+            "params": [
+              {
+                "name": "organizationCode",
+                "value": "",
+                "type": "path",
+                "description": "Academic Organization Code that associates to the Subjects"
+              }
+            ]
+          },
+          "docs": "Gets Subject data for Subjects associated to an Academic Organization by Organization code"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

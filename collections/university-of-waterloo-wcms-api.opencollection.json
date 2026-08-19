@@ -1,0 +1,206 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations Wcms API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Wcms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieves information about all active and published WCMS sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms"
+          },
+          "docs": "Retrieves information about all active and published WCMS sites"
+        },
+        {
+          "info": {
+            "name": "Retrieves information about a specific WCMS site by Site Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique site Id"
+              }
+            ]
+          },
+          "docs": "Retrieves information about a specific WCMS site by Site Id"
+        },
+        {
+          "info": {
+            "name": "Retrieves the latest news items across all WCMS sites, ordered by posted date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/latestnews/:maxItems",
+            "params": [
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "path",
+                "description": "Number of items to retrieve, default 15, maximum 25"
+              }
+            ]
+          },
+          "docs": "Retrieves the latest news items across all WCMS sites, ordered by posted date"
+        },
+        {
+          "info": {
+            "name": "Retrieves the latest events items across all WCMS sites, ordered by event start date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/latestevents/:maxItems",
+            "params": [
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "path",
+                "description": "Number of items to retrieve, default 15, maximum 25"
+              }
+            ]
+          },
+          "docs": "Retrieves the latest events items across all WCMS sites, ordered by event start date"
+        },
+        {
+          "info": {
+            "name": "Retrieves the latest blog post items across all WCMS sites, ordered by posted date",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/latestposts/:maxItems",
+            "params": [
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "path",
+                "description": "Number of items to retrieve, default 15, maximum 25"
+              }
+            ]
+          },
+          "docs": "Retrieves the latest blog post items across all WCMS sites, ordered by posted date"
+        },
+        {
+          "info": {
+            "name": "Retrieves all news items for a specific WCMS site by Site Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/:id/news",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique Id for the Site"
+              },
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Maximum amount of items to retrieve"
+              },
+              {
+                "name": "newestFirst",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+              }
+            ]
+          },
+          "docs": "Retrieves all news items for a specific WCMS site by Site Id"
+        },
+        {
+          "info": {
+            "name": "Retrieves all blog post items for a specific WCMS site by Site Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/:id/posts",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique Id for the Site"
+              },
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Maximum amount of items to retrieve"
+              },
+              {
+                "name": "newestFirst",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+              }
+            ]
+          },
+          "docs": "Retrieves all blog post items for a specific WCMS site by Site Id"
+        },
+        {
+          "info": {
+            "name": "Retrieves all event items for a specific WCMS site by Site Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Wcms/:id/events",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Unique Id for the Site"
+              },
+              {
+                "name": "maxItems",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Maximum amount of items to retrieve"
+              },
+              {
+                "name": "newestFirst",
+                "value": "",
+                "type": "query",
+                "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+              }
+            ]
+          },
+          "docs": "Retrieves all event items for a specific WCMS site by Site Id"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

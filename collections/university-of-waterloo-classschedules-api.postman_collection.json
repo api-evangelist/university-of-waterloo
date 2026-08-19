@@ -1,0 +1,382 @@
+{
+  "item": [
+    {
+      "id": "b77fdcde-6c23-48fa-94a6-212a65b9ea0c",
+      "name": "ClassSchedules",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2be10e4b-879e-40a2-bf9f-db6582363a70",
+          "name": "Get the Course IDs that have one or more active and associated schedules in the given Term",
+          "request": {
+            "name": "Get the Course IDs that have one or more active and associated schedules in the given Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ClassSchedules",
+                ":termCode"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Waterloo Term code to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4338b778-dd6e-4028-ad7e-58dfb8d9e962",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ClassSchedules",
+                    ":termCode"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Waterloo Term code to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "189e3bec-e91c-4345-8efd-ed0d5e15e7c0",
+          "name": "Get Class data for a scheduled Course by Course ID, in a specific Term",
+          "request": {
+            "name": "Get Class data for a scheduled Course by Course ID, in a specific Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ClassSchedules",
+                ":termCode",
+                ":courseId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Waterloo Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "courseId",
+                  "description": "(Required) Course ID to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5d967cc6-12fa-4053-ba8a-3c8224dc7eb1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ClassSchedules",
+                    ":termCode",
+                    ":courseId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Waterloo Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "courseId",
+                      "description": "(Required) Course ID to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 5382,\n    \"sessionCode\": \"string\",\n    \"classSection\": 6775,\n    \"termCode\": \"string\",\n    \"classNumber\": 3172,\n    \"courseComponent\": \"string\",\n    \"associatedClassCode\": 3597,\n    \"maxEnrollmentCapacity\": 6117,\n    \"enrolledStudents\": 6880,\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"scheduleData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 2687,\n        \"sessionCode\": \"string\",\n        \"classSection\": 7978,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 434,\n        \"scheduleStartDate\": \"1973-08-19T12:07:02.736Z\",\n        \"scheduleEndDate\": \"2000-08-26T17:46:06.153Z\",\n        \"classMeetingStartTime\": \"1992-12-20T15:14:55.589Z\",\n        \"classMeetingEndTime\": \"1959-03-13T08:51:38.733Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 6466,\n        \"sessionCode\": \"string\",\n        \"classSection\": 1689,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 2236,\n        \"scheduleStartDate\": \"1987-12-18T15:30:47.615Z\",\n        \"scheduleEndDate\": \"2003-12-30T05:24:29.213Z\",\n        \"classMeetingStartTime\": \"1978-03-26T00:25:00.412Z\",\n        \"classMeetingEndTime\": \"1984-03-17T04:05:53.434Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      }\n    ],\n    \"instructorData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 5872,\n        \"sessionCode\": \"string\",\n        \"classSection\": 3698,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 837\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 5983,\n        \"sessionCode\": \"string\",\n        \"classSection\": 5976,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 5410\n      }\n    ]\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 763,\n    \"sessionCode\": \"string\",\n    \"classSection\": 3569,\n    \"termCode\": \"string\",\n    \"classNumber\": 5570,\n    \"courseComponent\": \"string\",\n    \"associatedClassCode\": 8727,\n    \"maxEnrollmentCapacity\": 5336,\n    \"enrolledStudents\": 8897,\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"scheduleData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 2494,\n        \"sessionCode\": \"string\",\n        \"classSection\": 3106,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 9850,\n        \"scheduleStartDate\": \"1984-02-13T08:57:02.873Z\",\n        \"scheduleEndDate\": \"1950-10-15T12:26:28.443Z\",\n        \"classMeetingStartTime\": \"1967-05-12T19:55:50.959Z\",\n        \"classMeetingEndTime\": \"2016-01-13T16:32:34.606Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 6365,\n        \"sessionCode\": \"string\",\n        \"classSection\": 2436,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 6702,\n        \"scheduleStartDate\": \"1986-12-19T16:20:15.758Z\",\n        \"scheduleEndDate\": \"2026-01-28T02:41:40.907Z\",\n        \"classMeetingStartTime\": \"2011-06-30T14:48:04.462Z\",\n        \"classMeetingEndTime\": \"1977-05-04T17:21:11.791Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      }\n    ],\n    \"instructorData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 9099,\n        \"sessionCode\": \"string\",\n        \"classSection\": 9119,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 4920\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 385,\n        \"sessionCode\": \"string\",\n        \"classSection\": 6259,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 6519\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d35732cd-0303-4d64-ad11-10a5a243f078",
+          "name": "Get Class data for a scheduled Course by Subject and catalog number, in a specific Term",
+          "request": {
+            "name": "Get Class data for a scheduled Course by Subject and catalog number, in a specific Term",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ClassSchedules",
+                ":termCode",
+                ":subject",
+                ":catalogNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "termCode",
+                  "description": "(Required) Waterloo Term code to filter on"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "subject",
+                  "description": "(Required) Academic Subject code to filter ron"
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "catalogNumber",
+                  "description": "(Required) Catalog number to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3a5e8b81-9797-4acf-947e-cf0d8efc8eb1",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ClassSchedules",
+                    ":termCode",
+                    ":subject",
+                    ":catalogNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "termCode",
+                      "description": "(Required) Waterloo Term code to filter on"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "subject",
+                      "description": "(Required) Academic Subject code to filter ron"
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "catalogNumber",
+                      "description": "(Required) Catalog number to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 741,\n    \"sessionCode\": \"string\",\n    \"classSection\": 8135,\n    \"termCode\": \"string\",\n    \"classNumber\": 671,\n    \"courseComponent\": \"string\",\n    \"associatedClassCode\": 9705,\n    \"maxEnrollmentCapacity\": 9067,\n    \"enrolledStudents\": 2845,\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"scheduleData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 1769,\n        \"sessionCode\": \"string\",\n        \"classSection\": 3711,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 4938,\n        \"scheduleStartDate\": \"1980-03-19T21:59:59.093Z\",\n        \"scheduleEndDate\": \"1986-11-16T20:36:19.673Z\",\n        \"classMeetingStartTime\": \"1996-02-28T14:02:45.828Z\",\n        \"classMeetingEndTime\": \"1988-11-09T23:16:13.878Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 8515,\n        \"sessionCode\": \"string\",\n        \"classSection\": 7065,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 9497,\n        \"scheduleStartDate\": \"1983-10-29T19:25:43.508Z\",\n        \"scheduleEndDate\": \"2015-09-12T12:54:54.068Z\",\n        \"classMeetingStartTime\": \"1953-12-01T18:55:31.115Z\",\n        \"classMeetingEndTime\": \"2019-07-14T12:06:54.735Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      }\n    ],\n    \"instructorData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 7942,\n        \"sessionCode\": \"string\",\n        \"classSection\": 2276,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 4582\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 8121,\n        \"sessionCode\": \"string\",\n        \"classSection\": 6826,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 5875\n      }\n    ]\n  },\n  {\n    \"courseId\": \"string\",\n    \"courseOfferNumber\": 9499,\n    \"sessionCode\": \"string\",\n    \"classSection\": 5085,\n    \"termCode\": \"string\",\n    \"classNumber\": 9569,\n    \"courseComponent\": \"string\",\n    \"associatedClassCode\": 7974,\n    \"maxEnrollmentCapacity\": 8800,\n    \"enrolledStudents\": 3253,\n    \"enrollConsentCode\": \"string\",\n    \"enrollConsentDescription\": \"string\",\n    \"dropConsentCode\": \"string\",\n    \"dropConsentDescription\": \"string\",\n    \"scheduleData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 1632,\n        \"sessionCode\": \"string\",\n        \"classSection\": 986,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 6021,\n        \"scheduleStartDate\": \"2011-03-23T13:37:30.256Z\",\n        \"scheduleEndDate\": \"1958-12-30T20:53:22.008Z\",\n        \"classMeetingStartTime\": \"1967-03-15T01:21:36.774Z\",\n        \"classMeetingEndTime\": \"2010-03-17T13:10:02.572Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 6715,\n        \"sessionCode\": \"string\",\n        \"classSection\": 5510,\n        \"termCode\": \"string\",\n        \"classMeetingNumber\": 8333,\n        \"scheduleStartDate\": \"1977-03-28T22:22:07.116Z\",\n        \"scheduleEndDate\": \"1999-04-13T13:14:14.023Z\",\n        \"classMeetingStartTime\": \"1955-05-20T15:02:47.311Z\",\n        \"classMeetingEndTime\": \"2023-11-04T05:15:37.891Z\",\n        \"classMeetingDayPatternCode\": \"string\",\n        \"classMeetingWeekPatternCode\": \"string\",\n        \"locationName\": \"string\"\n      }\n    ],\n    \"instructorData\": [\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 1590,\n        \"sessionCode\": \"string\",\n        \"classSection\": 7834,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 8216\n      },\n      {\n        \"courseId\": \"string\",\n        \"courseOfferNumber\": 2540,\n        \"sessionCode\": \"string\",\n        \"classSection\": 64,\n        \"termCode\": \"string\",\n        \"instructorRoleCode\": \"string\",\n        \"instructorFirstName\": \"string\",\n        \"instructorLastName\": \"string\",\n        \"instructorUniqueIdentifier\": \"string\",\n        \"classMeetingNumber\": 6016\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "69c796af-e708-4d10-b41d-b2df0ffa3887",
+    "name": "Waterloo OpenData AcademicOrganizations ClassSchedules API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

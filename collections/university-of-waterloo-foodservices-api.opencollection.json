@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations FoodServices API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "FoodServices",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all food service Outlet data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/outlets"
+          },
+          "docs": "Get all food service Outlet data"
+        },
+        {
+          "info": {
+            "name": "Get specific food services Outlet data by Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/outlets/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "WCMS object ID representing the Outlet"
+              }
+            ]
+          },
+          "docs": "Get specific food services Outlet data by Id"
+        },
+        {
+          "info": {
+            "name": "Get specific food services Outlet data by Outlet name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/outlets/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name to filter Outlet by"
+              }
+            ]
+          },
+          "docs": "Get specific food services Outlet data by Outlet name"
+        },
+        {
+          "info": {
+            "name": "Get all food service Franchise data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/franchises"
+          },
+          "docs": "Get all food service Franchise data"
+        },
+        {
+          "info": {
+            "name": "Get specific food sercices Franchise data by Id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/franchises/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "WCMS object ID representing the Franchise"
+              }
+            ]
+          },
+          "docs": "Get specific food sercices Franchise data by Id"
+        },
+        {
+          "info": {
+            "name": "Get specific food services Franchise data by Franchise name",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/FoodServices/franchises/:name",
+            "params": [
+              {
+                "name": "name",
+                "value": "",
+                "type": "path",
+                "description": "Name to filter Franchise by"
+              }
+            ]
+          },
+          "docs": "Get specific food services Franchise data by Franchise name"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

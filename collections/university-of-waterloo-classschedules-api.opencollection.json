@@ -1,0 +1,101 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations ClassSchedules API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "ClassSchedules",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get the Course IDs that have one or more active and associated schedules in the given Term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/ClassSchedules/:termCode",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Waterloo Term code to filter on"
+              }
+            ]
+          },
+          "docs": "Get the Course IDs that have one or more active and associated schedules in the given Term"
+        },
+        {
+          "info": {
+            "name": "Get Class data for a scheduled Course by Course ID, in a specific Term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/ClassSchedules/:termCode/:courseId",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Waterloo Term code to filter on"
+              },
+              {
+                "name": "courseId",
+                "value": "",
+                "type": "path",
+                "description": "Course ID to filter on"
+              }
+            ]
+          },
+          "docs": "Get Class data for a scheduled Course by Course ID, in a specific Term"
+        },
+        {
+          "info": {
+            "name": "Get Class data for a scheduled Course by Subject and catalog number, in a specific Term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/ClassSchedules/:termCode/:subject/:catalogNumber",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Waterloo Term code to filter on"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "path",
+                "description": "Academic Subject code to filter ron"
+              },
+              {
+                "name": "catalogNumber",
+                "value": "",
+                "type": "path",
+                "description": "Catalog number to filter on"
+              }
+            ]
+          },
+          "docs": "Get Class data for a scheduled Course by Subject and catalog number, in a specific Term"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

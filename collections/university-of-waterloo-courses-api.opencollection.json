@@ -1,0 +1,156 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations Courses API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Courses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all Course data for a Term",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Courses/:termCode",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get all Course data for a Term"
+        },
+        {
+          "info": {
+            "name": "Get Course catalog data filtered by Term and Course ID, multiple Courses are usually cross listed",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Courses/:termCode/:courseId",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Term code to filter on"
+              },
+              {
+                "name": "courseId",
+                "value": "",
+                "type": "path",
+                "description": "Course ID to filter on"
+              }
+            ]
+          },
+          "docs": "Get Course catalog data filtered by Term and Course ID, multiple Courses are usually cross listed"
+        },
+        {
+          "info": {
+            "name": "Get Course catalog data filtered by Term, Course ID, and offer number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Courses/:termCode/:courseId/:offerNumber",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Term code to filter on"
+              },
+              {
+                "name": "courseId",
+                "value": "",
+                "type": "path",
+                "description": "Course ID to filter on"
+              },
+              {
+                "name": "offerNumber",
+                "value": "",
+                "type": "path",
+                "description": "Offer number to filter on"
+              }
+            ]
+          },
+          "docs": "Get Course catalog data filtered by Term, Course ID, and offer number"
+        },
+        {
+          "info": {
+            "name": "Get Course catalog data filtered by Term and Subject code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Courses/:termCode/:subject",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Term code to filter on"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "path",
+                "description": "Academic Subject code to filter on"
+              }
+            ]
+          },
+          "docs": "Get Course catalog data filtered by Term and Subject code"
+        },
+        {
+          "info": {
+            "name": "Get Course catalog data filtered by Term, Subject, and catalog number",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Courses/:termCode/:subject/:catalogNumber",
+            "params": [
+              {
+                "name": "termCode",
+                "value": "",
+                "type": "path",
+                "description": "Term code to filter on"
+              },
+              {
+                "name": "subject",
+                "value": "",
+                "type": "path",
+                "description": "Academic Subject code to filter on"
+              },
+              {
+                "name": "catalogNumber",
+                "value": "",
+                "type": "path",
+                "description": "Course catalog number to filter on, ie: 101, 111W, 239"
+              }
+            ]
+          },
+          "docs": "Get Course catalog data filtered by Term, Subject, and catalog number"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

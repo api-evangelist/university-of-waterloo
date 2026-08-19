@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Waterloo OpenData AcademicOrganizations Locations API",
+    "version": "v3"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all building location data",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations"
+          },
+          "docs": "Get all building location data"
+        },
+        {
+          "info": {
+            "name": "Get all building location data as GEO JSON",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations/geojson"
+          },
+          "docs": "Get all building location data as GEO JSON"
+        },
+        {
+          "info": {
+            "name": "Gets building by matched building code, case insensitive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations/:locationCode",
+            "params": [
+              {
+                "name": "locationCode",
+                "value": "",
+                "type": "path",
+                "description": "Building code to match"
+              }
+            ]
+          },
+          "docs": "Gets building by matched building code, case insensitive"
+        },
+        {
+          "info": {
+            "name": "Gets building by matched building code, case insensitive, as GEO JSON",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations/:locationCode/geojson",
+            "params": [
+              {
+                "name": "locationCode",
+                "value": "",
+                "type": "path",
+                "description": "Building code to match"
+              }
+            ]
+          },
+          "docs": "Gets building by matched building code, case insensitive, as GEO JSON"
+        },
+        {
+          "info": {
+            "name": "Gets buildings by matched building name, contains, case insensitive",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations/search/:locationName",
+            "params": [
+              {
+                "name": "locationName",
+                "value": "",
+                "type": "path",
+                "description": "Text to match in building name"
+              }
+            ]
+          },
+          "docs": "Gets buildings by matched building name, contains, case insensitive"
+        },
+        {
+          "info": {
+            "name": "Gets buildings by matched building name, contains, case insensitive, as GEO JSON",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://openapi.data.uwaterloo.ca/v3/Locations/search/:locationName/geojson",
+            "params": [
+              {
+                "name": "locationName",
+                "value": "",
+                "type": "path",
+                "description": "Text to match in building name"
+              }
+            ]
+          },
+          "docs": "Gets buildings by matched building name, contains, case insensitive, as GEO JSON"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

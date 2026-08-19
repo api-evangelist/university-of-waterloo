@@ -1,0 +1,869 @@
+{
+  "item": [
+    {
+      "id": "523ce270-45c1-4484-a554-2392fd39d8cb",
+      "name": "Wcms",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f1a918bf-1bfe-4b42-921e-a31c9d9621ab",
+          "name": "Retrieves information about all active and published WCMS sites",
+          "request": {
+            "name": "Retrieves information about all active and published WCMS sites",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "774566c0-f831-4ae4-a713-f78e5909653e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 8147,\n    \"relativeUri\": \"string\",\n    \"name\": \"string\",\n    \"completeUri\": \"string\",\n    \"ownerUnitCode\": \"string\",\n    \"ownerUnitNameShort\": \"string\",\n    \"ownerUnitNameFull\": \"string\",\n    \"ownerGroupCode\": \"string\",\n    \"ownerType\": \"string\"\n  },\n  {\n    \"siteId\": 4259,\n    \"relativeUri\": \"string\",\n    \"name\": \"string\",\n    \"completeUri\": \"string\",\n    \"ownerUnitCode\": \"string\",\n    \"ownerUnitNameShort\": \"string\",\n    \"ownerUnitNameFull\": \"string\",\n    \"ownerGroupCode\": \"string\",\n    \"ownerType\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c893a05d-d4d1-43b6-bc23-3e123fbf35c4",
+          "name": "Retrieves information about a specific WCMS site by Site Id",
+          "request": {
+            "name": "Retrieves information about a specific WCMS site by Site Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique site Id"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "579749d3-524d-435b-a06b-ba497b7e69d5",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique site Id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"siteId\": 6394,\n  \"relativeUri\": \"string\",\n  \"name\": \"string\",\n  \"completeUri\": \"string\",\n  \"ownerUnitCode\": \"string\",\n  \"ownerUnitNameShort\": \"string\",\n  \"ownerUnitNameFull\": \"string\",\n  \"ownerGroupCode\": \"string\",\n  \"ownerType\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5bac5baf-6be7-4278-a46d-32caa5e0ae1f",
+          "name": "Retrieves the latest news items across all WCMS sites, ordered by posted date",
+          "request": {
+            "name": "Retrieves the latest news items across all WCMS sites, ordered by posted date",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                "latestnews",
+                ":maxItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "15",
+                  "key": "maxItems",
+                  "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "57837669-20cf-4276-a293-99f5c4b31473",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    "latestnews",
+                    ":maxItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "15",
+                      "key": "maxItems",
+                      "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 8533,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1960-01-07T11:41:48.641Z\",\n    \"updatedDate\": \"1996-10-22T11:17:06.795Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\"\n  },\n  {\n    \"siteId\": 8032,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1947-07-14T18:05:12.656Z\",\n    \"updatedDate\": \"1961-06-27T11:48:53.762Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a5fae53d-bf2a-40cb-8b7d-8cc5f7e49813",
+          "name": "Retrieves the latest events items across all WCMS sites, ordered by event start date",
+          "request": {
+            "name": "Retrieves the latest events items across all WCMS sites, ordered by event start date",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                "latestevents",
+                ":maxItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "15",
+                  "key": "maxItems",
+                  "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "756cc262-5dbc-4e4a-a20f-1de75965df46",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    "latestevents",
+                    ":maxItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "15",
+                      "key": "maxItems",
+                      "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 3189,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"eventStartDate\": \"2024-01-21T01:56:50.868Z\",\n    \"eventEndDate\": \"1991-03-08T09:39:23.404Z\",\n    \"recurRule\": \"string\",\n    \"eventTimezone\": \"string\",\n    \"itemUri\": \"string\",\n    \"eventTags\": \"string\",\n    \"eventType\": \"string\",\n    \"eventWebsite\": \"string\",\n    \"audience\": \"string\",\n    \"cost\": \"string\",\n    \"host\": \"string\",\n    \"locationId\": 9380,\n    \"locationName\": \"string\",\n    \"updatedDate\": \"1978-10-07T14:24:37.989Z\",\n    \"content\": \"string\"\n  },\n  {\n    \"siteId\": 5152,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"eventStartDate\": \"2021-04-06T23:13:58.090Z\",\n    \"eventEndDate\": \"2021-10-07T23:53:35.256Z\",\n    \"recurRule\": \"string\",\n    \"eventTimezone\": \"string\",\n    \"itemUri\": \"string\",\n    \"eventTags\": \"string\",\n    \"eventType\": \"string\",\n    \"eventWebsite\": \"string\",\n    \"audience\": \"string\",\n    \"cost\": \"string\",\n    \"host\": \"string\",\n    \"locationId\": 2238,\n    \"locationName\": \"string\",\n    \"updatedDate\": \"1997-03-15T15:26:57.634Z\",\n    \"content\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "fe129629-2fbd-4217-9f9d-2e9812300f64",
+          "name": "Retrieves the latest blog post items across all WCMS sites, ordered by posted date",
+          "request": {
+            "name": "Retrieves the latest blog post items across all WCMS sites, ordered by posted date",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                "latestposts",
+                ":maxItems"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "15",
+                  "key": "maxItems",
+                  "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "caf6c22c-45fa-47a6-b57d-7f75b3b04827",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    "latestposts",
+                    ":maxItems"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "15",
+                      "key": "maxItems",
+                      "description": "(Required) Number of items to retrieve, default 15, maximum 25"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 204,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1959-04-04T12:23:42.584Z\",\n    \"updatedDate\": \"1957-07-19T13:32:20.771Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\",\n    \"delegatedAuthorName\": \"string\",\n    \"delegatedAuthorUri\": \"string\",\n    \"publisherUsername\": \"string\"\n  },\n  {\n    \"siteId\": 960,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1949-06-27T02:12:28.896Z\",\n    \"updatedDate\": \"2021-09-08T04:49:32.186Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\",\n    \"delegatedAuthorName\": \"string\",\n    \"delegatedAuthorUri\": \"string\",\n    \"publisherUsername\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5316ba4d-577f-49e6-b9bb-8a96d084e10a",
+          "name": "Retrieves all news items for a specific WCMS site by Site Id",
+          "request": {
+            "name": "Retrieves all news items for a specific WCMS site by Site Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                ":id",
+                "news"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxItems",
+                  "value": "<integer>",
+                  "description": "(Optional) Maximum amount of items to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "newestFirst",
+                  "value": "<boolean>",
+                  "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique Id for the Site"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "73e324a5-e98e-404d-9753-6851691600cf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    ":id",
+                    "news"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxItems",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "newestFirst",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique Id for the Site"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 8533,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1960-01-07T11:41:48.641Z\",\n    \"updatedDate\": \"1996-10-22T11:17:06.795Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\"\n  },\n  {\n    \"siteId\": 8032,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1947-07-14T18:05:12.656Z\",\n    \"updatedDate\": \"1961-06-27T11:48:53.762Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3117f558-48b7-4232-aba2-974531c3ff50",
+          "name": "Retrieves all blog post items for a specific WCMS site by Site Id",
+          "request": {
+            "name": "Retrieves all blog post items for a specific WCMS site by Site Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                ":id",
+                "posts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxItems",
+                  "value": "<integer>",
+                  "description": "(Optional) Maximum amount of items to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "newestFirst",
+                  "value": "<boolean>",
+                  "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique Id for the Site"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "45deee20-4267-4caf-89a0-dda4ef04be70",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    ":id",
+                    "posts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxItems",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "newestFirst",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique Id for the Site"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 204,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1959-04-04T12:23:42.584Z\",\n    \"updatedDate\": \"1957-07-19T13:32:20.771Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\",\n    \"delegatedAuthorName\": \"string\",\n    \"delegatedAuthorUri\": \"string\",\n    \"publisherUsername\": \"string\"\n  },\n  {\n    \"siteId\": 960,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"postedDate\": \"1949-06-27T02:12:28.896Z\",\n    \"updatedDate\": \"2021-09-08T04:49:32.186Z\",\n    \"itemUri\": \"string\",\n    \"audience\": \"string\",\n    \"content\": \"string\",\n    \"delegatedAuthorName\": \"string\",\n    \"delegatedAuthorUri\": \"string\",\n    \"publisherUsername\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "da46645e-829f-4c0b-a347-0ce94da2ba55",
+          "name": "Retrieves all event items for a specific WCMS site by Site Id",
+          "request": {
+            "name": "Retrieves all event items for a specific WCMS site by Site Id",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "Wcms",
+                ":id",
+                "events"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxItems",
+                  "value": "<integer>",
+                  "description": "(Optional) Maximum amount of items to retrieve"
+                },
+                {
+                  "disabled": false,
+                  "key": "newestFirst",
+                  "value": "<boolean>",
+                  "description": "(Optional) Requires maxItems parameter, sorts items by created date, newest first"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "id",
+                  "description": "(Required) Unique Id for the Site"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "348667fc-1347-43a7-bd01-9084735b3944",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "Wcms",
+                    ":id",
+                    "events"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxItems",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "newestFirst",
+                      "value": "<boolean>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "id",
+                      "description": "(Required) Unique Id for the Site"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"siteId\": 3189,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"eventStartDate\": \"2024-01-21T01:56:50.868Z\",\n    \"eventEndDate\": \"1991-03-08T09:39:23.404Z\",\n    \"recurRule\": \"string\",\n    \"eventTimezone\": \"string\",\n    \"itemUri\": \"string\",\n    \"eventTags\": \"string\",\n    \"eventType\": \"string\",\n    \"eventWebsite\": \"string\",\n    \"audience\": \"string\",\n    \"cost\": \"string\",\n    \"host\": \"string\",\n    \"locationId\": 9380,\n    \"locationName\": \"string\",\n    \"updatedDate\": \"1978-10-07T14:24:37.989Z\",\n    \"content\": \"string\"\n  },\n  {\n    \"siteId\": 5152,\n    \"uniqueKey\": \"string\",\n    \"title\": \"string\",\n    \"eventStartDate\": \"2021-04-06T23:13:58.090Z\",\n    \"eventEndDate\": \"2021-10-07T23:53:35.256Z\",\n    \"recurRule\": \"string\",\n    \"eventTimezone\": \"string\",\n    \"itemUri\": \"string\",\n    \"eventTags\": \"string\",\n    \"eventType\": \"string\",\n    \"eventWebsite\": \"string\",\n    \"audience\": \"string\",\n    \"cost\": \"string\",\n    \"host\": \"string\",\n    \"locationId\": 2238,\n    \"locationName\": \"string\",\n    \"updatedDate\": \"1997-03-15T15:26:57.634Z\",\n    \"content\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5f07bc48-b6fa-4749-9cff-bf696e2f2533",
+    "name": "Waterloo OpenData AcademicOrganizations Wcms API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

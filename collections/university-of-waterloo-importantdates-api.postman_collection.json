@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "ce3c3160-5970-418b-9400-94bb64f75646",
+      "name": "ImportantDates",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c3493c69-158d-4024-8463-19863bb4c59e",
+          "name": "Returns all current data for Important Dates",
+          "request": {
+            "name": "Returns all current data for Important Dates",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ImportantDates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3e39dd0b-abe2-4b7f-a609-e9a6bc26541c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ImportantDates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 5678,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"importantDateType\": \"string\",\n    \"associatedAcademicYear\": \"string\",\n    \"details\": [\n      {\n        \"importantDateId\": 9243,\n        \"termId\": 2910,\n        \"termName\": \"string\",\n        \"startDate\": \"1948-05-12T11:26:27.781Z\",\n        \"endDate\": \"1983-07-16T11:10:57.886Z\",\n        \"notes\": \"string\"\n      },\n      {\n        \"importantDateId\": 2782,\n        \"termId\": 5673,\n        \"termName\": \"string\",\n        \"startDate\": \"1994-11-11T11:32:37.822Z\",\n        \"endDate\": \"1959-07-26T16:11:00.768Z\",\n        \"notes\": \"string\"\n      }\n    ],\n    \"keywords\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audiences\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audienceString\": \"string\",\n    \"keywordString\": \"string\"\n  },\n  {\n    \"id\": 591,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"importantDateType\": \"string\",\n    \"associatedAcademicYear\": \"string\",\n    \"details\": [\n      {\n        \"importantDateId\": 817,\n        \"termId\": 3164,\n        \"termName\": \"string\",\n        \"startDate\": \"1966-11-16T11:23:00.388Z\",\n        \"endDate\": \"1986-01-21T20:11:59.363Z\",\n        \"notes\": \"string\"\n      },\n      {\n        \"importantDateId\": 4278,\n        \"termId\": 2976,\n        \"termName\": \"string\",\n        \"startDate\": \"2004-12-14T18:29:44.784Z\",\n        \"endDate\": \"1998-05-07T07:19:25.835Z\",\n        \"notes\": \"string\"\n      }\n    ],\n    \"keywords\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audiences\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audienceString\": \"string\",\n    \"keywordString\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3d63ca29-0f0a-425c-bd46-5a2c339226b2",
+          "name": "Returns important date data related to academic year",
+          "request": {
+            "name": "Returns important date data related to academic year",
+            "description": {},
+            "url": {
+              "path": [
+                "v3",
+                "ImportantDates",
+                ":year"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "year",
+                  "description": "(Required) Academic year to filter on"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "adbdc3f1-4ca1-42c7-93a3-7ef12e60c89b",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v3",
+                    "ImportantDates",
+                    ":year"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "year",
+                      "description": "(Required) Academic year to filter on"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": 1287,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"importantDateType\": \"string\",\n    \"associatedAcademicYear\": \"string\",\n    \"details\": [\n      {\n        \"importantDateId\": 5639,\n        \"termId\": 425,\n        \"termName\": \"string\",\n        \"startDate\": \"1958-01-03T13:05:15.640Z\",\n        \"endDate\": \"1976-07-14T00:22:46.890Z\",\n        \"notes\": \"string\"\n      },\n      {\n        \"importantDateId\": 8203,\n        \"termId\": 7920,\n        \"termName\": \"string\",\n        \"startDate\": \"2013-07-27T13:49:53.815Z\",\n        \"endDate\": \"1983-10-19T17:02:08.799Z\",\n        \"notes\": \"string\"\n      }\n    ],\n    \"keywords\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audiences\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audienceString\": \"string\",\n    \"keywordString\": \"string\"\n  },\n  {\n    \"id\": 5032,\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"importantDateType\": \"string\",\n    \"associatedAcademicYear\": \"string\",\n    \"details\": [\n      {\n        \"importantDateId\": 1071,\n        \"termId\": 8011,\n        \"termName\": \"string\",\n        \"startDate\": \"1950-11-16T08:42:40.137Z\",\n        \"endDate\": \"2021-04-26T08:24:38.657Z\",\n        \"notes\": \"string\"\n      },\n      {\n        \"importantDateId\": 4087,\n        \"termId\": 4257,\n        \"termName\": \"string\",\n        \"startDate\": \"2006-01-30T09:41:24.554Z\",\n        \"endDate\": \"1994-06-01T22:44:02.379Z\",\n        \"notes\": \"string\"\n      }\n    ],\n    \"keywords\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audiences\": [\n      \"string\",\n      \"string\"\n    ],\n    \"audienceString\": \"string\",\n    \"keywordString\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://openapi.data.uwaterloo.ca",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "5764f021-d079-4142-858b-b022512af5db",
+    "name": "Waterloo OpenData AcademicOrganizations ImportantDates API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}
