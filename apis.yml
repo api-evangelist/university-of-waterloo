@@ -206,6 +206,8 @@ apis:
   humanURL: https://uwaterloo.ca/api/
   baseURL: https://openapi.data.uwaterloo.ca/v3/
   tags:
+  - Food Services
+  tags_raw:
   - FoodServices
   properties:
   - type: OpenAPI
