@@ -1,0 +1,63 @@
+slug: university-of-waterloo
+provider: University of Waterloo
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Account
+  spec_file: university-of-waterloo-account-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.85
+  evidence: POST /v3/Account/Register 'Use this method to request an API key and begin your registration
+    process'
+  reason: Developer self-service registration, API key issuance, confirmation and key reset for the Open
+    Data API — developer credential management, not student accounts.
+- tag: ClassSchedules
+  spec_file: university-of-waterloo-classschedules-api-openapi.yml
+  capability_id: BC-4720.30
+  capability_id_l1: BC-4720
+  capability_name: Course Scheduling & Timetabling Records
+  confidence: 0.78
+  evidence: GET /v3/ClassSchedules/{termCode}/{courseId} 'Get Class data for a scheduled Course by Course
+    ID, in a specific Term'; schemas ClassSchedule, ClassInstructor
+  reason: Term-specific scheduled class/section data with instructors — course-section timetabling records.
+- tag: Courses
+  spec_file: university-of-waterloo-courses-api-openapi.yml
+  capability_id: BC-4700.40
+  capability_id_l1: BC-4700
+  capability_name: Programme Catalogue Management
+  confidence: 0.78
+  evidence: GET /v3/Courses/{termCode}/{subject}/{catalogNumber} 'Get Course catalog data filtered by
+    Term, Subject, and catalog number'
+  reason: Publication/retrieval of the institutional course catalogue by term and subject — programme/course
+    catalogue management.
+- tag: ExamSchedules
+  spec_file: university-of-waterloo-examschedules-api-openapi.yml
+  capability_id: BC-4740.20
+  capability_id_l1: BC-4740
+  capability_name: Examination Operations
+  confidence: 0.75
+  evidence: GET /v3/ExamSchedules 'Returns Exam Schedule data for the current Term'
+  reason: Examination scheduling data per term, which is operational delivery of examinations; scope limited
+    to schedules so moderate confidence on the sub-capability.
+- tag: FoodServices
+  spec_file: university-of-waterloo-foodservices-api-openapi.yml
+  capability_id: BC-700.30
+  capability_id_l1: BC-700
+  capability_name: Soft Facilities Management
+  confidence: 0.7
+  evidence: GET /v3/FoodServices/outlets 'Get all food service Outlet data'; schemas Cuisine, FoodServicesFranchises,
+    HoursChange
+  reason: Campus food-service outlets, franchises and opening hours — catering as a soft facilities service;
+    alternative readings exist but this is the closest fit.

@@ -440,6 +440,9 @@ apis:
   - type: JSONLD
     url: json-ld/university-of-waterloo-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/university-of-waterloo-capability-edges.yml
+    name: University of Waterloo Business Capability Map
   - type: IssueTracker
     url: https://github.com/uWaterloo/Datasets/issues
   - type: AgenticAccess
