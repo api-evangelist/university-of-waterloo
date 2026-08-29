@@ -11,6 +11,19 @@ description: >-
   datasets. Official code, documentation, and datasets are published under the
   verified uWaterloo GitHub organization.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: free
   onboarding: self-serve
@@ -427,6 +440,8 @@ apis:
   - type: JSONLD
     url: json-ld/university-of-waterloo-context.jsonld
 common:
+  - type: IssueTracker
+    url: https://github.com/uWaterloo/Datasets/issues
   - type: AgenticAccess
     url: agentic-access/university-of-waterloo-agentic-access.yml
   - type: VulnerabilityDisclosure
