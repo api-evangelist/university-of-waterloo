@@ -2,14 +2,23 @@
 aid: university-of-waterloo
 name: University of Waterloo
 description: >-
-  The University of Waterloo is a public research university in Waterloo, Ontario,
-  Canada, ranked #115 in the QS World University Rankings 2025 and known for its
-  cooperative education programs and strength in mathematics, engineering, and
-  computer science. Its developer footprint is centered on the University of
-  Waterloo Open Data API (the Open Data Initiative), a public, key-authenticated
-  REST API exposing authoritative academic, campus, and student-information
-  datasets. Official code, documentation, and datasets are published under the
-  verified uWaterloo GitHub organization.
+  The University of Waterloo is a public research university in Waterloo, Ontario, Canada, known for
+  cooperative education and for strength in mathematics, engineering and computer science. Unusually
+  for this cohort, Waterloo genuinely operates its own API programme rather than appearing programmable
+  through a vendor's contract: the Open Data API v3 at openapi.data.uwaterloo.ca is Waterloo-built and
+  Waterloo-hosted, publishes a first-party OpenAPI at /swagger/v1/swagger.json, exposes 48 self-serve
+  key-authenticated operations across courses, class and exam schedules, terms, subjects, academic organizations,
+  locations, food services, important dates and web content, and carries a dated release-note stream,
+  a published 120 requests-per-minute cap and a completed v2 retirement. Alongside it Waterloo runs
+  a second, deliberately gated SourceAPI over authoritative Quest and WatIAM data, its own Shibboleth
+  identity provider at idp.uwaterloo.ca, and the UWSpace institutional repository with DSpace REST and
+  OAI-PMH endpoints on a Waterloo Libraries host. What it does not run is the research-data platform:
+  Waterloo's data collection is a tenancy on the consortial Borealis Dataverse, and its status page
+  is a Statuspage tenancy — both recorded here as relationships, not as Waterloo engineering. There
+  is no unified developer portal spanning the three programmes; documentation is split between a Confluence
+  space, a GitHub wiki and a Swagger UI.
+x-type: university
+x-category: Public Research University
 type: Index
 deliveryModel:
   model: unknown
@@ -19,9 +28,9 @@ deliveryModel:
   label: Delivery model not determined — needs a product licence on record
   confidence: low
   source:
-  - openapi
-  - pricing
-  - repository-unlicensed
+    - openapi
+    - pricing
+    - repository-unlicensed
   generated: '2026-08-28'
   method: derived
 accessModel:
@@ -33,8 +42,8 @@ accessModel:
   label: Free · Self-serve signup
   confidence: high
   source:
-  - plans
-  - authentication
+    - plans
+    - authentication
   generated: '2026-07-22'
   method: derived
 position: Consumer
@@ -47,406 +56,933 @@ tags:
   - University
   - Open Data
   - Canada
+  - Ontario
   - Research
+  - Research Data
+  - Course Catalog
+  - Identity Federation
+  - Research Repository
+  - Campus Life
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 specificationVersion: '0.23'
+x-coverage:
+  state: covered
+  reason: covered
+  detail: >-
+    Every layer of Waterloo's programmable footprint was reached unauthenticated. The live first-party
+    OpenAPI was located behind the Swagger UI at /swagger/v1/swagger.json (48 operations, 12 tags, apiKey
+    scheme) and matches the pristine copy in openapi/_original/. Live unauthenticated calls to /v3/Terms,
+    /v3/Subjects and /v3/Locations returned the real 401 error envelope, which the contract does not
+    document. The Confluence UWAPI space was read through the Confluence content API, yielding the SourceAPI
+    programme, its terms of service and acceptable use policy, the roadmap, the dataset inventory and
+    a dated release-note stream back to 2017 including the published 120 req/min cap. Waterloo's own
+    Shibboleth IdP metadata, the UWSpace DSpace 8.4 REST root and its OAI-PMH Identify response all
+    returned 200 on Waterloo hosts. Crossref member 6095 and ROR 01aff2v68 were confirmed against the
+    registries. Two vendor tenancies were recorded rather than credited as Waterloo contracts: the Borealis
+    Dataverse collection and the Statuspage status API. The one dead pointer found — the Waterloo News
+    RSS feed, which now returns a deliberate 403 Access denied page — was removed and replaced with
+    the live news index.
+  evidence:
+    - url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      status: 200
+    - url: https://openapi.data.uwaterloo.ca/v3/Terms
+      status: 401
+    - url: https://idp.uwaterloo.ca/idp/shibboleth
+      status: 200
+    - url: https://dspacemainprd01.lib.uwaterloo.ca/server/api
+      status: 200
+    - url: https://dspacemainprd01.lib.uwaterloo.ca/server/oai/request?verb=Identify
+      status: 200
+    - url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      status: 200
+    - url: https://status.uwaterloo.ca/api/v2/summary.json
+      status: 200
+    - url: https://api.crossref.org/members/6095
+      status: 200
+    - url: https://borealisdata.ca/api/search?q=waterloo&type=dataverse
+      status: 200
+    - url: https://uwaterloo.ca/news/rss.xml
+      status: 403
+  checked: '2026-09-01'
 apis:
-- aid: university-of-waterloo:university-of-waterloo-academicorganizations-api
-  name: University of Waterloo AcademicOrganizations API
-  description: >-
-    The AcademicOrganizations API from University of Waterloo — 2 operation(s) for academicorganizations.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - AcademicOrganizations
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-academicorganizations-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-account-api
-  name: University of Waterloo Account API
-  description: The Account API from University of Waterloo — 5 operation(s) for account.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Account
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-account-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-classschedules-api
-  name: University of Waterloo ClassSchedules API
-  description: The ClassSchedules API from University of Waterloo — 3 operation(s) for classschedules.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Class Schedules
-  tags_raw:
-  - ClassSchedules
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-classschedules-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-courses-api
-  name: University of Waterloo Courses API
-  description: The Courses API from University of Waterloo — 5 operation(s) for courses.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Courses
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-courses-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-examschedules-api
-  name: University of Waterloo ExamSchedules API
-  description: The ExamSchedules API from University of Waterloo — 2 operation(s) for examschedules.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - ExamSchedules
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-examschedules-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-foodservices-api
-  name: University of Waterloo FoodServices API
-  description: The FoodServices API from University of Waterloo — 6 operation(s) for foodservices.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Food Services
-  tags_raw:
-  - FoodServices
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-foodservices-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-holidaydates-api
-  name: University of Waterloo HolidayDates API
-  description: The HolidayDates API from University of Waterloo — 3 operation(s) for holidaydates.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - HolidayDates
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-holidaydates-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-importantdates-api
-  name: University of Waterloo ImportantDates API
-  description: The ImportantDates API from University of Waterloo — 2 operation(s) for importantdates.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - ImportantDates
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-importantdates-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-locations-api
-  name: University of Waterloo Locations API
-  description: The Locations API from University of Waterloo — 6 operation(s) for locations.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Locations
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-locations-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-subjects-api
-  name: University of Waterloo Subjects API
-  description: The Subjects API from University of Waterloo — 3 operation(s) for subjects.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Subjects
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-subjects-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-terms-api
-  name: University of Waterloo Terms API
-  description: The Terms API from University of Waterloo — 3 operation(s) for terms.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Terms
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-terms-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
-- aid: university-of-waterloo:university-of-waterloo-wcms-api
-  name: University of Waterloo Wcms API
-  description: The Wcms API from University of Waterloo — 8 operation(s) for wcms.
-  humanURL: https://uwaterloo.ca/api/
-  baseURL: https://openapi.data.uwaterloo.ca/v3/
-  tags:
-  - Wcms
-  properties:
-  - type: OpenAPI
-    url: openapi/university-of-waterloo-wcms-api-openapi.yml
-  - type: Documentation
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: Signup
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: GitHub
-    url: https://github.com/uWaterloo/OpenData
-  - type: Authentication
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: JSONSchema
-    url: json-schema/university-of-waterloo-course-schema.json
-  - type: JSONStructure
-    url: json-structure/university-of-waterloo-course-structure.json
-  - type: Examples
-    url: examples/university-of-waterloo-course-detail-example.json
-  - type: Rules
-    url: rules/university-of-waterloo-rules.yml
-  - type: Vocabulary
-    url: vocabulary/university-of-waterloo-vocabulary.yml
-  - type: JSONLD
-    url: json-ld/university-of-waterloo-context.jsonld
+  - aid: university-of-waterloo:university-of-waterloo-academicorganizations-api
+    name: University of Waterloo AcademicOrganizations API
+    description: >-
+      The AcademicOrganizations API from University of Waterloo — 2 operation(s) for academicorganizations.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - AcademicOrganizations
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-academicorganizations-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-account-api
+    name: University of Waterloo Account API
+    description: The Account API from University of Waterloo — 5 operation(s) for account.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Account
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-account-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-classschedules-api
+    name: University of Waterloo ClassSchedules API
+    description: The ClassSchedules API from University of Waterloo — 3 operation(s) for classschedules.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Class Schedules
+    tags_raw:
+      - ClassSchedules
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-classschedules-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-courses-api
+    name: University of Waterloo Courses API
+    description: The Courses API from University of Waterloo — 5 operation(s) for courses.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Courses
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-courses-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-examschedules-api
+    name: University of Waterloo ExamSchedules API
+    description: The ExamSchedules API from University of Waterloo — 2 operation(s) for examschedules.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - ExamSchedules
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-examschedules-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-foodservices-api
+    name: University of Waterloo FoodServices API
+    description: The FoodServices API from University of Waterloo — 6 operation(s) for foodservices.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Food Services
+    tags_raw:
+      - FoodServices
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-foodservices-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-holidaydates-api
+    name: University of Waterloo HolidayDates API
+    description: The HolidayDates API from University of Waterloo — 3 operation(s) for holidaydates.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - HolidayDates
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-holidaydates-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-importantdates-api
+    name: University of Waterloo ImportantDates API
+    description: The ImportantDates API from University of Waterloo — 2 operation(s) for importantdates.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - ImportantDates
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-importantdates-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-locations-api
+    name: University of Waterloo Locations API
+    description: The Locations API from University of Waterloo — 6 operation(s) for locations.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Locations
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-locations-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-subjects-api
+    name: University of Waterloo Subjects API
+    description: The Subjects API from University of Waterloo — 3 operation(s) for subjects.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Subjects
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-subjects-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-terms-api
+    name: University of Waterloo Terms API
+    description: The Terms API from University of Waterloo — 3 operation(s) for terms.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Terms
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-terms-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-wcms-api
+    name: University of Waterloo Wcms API
+    description: The Wcms API from University of Waterloo — 8 operation(s) for wcms.
+    humanURL: https://uwaterloo.ca/api/
+    baseURL: https://openapi.data.uwaterloo.ca/v3/
+    tags:
+      - Wcms
+    properties:
+      - type: OpenAPI
+        url: openapi/university-of-waterloo-wcms-api-openapi.yml
+      - type: APIReference
+        url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+      - type: Documentation
+        url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+      - type: Signup
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: GitHub
+        url: https://github.com/uWaterloo/OpenData
+      - type: Authentication
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+      - type: JSONSchema
+        url: json-schema/university-of-waterloo-course-schema.json
+      - type: JSONStructure
+        url: json-structure/university-of-waterloo-course-structure.json
+      - type: Examples
+        url: examples/university-of-waterloo-course-detail-example.json
+      - type: Rules
+        url: rules/university-of-waterloo-rules.yml
+      - type: Vocabulary
+        url: vocabulary/university-of-waterloo-vocabulary.yml
+      - type: JSONLD
+        url: json-ld/university-of-waterloo-context.jsonld
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+      - type: GettingStarted
+        url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+      - type: ErrorCatalog
+        url: errors/university-of-waterloo-errors.yml
+      - type: OAuthScopes
+        url: scopes/university-of-waterloo-scopes.yml
+      - type: Lifecycle
+        url: lifecycle/university-of-waterloo-lifecycle.yml
+      - type: RateLimits
+        url: rate-limits/university-of-waterloo-rate-limits.yml
+    x-operator: institution
+    x-operator-basis: >-
+      Host openapi.data.uwaterloo.ca is under the University of Waterloo registrable domain; the contract
+      is titled "Waterloo OpenData API" and is served by Waterloo from its own Swagger UI. No vendor
+      identity appears in servers[], info.title or info.contact.
+  - aid: university-of-waterloo:university-of-waterloo-sourceapi
+    name: University of Waterloo SourceAPI
+    description: >-
+      A second, deliberately gated University of Waterloo API programme providing authenticated access
+      to data from authoritative source systems including Quest (student information) and WatIAM (identity
+      and access management). Access is requested through Jira Service Desk portal 115 and granted per
+      data set in collaboration with the responsible data stewards, under University of Waterloo Policy
+      46 - Information Management. Waterloo publishes terms of service, an acceptable use policy, getting-started
+      material and release notes for it, but no machine-readable contract and no public host — so it
+      is recorded as an institution-operated surface with no artifact set, not padded out with a fabricated
+      one.
+    humanURL: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779677/SourceAPI+Home+Page
+    x-operator: institution
+    x-operator-basis: >-
+      Built by or on behalf of the University of Waterloo per its own terms of service, operated by
+      IST Enterprise Architecture (IIM), documented on Waterloo's own Confluence space.
+    x-access: gated
+    tags:
+      - Student Information
+      - Identity
+      - Institutional Data
+    properties:
+      - type: Documentation
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779677/SourceAPI+Home+Page
+      - type: GettingStarted
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781278/Getting+Started+SourceAPI
+      - type: TermsOfService
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019780998/Terms+of+Service+SourceAPI
+      - type: AcceptableUsePolicy
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781061/Acceptable+Use+Policy+SourceAPI
+      - type: ChangeLog
+        url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781271/Release+Notes+SourceAPI
+      - type: Support
+        url: https://uwaterloo.atlassian.net/servicedesk/customer/portal/115
+      - type: Compliance
+        url: >-
+          https://uwaterloo.ca/secretariat-general-counsel/policies-procedures-guidelines/policy-46-information-management
+  - aid: university-of-waterloo:uwspace-dspace-rest-api
+    name: UWSpace DSpace REST API
+    description: >-
+      The REST backend of UWSpace, the University of Waterloo institutional repository, running DSpace
+      8.4 on a University of Waterloo Libraries host. The root document at /server/api returns a HAL
+      index of the full DSpace resource graph — communities, collections, items, bitstreams, discovery,
+      submission and authn. Waterloo operates the deployment; the contract is DSpace's open-source API,
+      shared by every DSpace installation, so no generic DSpace spec is saved under Waterloo's slug.
+      The deployment is the institutional fact, and it is recorded here.
+    humanURL: https://uwspace.uwaterloo.ca/
+    baseURL: https://dspacemainprd01.lib.uwaterloo.ca/server/api
+    x-operator: institution
+    x-operator-basis: >-
+      Host dspacemainprd01.lib.uwaterloo.ca is under the University of Waterloo registrable domain and
+      is self-hosted by Waterloo Libraries; the root document names dspaceUI https://uwspace.uwaterloo.ca
+      and dspaceName UWSpace. The software underneath is DSpace 8.4 — a shared open-source contract,
+      which is why no spec is saved.
+    x-contract-owner: DSpace (LYRASIS) — open-source, shared by every DSpace deployment
+    tags:
+      - Research Repository
+      - Institutional Repository
+      - Open Access
+    properties:
+      - type: Website
+        url: https://uwspace.uwaterloo.ca/
+      - type: APIReference
+        url: https://dspacemainprd01.lib.uwaterloo.ca/server/api
+      - type: Documentation
+        url: https://github.com/DSpace/RestContract
+  - aid: university-of-waterloo:uwspace-oai-pmh
+    name: UWSpace OAI-PMH Endpoint
+    description: >-
+      The OAI-PMH 2.0 metadata harvesting endpoint for UWSpace, the University of Waterloo institutional
+      repository. A verb=Identify request returns protocolVersion 2.0, repositoryName UWSpace, an adminEmail
+      of uwspace-admin@uwaterloo.ca and an earliest datestamp of 2006-07-28, confirming Waterloo has
+      been exposing harvestable repository metadata for close to twenty years. This is an institution-operated
+      surface and a direct hit against the education regime standard oai-pmh.
+    humanURL: https://uwspace.uwaterloo.ca/
+    baseURL: https://dspacemainprd01.lib.uwaterloo.ca/server/oai/request
+    x-operator: institution
+    x-operator-basis: >-
+      Confirmed with a live ?verb=Identify response on 2026-09-01 (HTTP 200, text/xml) naming UWSpace
+      and a uwaterloo.ca admin address, on a University of Waterloo Libraries host.
+    tags:
+      - OAI-PMH
+      - Metadata Harvesting
+      - Research Repository
+    properties:
+      - type: APIReference
+        url: https://dspacemainprd01.lib.uwaterloo.ca/server/oai/request?verb=Identify
+      - type: Conformance
+        url: conformance/university-of-waterloo-conformance.yml
+      - type: Documentation
+        url: https://www.openarchives.org/OAI/openarchivesprotocol.html
+  - aid: university-of-waterloo:university-of-waterloo-shibboleth-idp
+    name: University of Waterloo Shibboleth Identity Provider
+    description: >-
+      The University of Waterloo's own SAML 2.0 identity provider metadata, served as XML from idp.uwaterloo.ca.
+      The EntityDescriptor carries entityID https://idp.uwaterloo.ca/idp/shibboleth, a shibboleth Scope
+      of uwaterloo.ca, a display name and organization name of University of Waterloo, and protocol
+      support for SAML 2.0, SAML 1.1 and Shibboleth 1.0. Waterloo participates in the Canadian Access
+      Federation, which is shared by definition — the identity provider behind it is not. This is one
+      of the strongest institution-operated machine-readable surfaces a university has and it is routinely
+      uncatalogued.
+    humanURL: https://uwaterloo.ca/information-systems-technology/
+    baseURL: https://idp.uwaterloo.ca/idp/shibboleth
+    x-operator: federation
+    x-operator-basis: >-
+      Identity-federation metadata carrying Waterloo's OWN IdP, on a Waterloo host. Fetched 2026-09-01,
+      HTTP 200, application/xml.
+    tags:
+      - Identity Federation
+      - SAML
+      - Shibboleth
+      - Single Sign-On
+    properties:
+      - type: APIReference
+        url: https://idp.uwaterloo.ca/idp/shibboleth
+      - type: Conformance
+        url: conformance/university-of-waterloo-conformance.yml
+      - type: Documentation
+        url: https://www.canarie.ca/identity/caf/
+  - aid: university-of-waterloo:university-of-waterloo-borealis-collection
+    name: University of Waterloo Dataverse Collection (Borealis)
+    description: >-
+      Waterloo's named research-data collection on Borealis, the Canadian consortial Dataverse repository
+      operated by Scholars Portal for the Ontario Council of University Libraries. The collection is
+      Waterloo's — Waterloo's researchers, Waterloo Library's Research Data Management team reviewing
+      deposits, Waterloo's deposit guidelines — but the platform, the API contract and the DataCite
+      client (OCUL.SPDV) are the consortium's. Recorded here as a tenancy: the relationship is a real
+      institutional fact, the Dataverse contract is not Waterloo's engineering and is not saved under
+      this slug.
+    humanURL: https://borealisdata.ca/dataverse/waterloo
+    baseURL: https://borealisdata.ca/api/info/version
+    x-operator: tenant
+    x-operator-basis: >-
+      Named collection with identifier "waterloo" on a shared consortial host, confirmed via https://borealisdata.ca/api/search?q=waterloo&type=dataverse
+      on 2026-09-01. The generic Dataverse API contract belongs to Borealis / Scholars Portal.
+    x-contract-owner: Borealis — Scholars Portal / Ontario Council of University Libraries (Dataverse)
+    tags:
+      - Research Data
+      - Research Repository
+      - Dataverse
+      - Open Data
+    properties:
+      - type: Website
+        url: https://borealisdata.ca/dataverse/waterloo
+      - type: APIReference
+        url: https://borealisdata.ca/api/dataverses/waterloo
+      - type: Documentation
+        url: https://guides.dataverse.org/en/latest/api/
+  - aid: university-of-waterloo:university-of-waterloo-crossref-member
+    name: University of Waterloo Crossref Membership
+    description: >-
+      The University of Waterloo is Crossref member 6095, holding DOI prefix 10.15353 with 3,104 DOIs
+      registered as of 2026-09-01. This is an identifier-registry membership — a fact about Waterloo,
+      shared with every other Crossref member because DOI registration is shared by design. The membership
+      record is recorded; Crossref's own API contract belongs to Crossref and is not saved under this
+      slug.
+    humanURL: https://www.crossref.org/
+    baseURL: https://api.crossref.org/members/6095
+    x-operator: registry
+    x-operator-basis: >-
+      Confirmed against https://api.crossref.org/members/6095 on 2026-09-01 — primary-name "University
+      of Waterloo", prefix 10.15353.
+    x-registrant-id: '6095'
+    tags:
+      - Crossref
+      - DOI
+      - Scholarly Publishing
+      - Persistent Identifiers
+    properties:
+      - type: APIReference
+        url: https://api.crossref.org/members/6095
+      - type: Conformance
+        url: conformance/university-of-waterloo-conformance.yml
+  - aid: university-of-waterloo:university-of-waterloo-ror-record
+    name: University of Waterloo ROR Record
+    description: >-
+      The University of Waterloo's Research Organization Registry record, ROR ID https://ror.org/01aff2v68,
+      carrying the uwaterloo.ca domain, an establishment year of 1956, and cross-references to Funder
+      Registry 501100004490, GRID grid.46078.3d, ISNI 0000 0000 8644 1405 and Wikidata Q1049470. A registry
+      membership, not a Waterloo-operated API.
+    humanURL: https://ror.org/01aff2v68
+    baseURL: https://api.ror.org/organizations/01aff2v68
+    x-operator: registry
+    x-operator-basis: Confirmed against https://api.ror.org/organizations/01aff2v68 on 2026-09-01.
+    x-registrant-id: https://ror.org/01aff2v68
+    tags:
+      - ROR
+      - Persistent Identifiers
+      - Research
+    properties:
+      - type: APIReference
+        url: https://api.ror.org/organizations/01aff2v68
+  - aid: university-of-waterloo:university-of-waterloo-status-api
+    name: University of Waterloo Status API
+    description: >-
+      Waterloo's public service status page at status.uwaterloo.ca, with the full Statuspage v2 JSON
+      API behind it — status.json, summary.json and an RSS incident history all return 200 unauthenticated.
+      The page and the incident data are Waterloo's; the platform and its API contract are Atlassian
+      Statuspage's, shared by every Statuspage customer, so the contract is not saved under this slug.
+      Real operational transparency, and the only machine-readable incident feed on the profile.
+    humanURL: https://status.uwaterloo.ca/
+    baseURL: https://status.uwaterloo.ca/api/v2/
+    x-operator: tenant
+    x-operator-basis: >-
+      Institution-specific subdomain on a vendor platform (Atlassian Statuspage). Probed 2026-09-01:
+      /api/v2/status.json and /api/v2/summary.json both 200 application/json, /history.rss 200 application/rss+xml.
+    x-contract-owner: Atlassian Statuspage
+    tags:
+      - Status
+      - Operational Transparency
+      - Incidents
+    properties:
+      - type: StatusPage
+        url: https://status.uwaterloo.ca/
+      - type: APIReference
+        url: https://status.uwaterloo.ca/api/v2/summary.json
+      - type: Documentation
+        url: https://status.uwaterloo.ca/api/v2/
 common:
+  - type: Website
+    url: https://uwaterloo.ca/
+  - type: DeveloperPortal
+    url: https://uwaterloo.ca/api/
+  - type: Documentation
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+  - type: APIReference
+    url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+  - type: Swagger
+    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+  - type: GettingStarted
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+  - type: SignUp
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+  - type: TermsOfService
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019780998/Terms+of+Service+SourceAPI
+  - type: AcceptableUsePolicy
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781061/Acceptable+Use+Policy+SourceAPI
+  - type: PrivacyPolicy
+    url: https://uwaterloo.ca/privacy/
+  - type: Compliance
+    url: >-
+      https://uwaterloo.ca/secretariat-general-counsel/policies-procedures-guidelines/policy-46-information-management
+  - type: StatusPage
+    url: https://status.uwaterloo.ca/
+  - type: ChangeLog
+    url: >-
+      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+  - type: Roadmap
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779689/Roadmap+-+OpenAPI
+  - type: Support
+    url: https://uwaterloo.atlassian.net/servicedesk/customer/portal/115
+  - type: IssueTracker
+    url: https://github.com/uWaterloo/Datasets/issues
+  - type: GitHubOrganization
+    url: https://github.com/uWaterloo
+  - type: SourceCode
+    url: https://github.com/uWaterloo/Datasets
+  - type: WellKnown
+    url: https://uwaterloo.ca/.well-known/security.txt
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/university-of-waterloo/
+  - type: Blog
+    url: https://uwaterloo.ca/news/
+  - type: OpenData
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779691/Datasets+OpenAPI
+  - type: CourseCatalog
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34006663321/Course+Schedule
+  - type: ResearchRepository
+    url: https://uwspace.uwaterloo.ca/
+  - type: IdentityFederation
+    url: https://idp.uwaterloo.ca/idp/shibboleth
+  - type: AIPolicy
+    url: https://uwaterloo.ca/artificial-intelligence-institute/
+  - type: Conformance
+    url: conformance/university-of-waterloo-conformance.yml
+  - type: ErrorCatalog
+    url: errors/university-of-waterloo-errors.yml
+  - type: Lifecycle
+    url: lifecycle/university-of-waterloo-lifecycle.yml
+  - type: OAuthScopes
+    url: scopes/university-of-waterloo-scopes.yml
   - type: CapabilityMap
     url: capabilities/university-of-waterloo-capability-edges.yml
     name: University of Waterloo Business Capability Map
-  - type: IssueTracker
-    url: https://github.com/uWaterloo/Datasets/issues
   - type: AgenticAccess
     url: agentic-access/university-of-waterloo-agentic-access.yml
   - type: VulnerabilityDisclosure
@@ -455,16 +991,6 @@ common:
     url: security/university-of-waterloo-domain-security.yml
   - type: Authentication
     url: authentication/university-of-waterloo-authentication.yml
-  - type: Website
-    url: https://uwaterloo.ca/
-  - type: DeveloperPortal
-    url: https://uwaterloo.ca/api/
-  - type: GitHub
-    url: https://github.com/uWaterloo
-  - type: LinkedIn
-    url: https://www.linkedin.com/school/university-of-waterloo/
-  - type: SourceCode
-    url: https://github.com/uWaterloo/Datasets
   - type: Plans
     url: plans/university-of-waterloo-plans-pricing.yml
   - type: RateLimits
@@ -473,8 +999,6 @@ common:
     url: finops/university-of-waterloo-finops.yml
   - type: Review
     url: review.yml
-  - type: Blog
-    url: https://uwaterloo.ca/news/rss.xml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
