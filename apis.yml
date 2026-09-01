@@ -123,6 +123,8 @@ apis:
   humanURL: https://uwaterloo.ca/api/
   baseURL: https://openapi.data.uwaterloo.ca/v3/
   tags:
+  - Class Schedules
+  tags_raw:
   - ClassSchedules
   properties:
   - type: OpenAPI
@@ -219,7 +221,7 @@ apis:
   humanURL: https://uwaterloo.ca/api/
   baseURL: https://openapi.data.uwaterloo.ca/v3/
   tags:
-  - FoodServices
+  - Food Services
   tags_raw:
   - FoodServices
   properties:
