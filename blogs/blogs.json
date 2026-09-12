@@ -2,16 +2,15 @@
   "repo": "university-of-waterloo",
   "feeds": [
     {
+      "source": "https://www.linkedin.com/school/university-of-waterloo/",
+      "error": "HTTPError"
+    },
+    {
       "source": "https://uwaterloo.ca/news/rss.xml",
-      "feed_url": "https://uwaterloo.ca/news/rss.xml",
-      "title": "Waterloo News",
-      "saved": 0,
-      "error": "fetch_failed: HTTPError",
-      "nature": "vendor-blog",
-      "nature_basis": "path_blog"
+      "error": "HTTPError"
     }
   ],
-  "fetched": "2026-08-30T22:05:13Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 32,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",
