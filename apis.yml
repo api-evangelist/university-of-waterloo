@@ -363,7 +363,7 @@ apis:
     humanURL: https://uwaterloo.ca/api/
     baseURL: https://openapi.data.uwaterloo.ca/v3/
     tags:
-      - Food Services
+      - Food Service
     tags_raw:
       - FoodServices
     properties:
@@ -512,6 +512,8 @@ apis:
     humanURL: https://uwaterloo.ca/api/
     baseURL: https://openapi.data.uwaterloo.ca/v3/
     tags:
+      - Location
+    tags_raw:
       - Locations
     properties:
       - type: OpenAPI
@@ -810,6 +812,11 @@ apis:
       Identity-federation metadata carrying Waterloo's OWN IdP, on a Waterloo host. Fetched 2026-09-01,
       HTTP 200, application/xml.
     tags:
+      - Identity Federation
+      - SAML
+      - Shibboleth
+      - SSO
+    tags_raw:
       - Identity Federation
       - SAML
       - Shibboleth
