@@ -1,18 +1,7 @@
 {
   "provider": "university-of-waterloo",
   "sources": [
-    "university-of-waterloo-academicorganizations-api-openapi.yml",
-    "university-of-waterloo-account-api-openapi.yml",
-    "university-of-waterloo-classschedules-api-openapi.yml",
-    "university-of-waterloo-courses-api-openapi.yml",
-    "university-of-waterloo-examschedules-api-openapi.yml",
-    "university-of-waterloo-foodservices-api-openapi.yml",
-    "university-of-waterloo-holidaydates-api-openapi.yml",
-    "university-of-waterloo-importantdates-api-openapi.yml",
-    "university-of-waterloo-locations-api-openapi.yml",
-    "university-of-waterloo-subjects-api-openapi.yml",
-    "university-of-waterloo-terms-api-openapi.yml",
-    "university-of-waterloo-wcms-api-openapi.yml"
+    "_original/university-of-waterloo-open-data-api.yaml"
   ],
   "outputs": [
     "university-of-waterloo-academicorganizations-api-openapi.yml",
@@ -31,6 +20,35 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "university-of-waterloo-open-data-api.yaml: upgraded openapi 3.0.4 -> OpenAPI 3.2.0",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: AcademicOrganizations",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Account",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: ClassSchedules",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Courses",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: ExamSchedules",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: FoodServices",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: HolidayDates",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: ImportantDates",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Locations",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Subjects",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Terms",
+    "university-of-waterloo-open-data-api.yaml: declared missing tag: Wcms",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "university-of-waterloo-academicorganizations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-account-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-classschedules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-courses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-examschedules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-foodservices-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-holidaydates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-importantdates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-locations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-subjects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-terms-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "university-of-waterloo-wcms-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

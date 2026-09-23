@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations Terms API
+  title: Waterloo OpenData Terms API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Term'
+      operationId: getV3Terms
+      x-operation-id-source: derived
   /v3/Terms/current:
     get:
       tags:
@@ -36,6 +38,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Term'
+      operationId: getV3TermsCurrent
+      x-operation-id-source: derived
   /v3/Terms/{code}:
     get:
       tags:
@@ -57,23 +61,28 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Term'
+      operationId: getV3TermsByCode
+      x-operation-id-source: derived
 components:
   schemas:
     Term:
       type: object
       properties:
         termCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Code that describes this Term
-          nullable: true
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The Name for this Term, most often the displayed name
-          nullable: true
         nameShort:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The short form name for this Term
-          nullable: true
         termBeginDate:
           type: string
           description: The date and time from which the Term begins, inclusive
@@ -83,10 +92,11 @@ components:
           description: The date and time on which the Term ends, inclusive
           format: date-time
         sixtyPercentCompleteDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The date and time at which the term is 60% complete, used for standing, withdrawal, and penalties
           format: date-time
-          nullable: true
         associatedAcademicYear:
           type: integer
           description: The academic year to which this Term belongs

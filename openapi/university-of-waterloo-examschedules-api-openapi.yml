@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations ExamSchedules API
+  title: Waterloo OpenData Exam Schedules API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Exam'
+      operationId: getV3ExamSchedules
+      x-operation-id-source: derived
   /v3/ExamSchedules/{code}:
     get:
       tags:
@@ -47,51 +49,63 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Exam'
+      operationId: getV3ExamSchedulesByCode
+      x-operation-id-source: derived
 components:
   schemas:
     Exam:
       type: object
       properties:
         examDisplayName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The name of the Exam, representative of the Course name
-          nullable: true
         sections:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Sections of the Class this Exam schedule is applicable to
-          nullable: true
         isOnlineDescription:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Indicates whether this Exam is held online, or provides an alternate description
-          nullable: true
         day:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Day name on which this Exam is scheduled to take place
-          nullable: true
         location:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Description of the location of the Exam
-          nullable: true
         examWindowStartDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The date the Exam is scheduled for
-          nullable: true
         examWindowStartTime:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The time the Exam is scheduled to start
-          nullable: true
         examDuration:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The scheduled duration of the Exam
-          nullable: true
         notes:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Additional notes about this Exam schedule
-          nullable: true
         termCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Term Code for the Term this Exam is associated with
-          nullable: true
       additionalProperties: false
       description: Represents a scheduled Exam for a Class
   securitySchemes:

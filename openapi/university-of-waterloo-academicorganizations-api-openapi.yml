@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations API
+  title: Waterloo OpenData Academic Organizations API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/AcademicOrganization'
+      operationId: getV3AcademicOrganizations
+      x-operation-id-source: derived
   /v3/AcademicOrganizations/{organizationCode}:
     get:
       tags:
@@ -44,31 +46,38 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AcademicOrganization'
+      operationId: getV3AcademicOrganizationsByOrganizationCode
+      x-operation-id-source: derived
 components:
   schemas:
     AcademicOrganization:
       type: object
       properties:
         code:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Unique Code of this Academic Organization
-          nullable: true
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The Name for this Academic Organization, most often the display name
-          nullable: true
         description:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The short description for this Academic Organization
-          nullable: true
         descriptionFormal:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The formal description for this Academic Organization, most often used in official capacity
-          nullable: true
         associatedCampusCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The Code for the Campus that this Academic Organization is assigned to
-          nullable: true
       additionalProperties: false
       description: An Academic Organization at Waterloo is similar to a department
   securitySchemes:

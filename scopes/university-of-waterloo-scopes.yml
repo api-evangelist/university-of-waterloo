@@ -1,0 +1,41 @@
+specification: API Commons Scopes
+specificationVersion: '0.1'
+provider: University of Waterloo
+providerId: university-of-waterloo
+generated: '2026-09-01'
+method: derived
+source: >-
+  https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json (fetched 2026-09-01) — the live
+  first-party contract — plus live probes of https://openapi.data.uwaterloo.ca/v3/.
+description: >-
+  The University of Waterloo Open Data API has no authorization scopes. Its only security scheme is
+  a single API key in the X-API-KEY header, applied globally to all 48 operations, and there is no
+  OAuth flow, no consent surface and no per-resource authorization boundary. This file records that
+  absence explicitly so the gap is measured rather than inferred from a missing file.
+scopes: []
+security_schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: Custom API key authentication
+  scopes: []
+  applied: >-
+    Globally, via a top-level security requirement of [{apiKey: []}]. Every operation inherits it;
+    no operation declares its own.
+authorization_model: >-
+  Binary. A valid key grants read access to the whole published surface; an absent or unissued key
+  is rejected with 401 on every path. Waterloo's separate, gated SourceAPI applies authorization
+  out of band — access is granted per data set by the responsible data stewards through a Jira
+  service-desk request, not through scopes carried in a token.
+gaps:
+- No OAuth 2.0 or OpenID Connect flow on the public Open Data API.
+- >-
+  No scope, role or claim vocabulary is published, so a client cannot request or reason about least
+  privilege.
+- >-
+  Key issuance is self-serve (POST /v3/Account/Register) and unscoped, so every issued key carries
+  identical authority.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

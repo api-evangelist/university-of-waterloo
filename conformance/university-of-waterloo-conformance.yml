@@ -1,0 +1,104 @@
+specification: API Commons Conformance
+specificationVersion: '0.1'
+provider: University of Waterloo
+providerId: university-of-waterloo
+regime: education
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live probes of University of Waterloo hosts on 2026-09-01. Each entry below points at the exact
+  location the conformance was observed. Standards in the education regime that were checked and
+  NOT found are listed under not_observed — absence is recorded, never inferred as a hit.
+description: >-
+  Domain-standard conformance for the University of Waterloo, measured against the Kin Score
+  `education` regulatory regime standards list. Only standards observed in a fetched artifact are
+  recorded as conformant; every hit carries the URL and HTTP status it was observed at.
+conformance:
+- standard: oai-pmh
+  name: Open Archives Initiative Protocol for Metadata Harvesting 2.0
+  status: conformant
+  operator: institution
+  evidence:
+    url: https://dspacemainprd01.lib.uwaterloo.ca/server/oai/request?verb=Identify
+    status: 200
+    observed: >-
+      OAI-PMH 2.0 Identify response — <protocolVersion>2.0</protocolVersion>,
+      <repositoryName>UWSpace</repositoryName>,
+      <baseURL>https://dspacemainprd01.lib.uwaterloo.ca/server/oai/request</baseURL>,
+      <adminEmail>uwspace-admin@uwaterloo.ca</adminEmail>, earliestDatestamp 2006-07-28.
+    checked: '2026-09-01'
+  notes: >-
+    The harvesting endpoint runs on a University of Waterloo Libraries host
+    (dspacemainprd01.lib.uwaterloo.ca) and is administered from a uwaterloo.ca address. The
+    repository software underneath is DSpace 8.4; the OAI-PMH surface is Waterloo's deployment.
+- standard: shibboleth
+  name: Shibboleth Identity Provider
+  status: conformant
+  operator: federation
+  evidence:
+    url: https://idp.uwaterloo.ca/idp/shibboleth
+    status: 200
+    observed: >-
+      SAML 2.0 EntityDescriptor with entityID https://idp.uwaterloo.ca/idp/shibboleth, a
+      shibmd:Scope of uwaterloo.ca, mdui:DisplayName "University of Waterloo" and
+      md:OrganizationName "University of Waterloo". Content-Type application/xml.
+    checked: '2026-09-01'
+  notes: >-
+    Waterloo's own Shibboleth IdP metadata, served from an institution host. This is the
+    institution's identity surface, not a vendor's — the federation it participates in is shared by
+    definition, the IdP behind it is not.
+- standard: saml
+  name: SAML 2.0 Metadata
+  status: conformant
+  operator: federation
+  evidence:
+    url: https://idp.uwaterloo.ca/idp/shibboleth
+    status: 200
+    observed: >-
+      protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol
+      urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0" on the IDPSSODescriptor;
+      SingleSignOnService and signing KeyDescriptor present.
+    checked: '2026-09-01'
+- standard: crossref
+  name: Crossref DOI registration
+  status: conformant
+  operator: registry
+  evidence:
+    url: https://api.crossref.org/members/6095
+    status: 200
+    observed: >-
+      Crossref member 6095, primary-name "University of Waterloo", DOI prefix 10.15353,
+      3,104 registered DOIs.
+    checked: '2026-09-01'
+  notes: >-
+    A registry membership, recorded as a fact about the institution. Crossref's own API contract is
+    Crossref's and is not saved here.
+not_observed:
+- standard: scim
+  detail: No SCIM 2.0 endpoint or metadata found on any uwaterloo.ca host probed.
+- standard: lti
+  detail: >-
+    Waterloo runs D2L Brightspace as LEARN; no institution-published LTI tool or platform
+    registration document was reachable. Any LTI conformance here would be D2L's, not Waterloo's.
+- standard: oneroster
+  detail: No IMS Global OneRoster endpoint found.
+- standard: ed-fi
+  detail: Ed-Fi is a US K-12/state-agency data standard; not applicable and not found.
+- standard: caliper
+  detail: No Caliper Analytics endpoint or sensor documentation found.
+- standard: qti
+  detail: No QTI item bank or assessment interchange surface found.
+- standard: orcid
+  detail: >-
+    Waterloo's Borealis collection description invites depositors to connect an ORCID iD, but no
+    institution-operated ORCID member API integration or ORCID Trusted Organization record was
+    evidenced. Not recorded as a hit.
+- standard: datacite
+  detail: >-
+    Waterloo's research data DOIs are minted through Borealis, whose DataCite client is OCUL.SPDV
+    (Scholars Portal / Ontario Council of University Libraries) — not a Waterloo DataCite client.
+    api.datacite.org returned zero providers and zero clients for the query "waterloo". Recorded as
+    an indirect relationship in apis.yml, not as Waterloo conformance.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

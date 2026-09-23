@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations Wcms API
+  title: Waterloo OpenData Wcms API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Site'
+      operationId: getV3Wcms
+      x-operation-id-source: derived
   /v3/Wcms/{id}:
     get:
       tags:
@@ -44,6 +46,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Site'
+      operationId: getV3WcmsById
+      x-operation-id-source: derived
   /v3/Wcms/latestnews/{maxItems}:
     get:
       tags:
@@ -67,11 +71,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteNews'
+      operationId: getV3WcmsLatestnewsByMaxItems
+      x-operation-id-source: derived
   /v3/Wcms/latestevents/{maxItems}:
     get:
       tags:
       - Wcms
-      summary: Retrieves the latest events items across all WCMS sites, ordered by event start date
+      summary: Retrieves the latest events items across all WCMS sites, ordered by event start…
       parameters:
       - name: maxItems
         in: path
@@ -90,11 +96,13 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteEvent'
+      operationId: getV3WcmsLatesteventsByMaxItems
+      x-operation-id-source: derived
   /v3/Wcms/latestposts/{maxItems}:
     get:
       tags:
       - Wcms
-      summary: Retrieves the latest blog post items across all WCMS sites, ordered by posted date
+      summary: Retrieves the latest blog post items across all WCMS sites, ordered by posted…
       parameters:
       - name: maxItems
         in: path
@@ -113,6 +121,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteBlogPost'
+      operationId: getV3WcmsLatestpostsByMaxItems
+      x-operation-id-source: derived
   /v3/Wcms/{id}/news:
     get:
       tags:
@@ -146,6 +156,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteNews'
+      operationId: getV3WcmsByIdNews
+      x-operation-id-source: derived
   /v3/Wcms/{id}/posts:
     get:
       tags:
@@ -179,6 +191,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteBlogPost'
+      operationId: getV3WcmsByIdPosts
+      x-operation-id-source: derived
   /v3/Wcms/{id}/events:
     get:
       tags:
@@ -212,98 +226,10 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/SiteEvent'
+      operationId: getV3WcmsByIdEvents
+      x-operation-id-source: derived
 components:
   schemas:
-    SiteNews:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID of the Site this news originates from
-          format: int32
-        uniqueKey:
-          type: string
-          description: Unique Id of this news item
-          nullable: true
-        title:
-          type: string
-          description: Title of the news item
-          nullable: true
-        postedDate:
-          type: string
-          description: Content created or posted date
-          format: date-time
-          nullable: true
-        updatedDate:
-          type: string
-          description: Content updated date
-          format: date-time
-          nullable: true
-        itemUri:
-          type: string
-          description: URI to the news item in WCMS
-          nullable: true
-        audience:
-          type: string
-          description: Intended audience tag(s)
-          nullable: true
-        content:
-          type: string
-          description: News item content, often with HTML markup
-          nullable: true
-      additionalProperties: false
-      description: Model representing News data associated to a Site in the WCMS
-    SiteBlogPost:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID
-          format: int32
-        uniqueKey:
-          type: string
-          description: Unique Id of this post item
-          nullable: true
-        title:
-          type: string
-          description: Title of the blog post
-          nullable: true
-        postedDate:
-          type: string
-          description: Content created or posted date
-          format: date-time
-          nullable: true
-        updatedDate:
-          type: string
-          description: Content updated date
-          format: date-time
-          nullable: true
-        itemUri:
-          type: string
-          description: URI to the item in WCMS
-          nullable: true
-        audience:
-          type: string
-          description: Intended audience tag(s)
-          nullable: true
-        content:
-          type: string
-          description: Blog post content, often with HTML markup
-          nullable: true
-        delegatedAuthorName:
-          type: string
-          description: Display name of the delegated author for this blog post
-          nullable: true
-        delegatedAuthorUri:
-          type: string
-          description: Link to the WCMS profiel of the delegated author
-          nullable: true
-        publisherUsername:
-          type: string
-          description: Username of the person publishing the content, not necessarily the author
-          nullable: true
-      additionalProperties: false
-      description: Model representing a WCMS blog post item
     Site:
       type: object
       properties:
@@ -312,39 +238,108 @@ components:
           description: Unique, numeric site ID
           format: int32
         relativeUri:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Relative URI of the site from the root uWaterloo CMS domain
-          nullable: true
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Display name of the Site
-          nullable: true
         completeUri:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Complete URI of the site, including root domain
-          nullable: true
         ownerUnitCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: If available, the department owner code for this Site. Can loosely map to Academic Groups.
-          nullable: true
         ownerUnitNameShort:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Short name of the department owner for this Site. See OwnerUnitCode for more.
-          nullable: true
         ownerUnitNameFull:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Full name of the department owner for this Site. See OwnerUnitCode for more.
-          nullable: true
         ownerGroupCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: If available, the faculty owner code for this Site. Can loosely map to Academic Organization.
-          nullable: true
         ownerType:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The tag describing the association of the owner department, such as academic, research, and more.
-          nullable: true
       additionalProperties: false
       description: Model representing a Site on the Waterloo CMS
+    SiteBlogPost:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this post item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the blog post
+        postedDate:
+          type:
+          - string
+          - 'null'
+          description: Content created or posted date
+          format: date-time
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Content updated date
+          format: date-time
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: URI to the item in WCMS
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Intended audience tag(s)
+        content:
+          type:
+          - string
+          - 'null'
+          description: Blog post content, often with HTML markup
+        delegatedAuthorName:
+          type:
+          - string
+          - 'null'
+          description: Display name of the delegated author for this blog post
+        delegatedAuthorUri:
+          type:
+          - string
+          - 'null'
+          description: Link to the WCMS profiel of the delegated author
+        publisherUsername:
+          type:
+          - string
+          - 'null'
+          description: Username of the person publishing the content, not necessarily the author
+      additionalProperties: false
+      description: Model representing a WCMS blog post item
     SiteEvent:
       type: object
       properties:
@@ -353,79 +348,142 @@ components:
           description: Unique, numeric site ID
           format: int32
         uniqueKey:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Unique Id of this evevnt item
-          nullable: true
         title:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Title of the event
-          nullable: true
         eventStartDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Start date of the event
           format: date-time
-          nullable: true
         eventEndDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: End date of the event
           format: date-time
-          nullable: true
         recurRule:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Description of the event recurrence rule
-          nullable: true
         eventTimezone:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Time zone description of the event dates
-          nullable: true
         itemUri:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Link to the Event
-          nullable: true
         eventTags:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Tag(s) representing the event
-          nullable: true
         eventType:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Type of the event
-          nullable: true
         eventWebsite:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Supplemental URI for the event
-          nullable: true
         audience:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Tag(s) representing the intended audience for the event
-          nullable: true
         cost:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Cost of the event
-          nullable: true
         host:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Event host information
-          nullable: true
         locationId:
-          type: integer
+          type:
+          - integer
+          - 'null'
           description: Unique Id of the location hosting the event
           format: int32
-          nullable: true
         locationName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Display name of the location hosting the event
-          nullable: true
         updatedDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Date item last updated
           format: date-time
-          nullable: true
         content:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Description content for the event, often includes HTML markup
-          nullable: true
       additionalProperties: false
       description: Model representing a WCMS Event item
+    SiteNews:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID of the Site this news originates from
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this news item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the news item
+        postedDate:
+          type:
+          - string
+          - 'null'
+          description: Content created or posted date
+          format: date-time
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Content updated date
+          format: date-time
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: URI to the news item in WCMS
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Intended audience tag(s)
+        content:
+          type:
+          - string
+          - 'null'
+          description: News item content, often with HTML markup
+      additionalProperties: false
+      description: Model representing News data associated to a Site in the WCMS
   securitySchemes:
     apiKey:
       type: apiKey

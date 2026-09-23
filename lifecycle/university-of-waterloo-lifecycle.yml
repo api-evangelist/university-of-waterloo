@@ -1,0 +1,96 @@
+specification: API Commons Lifecycle
+specificationVersion: '0.1'
+provider: University of Waterloo
+providerId: university-of-waterloo
+generated: '2026-09-01'
+method: searched
+source: >-
+  IST-DIA APIs Confluence space (https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview),
+  read via the Confluence content API on 2026-09-01 — release-notes pages, the OpenAPI roadmap page,
+  and the January 2026 "Open Data API Functional Changes" post.
+description: >-
+  Version and deprecation history for the University of Waterloo Open Data API, taken from the
+  institution's own published release notes rather than inferred. Waterloo runs a real, dated
+  release-note stream going back to 2017 and executed a full v2 shutdown — one of the few
+  universities in this cohort with an evidenced API lifecycle rather than a single undated contract.
+apis:
+- name: Waterloo Open Data API
+  operator: institution
+  versions:
+  - version: v3
+    status: current
+    base_url: https://openapi.data.uwaterloo.ca/v3/
+    contract: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+    first_seen: '2020-01-11'
+    notes: >-
+      48 operations across 12 resource groups. Hosted on Azure App Service (Microsoft-IIS/10.0,
+      ARRAffinity cookies observed on the wire), consistent with the roadmap page's "Azure platform
+      as host provider" item.
+  - version: v2
+    status: retired
+    notes: >-
+      Deprecation announced and a temporary-then-complete shutdown scheduled; release notes carry
+      both a "V2 deprecation notice" page and an "Open Data v2 API Temporary and Complete shutdown
+      dates" page.
+    source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34163165086
+  - version: '1.0'
+    status: retired
+    source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779304
+- name: Waterloo SourceAPI
+  operator: institution
+  versions:
+  - version: current
+    status: active
+    access: gated
+    notes: >-
+      Authenticated access to authoritative source systems (Quest, WatIAM). Access is requested
+      through Jira Service Desk portal 115 and evaluated with the responsible data stewards; no
+      public contract is published.
+    source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779677/SourceAPI+Home+Page
+events:
+- date: '2026-01-23'
+  api: Waterloo Open Data API v3
+  type: change
+  summary: >-
+    Registration reopened for learning and prototype projects, email confirmation dropped, a 120
+    request-per-minute cap introduced, and caching added to several semi-static endpoints.
+  source: >-
+    https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+- date: '2025-11-20'
+  api: Waterloo Open Data API v3
+  type: release
+  summary: Open Data API v3, 2025.11.20 release notes.
+  source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/44809159967
+- date: '2023-09-18'
+  api: Waterloo Open Data API v3
+  type: release
+  summary: Open Data API v3, 2023.09.18 release.
+  source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/43622531917
+- date: '2021-12-13'
+  api: Waterloo Open Data API v3
+  type: breaking-change
+  summary: >-
+    Breaking change announced ahead of the 2021.12.13.1 release, with a dedicated advance-notice
+    page.
+  source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/42613833757
+- date: '2020-10-21'
+  api: Waterloo Open Data API v2
+  type: deprecation
+  summary: v2 deprecation notice published; shutdown dates page follows.
+  source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34163165086
+policy:
+  versioning: URI path versioning (/v3/).
+  deprecation_notice: >-
+    Advance notice is published as a dated Confluence page in the UWAPI space, including a
+    standalone page for breaking changes ahead of the release that carries them.
+  changelog: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+  roadmap: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779689/Roadmap+-+OpenAPI
+  sunset_header: not observed
+gaps:
+- >-
+  The roadmap page is stale — its "in progress" items are dated ~end of 2020 and the v2 retirement it
+  describes has long since completed.
+- No machine-readable deprecation signalling (no Sunset or Deprecation response headers observed).
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

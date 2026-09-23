@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations ImportantDates API
+  title: Waterloo OpenData Important Dates API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ImportantDate'
+      operationId: getV3ImportantDates
+      x-operation-id-source: derived
   /v3/ImportantDates/{year}:
     get:
       tags:
@@ -48,6 +50,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/ImportantDate'
+      operationId: getV3ImportantDatesByYear
+      x-operation-id-source: derived
 components:
   schemas:
     ImportantDateDetails:
@@ -62,23 +66,27 @@ components:
           description: Id to the associated Term
           format: int32
         termName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Name of the associated Term when the Important Date takes place
-          nullable: true
         startDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Start or event date for the Important Date
           format: date-time
-          nullable: true
         endDate:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Optional end date for the Important Date
           format: date-time
-          nullable: true
         notes:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Any special notes for this occurance of the Important Date, can contain markup
-          nullable: true
       additionalProperties: false
       description: Details about terms, dates, and special notes for an Important Date
     ImportantDate:
@@ -89,45 +97,54 @@ components:
           description: Unique, non-persistent Api Id for this resource
           format: int32
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Name/Title of the Important Date
-          nullable: true
         description:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Optional description of the Important Date, can contain markup
-          nullable: true
         importantDateType:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The type category this Important Date belongs to
-          nullable: true
         associatedAcademicYear:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The academic year this important date is associated to
-          nullable: true
         details:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             $ref: '#/components/schemas/ImportantDateDetails'
           description: Details about terms, dates, and special notes
-          nullable: true
         keywords:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: Keywords associated with the Important Date
-          nullable: true
         audiences:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: Audiences associated with the Important Date
-          nullable: true
         audienceString:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
         keywordString:
-          type: string
-          nullable: true
+          type:
+          - string
+          - 'null'
       additionalProperties: false
       description: An Important Date is an event at a time that has significance to the Waterloo community
   securitySchemes:

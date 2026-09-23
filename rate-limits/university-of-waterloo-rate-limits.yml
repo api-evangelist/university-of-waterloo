@@ -4,32 +4,71 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: University of Waterloo
 providerId: university-of-waterloo
 created: '2026-06-03'
-modified: '2026-06-03'
-reconciled: false
+modified: '2026-09-01'
+generated: '2026-09-01'
+method: searched
+reconciled: true
 tags:
 - Education
 - Higher Education
 - University
 - Rate Limiting
 description: >-
-  University of Waterloo does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
-notes: Confirm per-service limits with each API's documentation; harvest responsibly.
+  The University of Waterloo publishes an explicit numeric rate limit for its Open Data API v3:
+  120 requests per minute, introduced in January 2026 alongside reopened self-serve key registration
+  and response caching on semi-static endpoints. Waterloo states the limit and the algorithm may be
+  adjusted. No limit is published for the gated SourceAPI, whose throughput is negotiated per data
+  set with the responsible data steward. The UWSpace DSpace REST and OAI-PMH endpoints publish no
+  limit; harvest politely.
+notes: >-
+  The 120/minute figure is the provider's own published statement, not an inferred default. It is
+  not surfaced in the OpenAPI contract and no RateLimit or Retry-After headers were observed on the
+  401 responses probed on 2026-09-01, so a client cannot discover the budget programmatically.
 sources:
-- https://raw.githubusercontent.com/api-evangelist/university-of-waterloo/refs/heads/main/apis.yml
+- >-
+  https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+- https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
 responseCodes:
   throttled: 429
 limits:
-- name: Default
+- name: Open Data API v3
+  scope: api-key
+  metric: requests-per-minute
+  limit: 120
+  timeFrame: minute
+  unit: 1
+  notes: >-
+    Published by the provider on 2026-01-23. Applies to keys issued through
+    POST /v3/Account/Register. Waterloo reserves the right to adjust the limit and the algorithm,
+    and to revoke keys with notice.
+  source: >-
+    https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+- name: SourceAPI
   scope: client
   metric: requests-per-minute
-  limit: see service documentation
-  notes: No published global limit; large harvests may be rate-limited.
+  limit: not published
+  notes: >-
+    Access is granted per data set through Jira Service Desk portal 115 in collaboration with data
+    stewards; throughput is governed by that agreement and by University of Waterloo Policy 46 —
+    Information Management, not by a published table.
+- name: UWSpace (DSpace REST + OAI-PMH)
+  scope: client
+  metric: requests-per-minute
+  limit: not published
+  notes: >-
+    No limit published on dspacemainprd01.lib.uwaterloo.ca. The UWSpace front end declares a
+    server-side UI rate limiter of 500 requests per 60s window in its own runtime configuration;
+    that governs the Angular front end, not the REST or OAI-PMH surfaces.
 policies:
+- name: Caching
+  description: >-
+    Waterloo added server-side caching to several semi-static Open Data endpoints in January 2026 to
+    mitigate operational performance and cost; prefer cached reads over polling.
 - name: Backoff Strategy
-  description: Exponential backoff with jitter; honor Retry-After; harvest during off-peak hours.
+  description: Exponential backoff with jitter; honor Retry-After if returned; harvest during off-peak hours.
+gaps:
+- No RateLimit-Limit / RateLimit-Remaining / RateLimit-Reset headers observed.
+- The 120/minute limit is not declared anywhere in the published OpenAPI contract.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

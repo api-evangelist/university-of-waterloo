@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations Subjects API
+  title: Waterloo OpenData Subjects API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Subject'
+      operationId: getV3Subjects
+      x-operation-id-source: derived
   /v3/Subjects/{code}:
     get:
       tags:
@@ -44,11 +46,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Subject'
+      operationId: getV3SubjectsByCode
+      x-operation-id-source: derived
   /v3/Subjects/associatedto/{organizationCode}:
     get:
       tags:
       - Subjects
-      summary: Gets Subject data for Subjects associated to an Academic Organization by Organization code
+      summary: Gets Subject data for Subjects associated to an Academic Organization by…
       parameters:
       - name: organizationCode
         in: path
@@ -66,31 +70,38 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Subject'
+      operationId: getV3SubjectsAssociatedtoByOrganizationCode
+      x-operation-id-source: derived
 components:
   schemas:
     Subject:
       type: object
       properties:
         code:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Code that identifies this Subject
-          nullable: true
         name:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The Name for this Subject, most often the displayed name
-          nullable: true
         descriptionAbbreviated:
-          type: string
+          type:
+          - string
+          - 'null'
           description: The short description of this subject, often same as Code
-          nullable: true
         description:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Description of the Subject
-          nullable: true
         associatedAcademicOrgCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Code for the Academic Organization that is associated to this Subject
-          nullable: true
       additionalProperties: false
       description: An academic Subject at Waterloo describes an area that a Course can be in
   securitySchemes:

@@ -1,0 +1,92 @@
+specification: API Commons Errors
+specificationVersion: '0.1'
+provider: University of Waterloo
+providerId: university-of-waterloo
+generated: '2026-09-01'
+method: probed
+source: >-
+  Live unauthenticated and bad-key requests against https://openapi.data.uwaterloo.ca/v3/ on
+  2026-09-01. The published OpenAPI (https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json)
+  documents a 200 response and nothing else on all 48 operations, so every error shape below was
+  observed on the wire, not read out of the contract.
+description: >-
+  Error catalog for the University of Waterloo Open Data API v3. The API returns a consistent
+  JSON envelope of Message / Level / SeeAlso on authentication failures, with SeeAlso pointing at
+  the relevant page of the uWaterloo/OpenData GitHub wiki. None of these responses are declared in
+  the published contract — this is the largest single contract-quality gap on the surface.
+envelope:
+  media_type: application/json
+  fields:
+  - name: Message
+    type: string
+    description: Human-readable description of what went wrong.
+  - name: Level
+    type: string
+    description: Severity label. Observed values — Error, Warning.
+  - name: SeeAlso
+    type: string
+    format: uri
+    description: Link to the uWaterloo OpenData wiki page that explains the fix.
+errors:
+- code: 401
+  name: Missing API key
+  documented_in_contract: false
+  observed:
+    request: GET https://openapi.data.uwaterloo.ca/v3/Terms with no X-API-KEY header
+    status: 401
+    body:
+      Message: >-
+        There does not appear to be an X-API-KEY header. You need to provide a valid key as part of
+        the X-API-KEY header.
+      Level: Error
+      SeeAlso: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started#querying-the-api
+    checked: '2026-09-01'
+  remediation: >-
+    Register for a key at POST /v3/Account/Register and send it in the X-API-KEY request header.
+- code: 401
+  name: Invalid or unactivated API key
+  documented_in_contract: false
+  observed:
+    request: GET https://openapi.data.uwaterloo.ca/v3/Terms with X-API-KEY set to an unissued value
+    status: 401
+    body:
+      Message: >-
+        Your API key <key> is not valid or was not activated. You need to provide a valid key as
+        part of the X-API-KEY header.
+      Level: Warning
+      SeeAlso: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
+    checked: '2026-09-01'
+  remediation: Re-register, or confirm the key has not been revoked.
+  notes: >-
+    The submitted key is echoed back verbatim in the message body. Callers should not log this
+    response body where the key would be exposed.
+- code: 404
+  name: Unknown resource
+  documented_in_contract: false
+  observed:
+    request: GET https://openapi.data.uwaterloo.ca/v3/NotAThing
+    status: 404
+    body: empty (zero-length response, no Content-Type)
+    checked: '2026-09-01'
+  remediation: Check the path against the published OpenAPI.
+- code: 429
+  name: Request rate exceeded
+  documented_in_contract: false
+  observed: >-
+    Not reproduced — deliberately not provoked against a live public university service. Declared by
+    the provider: "We've added request limit to the API. The current limit allows for 120 requests
+    per minute."
+  source_url: >-
+    https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+  method: searched
+gaps:
+- >-
+  All 48 operations in the published contract declare only a 200 response. 401, 404 and the declared
+  429 are undocumented.
+- >-
+  No error response schema is defined in components, so the Message / Level / SeeAlso envelope is
+  not machine-discoverable from the contract.
+- No RFC 9457 problem+json support; errors are a bespoke JSON envelope.
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

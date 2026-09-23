@@ -1,6 +1,6 @@
-openapi: 3.0.4
+openapi: 3.2.0
 info:
-  title: Waterloo OpenData AcademicOrganizations Locations API
+  title: Waterloo OpenData Locations API
   version: v3
 servers:
 - url: https://openapi.data.uwaterloo.ca
@@ -24,6 +24,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Location'
+      operationId: getV3Locations
+      x-operation-id-source: derived
   /v3/Locations/geojson:
     get:
       tags:
@@ -36,6 +38,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LocationGeo'
+      operationId: getV3LocationsGeojson
+      x-operation-id-source: derived
   /v3/Locations/{locationCode}:
     get:
       tags:
@@ -55,6 +59,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
+      operationId: getV3LocationsByLocationCode
+      x-operation-id-source: derived
   /v3/Locations/{locationCode}/geojson:
     get:
       tags:
@@ -74,6 +80,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LocationGeo'
+      operationId: getV3LocationsByLocationCodeGeojson
+      x-operation-id-source: derived
   /v3/Locations/search/{locationName}:
     get:
       tags:
@@ -95,6 +103,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Location'
+      operationId: getV3LocationsSearchByLocationName
+      x-operation-id-source: derived
   /v3/Locations/search/{locationName}/geojson:
     get:
       tags:
@@ -114,68 +124,62 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/LocationGeo'
+      operationId: getV3LocationsSearchByLocationNameGeojson
+      x-operation-id-source: derived
 components:
   schemas:
     Location:
       type: object
       properties:
         buildingId:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Unique identifier for this building
-          nullable: true
         buildingCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Alpha-numeric building code
-          nullable: true
         parentBuildingCode:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Unofficial, alpha-numeric building code that represents the parent location
-          nullable: true
         buildingName:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Display name of the building
-          nullable: true
         alternateBuildingNames:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: string
           description: Unofficial, collection of alternate building display names
-          nullable: true
         latitude:
-          type: number
+          type:
+          - number
+          - 'null'
           description: Latitude co-ordinate of this location
           format: double
-          nullable: true
         longitude:
-          type: number
+          type:
+          - number
+          - 'null'
           description: Longitude co-ordinate of this location
           format: double
-          nullable: true
       additionalProperties: false
       description: Model representing a Location for the Buildings dataset
-    LocationGeo:
-      type: object
-      properties:
-        type:
-          type: string
-          description: Type property of GEO JSON collection
-          nullable: true
-          readOnly: true
-        features:
-          type: array
-          items:
-            $ref: '#/components/schemas/Feature'
-          description: Features of this collection
-          nullable: true
-      additionalProperties: false
-      description: Model representing a Location for the Buildings dataset in GEO JSON format
     Feature:
       type: object
       properties:
         type:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Type of Feature
-          nullable: true
           readOnly: true
         properties:
           $ref: '#/components/schemas/Location'
@@ -187,19 +191,39 @@ components:
       type: object
       properties:
         type:
-          type: string
+          type:
+          - string
+          - 'null'
           description: Type of geometry
-          nullable: true
           readOnly: true
         coordinates:
-          type: array
+          type:
+          - array
+          - 'null'
           items:
             type: number
             format: double
           description: Latitude and Longitude collection of this location
-          nullable: true
       additionalProperties: false
       description: Represents Geometry data of the Feature
+    LocationGeo:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+          description: Type property of GEO JSON collection
+          readOnly: true
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Feature'
+          description: Features of this collection
+      additionalProperties: false
+      description: Model representing a Location for the Buildings dataset in GEO JSON format
   securitySchemes:
     apiKey:
       type: apiKey
