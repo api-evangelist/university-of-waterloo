@@ -106,73 +106,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ClassSchedule:
-      type: object
-      properties:
-        courseId:
-          type:
-          - string
-          - 'null'
-          description: Course identifier number, not unique
-        courseOfferNumber:
-          type: integer
-          description: Course offer number identifier for this class
-          format: int32
-        sessionCode:
-          type:
-          - string
-          - 'null'
-          description: Session code number for this class
-        classSection:
-          type: integer
-          description: Number identifying the section of this class
-          format: int32
-        termCode:
-          type:
-          - string
-          - 'null'
-          description: Waterloo academic term code
-        classMeetingNumber:
-          type: integer
-          description: Identifier for the class meeting this schedule data relates to
-          format: int32
-        scheduleStartDate:
-          type: string
-          description: The date this schedule begins
-          format: date-time
-        scheduleEndDate:
-          type: string
-          description: The date this schedule ends
-          format: date-time
-        classMeetingStartTime:
-          type:
-          - string
-          - 'null'
-          description: The start time of this class
-          format: date-time
-        classMeetingEndTime:
-          type:
-          - string
-          - 'null'
-          description: The end time of this class
-          format: date-time
-        classMeetingDayPatternCode:
-          type:
-          - string
-          - 'null'
-          description: A code representing the days the class schedule takes place during the week
-        classMeetingWeekPatternCode:
-          type:
-          - string
-          - 'null'
-          description: A Y|N per day representation of the class schedule taking place during the week
-        locationName:
-          type:
-          - string
-          - 'null'
-          description: REMOVED for privacy. Building and room name for the location of this class schedule
-      additionalProperties: false
-      description: Data describing scheduling and availability data for a Class
     ClassInstructor:
       type: object
       properties:
@@ -310,6 +243,73 @@ components:
           description: Instructor data for this class
       additionalProperties: false
       description: Represents an Academic class, which is a scheduled instance of a Course
+    ClassSchedule:
+      type: object
+      properties:
+        courseId:
+          type:
+          - string
+          - 'null'
+          description: Course identifier number, not unique
+        courseOfferNumber:
+          type: integer
+          description: Course offer number identifier for this class
+          format: int32
+        sessionCode:
+          type:
+          - string
+          - 'null'
+          description: Session code number for this class
+        classSection:
+          type: integer
+          description: Number identifying the section of this class
+          format: int32
+        termCode:
+          type:
+          - string
+          - 'null'
+          description: Waterloo academic term code
+        classMeetingNumber:
+          type: integer
+          description: Identifier for the class meeting this schedule data relates to
+          format: int32
+        scheduleStartDate:
+          type: string
+          description: The date this schedule begins
+          format: date-time
+        scheduleEndDate:
+          type: string
+          description: The date this schedule ends
+          format: date-time
+        classMeetingStartTime:
+          type:
+          - string
+          - 'null'
+          description: The start time of this class
+          format: date-time
+        classMeetingEndTime:
+          type:
+          - string
+          - 'null'
+          description: The end time of this class
+          format: date-time
+        classMeetingDayPatternCode:
+          type:
+          - string
+          - 'null'
+          description: A code representing the days the class schedule takes place during the week
+        classMeetingWeekPatternCode:
+          type:
+          - string
+          - 'null'
+          description: A Y|N per day representation of the class schedule taking place during the week
+        locationName:
+          type:
+          - string
+          - 'null'
+          description: REMOVED for privacy. Building and room name for the location of this class schedule
+      additionalProperties: false
+      description: Data describing scheduling and availability data for a Class
   securitySchemes:
     apiKey:
       type: apiKey

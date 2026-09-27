@@ -230,6 +230,150 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    SiteNews:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID of the Site this news originates from
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this news item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the news item
+        postedDate:
+          type:
+          - string
+          - 'null'
+          description: Content created or posted date
+          format: date-time
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Content updated date
+          format: date-time
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: URI to the news item in WCMS
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Intended audience tag(s)
+        content:
+          type:
+          - string
+          - 'null'
+          description: News item content, often with HTML markup
+      additionalProperties: false
+      description: Model representing News data associated to a Site in the WCMS
+    SiteEvent:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this evevnt item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the event
+        eventStartDate:
+          type:
+          - string
+          - 'null'
+          description: Start date of the event
+          format: date-time
+        eventEndDate:
+          type:
+          - string
+          - 'null'
+          description: End date of the event
+          format: date-time
+        recurRule:
+          type:
+          - string
+          - 'null'
+          description: Description of the event recurrence rule
+        eventTimezone:
+          type:
+          - string
+          - 'null'
+          description: Time zone description of the event dates
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: Link to the Event
+        eventTags:
+          type:
+          - string
+          - 'null'
+          description: Tag(s) representing the event
+        eventType:
+          type:
+          - string
+          - 'null'
+          description: Type of the event
+        eventWebsite:
+          type:
+          - string
+          - 'null'
+          description: Supplemental URI for the event
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Tag(s) representing the intended audience for the event
+        cost:
+          type:
+          - string
+          - 'null'
+          description: Cost of the event
+        host:
+          type:
+          - string
+          - 'null'
+          description: Event host information
+        locationId:
+          type:
+          - integer
+          - 'null'
+          description: Unique Id of the location hosting the event
+          format: int32
+        locationName:
+          type:
+          - string
+          - 'null'
+          description: Display name of the location hosting the event
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Date item last updated
+          format: date-time
+        content:
+          type:
+          - string
+          - 'null'
+          description: Description content for the event, often includes HTML markup
+      additionalProperties: false
+      description: Model representing a WCMS Event item
     Site:
       type: object
       properties:
@@ -340,150 +484,6 @@ components:
           description: Username of the person publishing the content, not necessarily the author
       additionalProperties: false
       description: Model representing a WCMS blog post item
-    SiteEvent:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID
-          format: int32
-        uniqueKey:
-          type:
-          - string
-          - 'null'
-          description: Unique Id of this evevnt item
-        title:
-          type:
-          - string
-          - 'null'
-          description: Title of the event
-        eventStartDate:
-          type:
-          - string
-          - 'null'
-          description: Start date of the event
-          format: date-time
-        eventEndDate:
-          type:
-          - string
-          - 'null'
-          description: End date of the event
-          format: date-time
-        recurRule:
-          type:
-          - string
-          - 'null'
-          description: Description of the event recurrence rule
-        eventTimezone:
-          type:
-          - string
-          - 'null'
-          description: Time zone description of the event dates
-        itemUri:
-          type:
-          - string
-          - 'null'
-          description: Link to the Event
-        eventTags:
-          type:
-          - string
-          - 'null'
-          description: Tag(s) representing the event
-        eventType:
-          type:
-          - string
-          - 'null'
-          description: Type of the event
-        eventWebsite:
-          type:
-          - string
-          - 'null'
-          description: Supplemental URI for the event
-        audience:
-          type:
-          - string
-          - 'null'
-          description: Tag(s) representing the intended audience for the event
-        cost:
-          type:
-          - string
-          - 'null'
-          description: Cost of the event
-        host:
-          type:
-          - string
-          - 'null'
-          description: Event host information
-        locationId:
-          type:
-          - integer
-          - 'null'
-          description: Unique Id of the location hosting the event
-          format: int32
-        locationName:
-          type:
-          - string
-          - 'null'
-          description: Display name of the location hosting the event
-        updatedDate:
-          type:
-          - string
-          - 'null'
-          description: Date item last updated
-          format: date-time
-        content:
-          type:
-          - string
-          - 'null'
-          description: Description content for the event, often includes HTML markup
-      additionalProperties: false
-      description: Model representing a WCMS Event item
-    SiteNews:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID of the Site this news originates from
-          format: int32
-        uniqueKey:
-          type:
-          - string
-          - 'null'
-          description: Unique Id of this news item
-        title:
-          type:
-          - string
-          - 'null'
-          description: Title of the news item
-        postedDate:
-          type:
-          - string
-          - 'null'
-          description: Content created or posted date
-          format: date-time
-        updatedDate:
-          type:
-          - string
-          - 'null'
-          description: Content updated date
-          format: date-time
-        itemUri:
-          type:
-          - string
-          - 'null'
-          description: URI to the news item in WCMS
-        audience:
-          type:
-          - string
-          - 'null'
-          description: Intended audience tag(s)
-        content:
-          type:
-          - string
-          - 'null'
-          description: News item content, often with HTML markup
-      additionalProperties: false
-      description: Model representing News data associated to a Site in the WCMS
   securitySchemes:
     apiKey:
       type: apiKey

@@ -54,41 +54,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    ImportantDateDetails:
-      type: object
-      properties:
-        importantDateId:
-          type: integer
-          description: Id link to associated Important Date, internal
-          format: int32
-        termId:
-          type: integer
-          description: Id to the associated Term
-          format: int32
-        termName:
-          type:
-          - string
-          - 'null'
-          description: Name of the associated Term when the Important Date takes place
-        startDate:
-          type:
-          - string
-          - 'null'
-          description: Start or event date for the Important Date
-          format: date-time
-        endDate:
-          type:
-          - string
-          - 'null'
-          description: Optional end date for the Important Date
-          format: date-time
-        notes:
-          type:
-          - string
-          - 'null'
-          description: Any special notes for this occurance of the Important Date, can contain markup
-      additionalProperties: false
-      description: Details about terms, dates, and special notes for an Important Date
     ImportantDate:
       type: object
       properties:
@@ -147,6 +112,41 @@ components:
           - 'null'
       additionalProperties: false
       description: An Important Date is an event at a time that has significance to the Waterloo community
+    ImportantDateDetails:
+      type: object
+      properties:
+        importantDateId:
+          type: integer
+          description: Id link to associated Important Date, internal
+          format: int32
+        termId:
+          type: integer
+          description: Id to the associated Term
+          format: int32
+        termName:
+          type:
+          - string
+          - 'null'
+          description: Name of the associated Term when the Important Date takes place
+        startDate:
+          type:
+          - string
+          - 'null'
+          description: Start or event date for the Important Date
+          format: date-time
+        endDate:
+          type:
+          - string
+          - 'null'
+          description: Optional end date for the Important Date
+          format: date-time
+        notes:
+          type:
+          - string
+          - 'null'
+          description: Any special notes for this occurance of the Important Date, can contain markup
+      additionalProperties: false
+      description: Details about terms, dates, and special notes for an Important Date
   securitySchemes:
     apiKey:
       type: apiKey
