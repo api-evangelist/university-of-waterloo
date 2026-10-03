@@ -230,23 +230,23 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SiteNews:
+    SiteBlogPost:
       type: object
       properties:
         siteId:
           type: integer
-          description: Unique, numeric site ID of the Site this news originates from
+          description: Unique, numeric site ID
           format: int32
         uniqueKey:
           type:
           - string
           - 'null'
-          description: Unique Id of this news item
+          description: Unique Id of this post item
         title:
           type:
           - string
           - 'null'
-          description: Title of the news item
+          description: Title of the blog post
         postedDate:
           type:
           - string
@@ -263,7 +263,7 @@ components:
           type:
           - string
           - 'null'
-          description: URI to the news item in WCMS
+          description: URI to the item in WCMS
         audience:
           type:
           - string
@@ -273,9 +273,73 @@ components:
           type:
           - string
           - 'null'
-          description: News item content, often with HTML markup
+          description: Blog post content, often with HTML markup
+        delegatedAuthorName:
+          type:
+          - string
+          - 'null'
+          description: Display name of the delegated author for this blog post
+        delegatedAuthorUri:
+          type:
+          - string
+          - 'null'
+          description: Link to the WCMS profiel of the delegated author
+        publisherUsername:
+          type:
+          - string
+          - 'null'
+          description: Username of the person publishing the content, not necessarily the author
       additionalProperties: false
-      description: Model representing News data associated to a Site in the WCMS
+      description: Model representing a WCMS blog post item
+    Site:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        relativeUri:
+          type:
+          - string
+          - 'null'
+          description: Relative URI of the site from the root uWaterloo CMS domain
+        name:
+          type:
+          - string
+          - 'null'
+          description: Display name of the Site
+        completeUri:
+          type:
+          - string
+          - 'null'
+          description: Complete URI of the site, including root domain
+        ownerUnitCode:
+          type:
+          - string
+          - 'null'
+          description: If available, the department owner code for this Site. Can loosely map to Academic Groups.
+        ownerUnitNameShort:
+          type:
+          - string
+          - 'null'
+          description: Short name of the department owner for this Site. See OwnerUnitCode for more.
+        ownerUnitNameFull:
+          type:
+          - string
+          - 'null'
+          description: Full name of the department owner for this Site. See OwnerUnitCode for more.
+        ownerGroupCode:
+          type:
+          - string
+          - 'null'
+          description: If available, the faculty owner code for this Site. Can loosely map to Academic Organization.
+        ownerType:
+          type:
+          - string
+          - 'null'
+          description: The tag describing the association of the owner department, such as academic, research, and more.
+      additionalProperties: false
+      description: Model representing a Site on the Waterloo CMS
     SiteEvent:
       type: object
       properties:
@@ -374,72 +438,23 @@ components:
           description: Description content for the event, often includes HTML markup
       additionalProperties: false
       description: Model representing a WCMS Event item
-    Site:
+    SiteNews:
       type: object
       properties:
         siteId:
           type: integer
-          description: Unique, numeric site ID
-          format: int32
-        relativeUri:
-          type:
-          - string
-          - 'null'
-          description: Relative URI of the site from the root uWaterloo CMS domain
-        name:
-          type:
-          - string
-          - 'null'
-          description: Display name of the Site
-        completeUri:
-          type:
-          - string
-          - 'null'
-          description: Complete URI of the site, including root domain
-        ownerUnitCode:
-          type:
-          - string
-          - 'null'
-          description: If available, the department owner code for this Site. Can loosely map to Academic Groups.
-        ownerUnitNameShort:
-          type:
-          - string
-          - 'null'
-          description: Short name of the department owner for this Site. See OwnerUnitCode for more.
-        ownerUnitNameFull:
-          type:
-          - string
-          - 'null'
-          description: Full name of the department owner for this Site. See OwnerUnitCode for more.
-        ownerGroupCode:
-          type:
-          - string
-          - 'null'
-          description: If available, the faculty owner code for this Site. Can loosely map to Academic Organization.
-        ownerType:
-          type:
-          - string
-          - 'null'
-          description: The tag describing the association of the owner department, such as academic, research, and more.
-      additionalProperties: false
-      description: Model representing a Site on the Waterloo CMS
-    SiteBlogPost:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID
+          description: Unique, numeric site ID of the Site this news originates from
           format: int32
         uniqueKey:
           type:
           - string
           - 'null'
-          description: Unique Id of this post item
+          description: Unique Id of this news item
         title:
           type:
           - string
           - 'null'
-          description: Title of the blog post
+          description: Title of the news item
         postedDate:
           type:
           - string
@@ -456,7 +471,7 @@ components:
           type:
           - string
           - 'null'
-          description: URI to the item in WCMS
+          description: URI to the news item in WCMS
         audience:
           type:
           - string
@@ -466,24 +481,9 @@ components:
           type:
           - string
           - 'null'
-          description: Blog post content, often with HTML markup
-        delegatedAuthorName:
-          type:
-          - string
-          - 'null'
-          description: Display name of the delegated author for this blog post
-        delegatedAuthorUri:
-          type:
-          - string
-          - 'null'
-          description: Link to the WCMS profiel of the delegated author
-        publisherUsername:
-          type:
-          - string
-          - 'null'
-          description: Username of the person publishing the content, not necessarily the author
+          description: News item content, often with HTML markup
       additionalProperties: false
-      description: Model representing a WCMS blog post item
+      description: Model representing News data associated to a Site in the WCMS
   securitySchemes:
     apiKey:
       type: apiKey
