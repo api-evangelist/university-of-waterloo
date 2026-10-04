@@ -128,24 +128,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    LocationGeo:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-          description: Type property of GEO JSON collection
-          readOnly: true
-        features:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Feature'
-          description: Features of this collection
-      additionalProperties: false
-      description: Model representing a Location for the Buildings dataset in GEO JSON format
     Geometry:
       type: object
       properties:
@@ -165,6 +147,39 @@ components:
           description: Latitude and Longitude collection of this location
       additionalProperties: false
       description: Represents Geometry data of the Feature
+    Feature:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+          description: Type of Feature
+          readOnly: true
+        properties:
+          $ref: '#/components/schemas/Location'
+        geometry:
+          $ref: '#/components/schemas/Geometry'
+      additionalProperties: false
+      description: Feature of location collection
+    LocationGeo:
+      type: object
+      properties:
+        type:
+          type:
+          - string
+          - 'null'
+          description: Type property of GEO JSON collection
+          readOnly: true
+        features:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Feature'
+          description: Features of this collection
+      additionalProperties: false
+      description: Model representing a Location for the Buildings dataset in GEO JSON format
     Location:
       type: object
       properties:
@@ -209,21 +224,6 @@ components:
           format: double
       additionalProperties: false
       description: Model representing a Location for the Buildings dataset
-    Feature:
-      type: object
-      properties:
-        type:
-          type:
-          - string
-          - 'null'
-          description: Type of Feature
-          readOnly: true
-        properties:
-          $ref: '#/components/schemas/Location'
-        geometry:
-          $ref: '#/components/schemas/Geometry'
-      additionalProperties: false
-      description: Feature of location collection
   securitySchemes:
     apiKey:
       type: apiKey

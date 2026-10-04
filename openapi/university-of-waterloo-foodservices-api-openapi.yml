@@ -128,194 +128,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Translations:
-      type: object
-      properties:
-        original:
-          type:
-          - string
-          - 'null'
-        data:
-          $ref: '#/components/schemas/Data'
-      additionalProperties: false
-    Name:
-      type: object
-      properties:
-        predicates:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    FoodServicesOutletPhoto:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        filemime:
-          type:
-          - string
-          - 'null'
-        filesize:
-          type:
-          - string
-          - 'null'
-        width:
-          type:
-          - string
-          - 'null'
-        height:
-          type:
-          - string
-          - 'null'
-        alt:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    FoodServicesOutlets:
-      type: object
-      properties:
-        data:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/FoodServicesOutlet'
-        count:
-          type: integer
-          format: int32
-        self:
-          $ref: '#/components/schemas/FoodServicesOutletsSelf'
-      additionalProperties: false
-    Changed:
-      type: object
-      properties:
-        predicates:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        datatype:
-          type:
-          - string
-          - 'null'
-        callback:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Path:
-      type: object
-      properties:
-        pid:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        alias:
-          type:
-          - string
-          - 'null'
-        language:
-          type:
-          - string
-          - 'null'
-        pathauto:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Und1:
-      type: object
-      properties:
-        fid:
-          type:
-          - string
-          - 'null'
-        uid:
-          type:
-          - string
-          - 'null'
-        filename:
-          type:
-          - string
-          - 'null'
-        uri:
-          type:
-          - string
-          - 'null'
-        filemime:
-          type:
-          - string
-          - 'null'
-        filesize:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - string
-          - 'null'
-        timestamp:
-          type:
-          - string
-          - 'null'
-        uuid:
-          type:
-          - string
-          - 'null'
-        rdf_mapping:
-          type:
-          - array
-          - 'null'
-          items: {}
-        focal_point:
-          type:
-          - string
-          - 'null'
-        alt:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-        width:
-          type:
-          - string
-          - 'null'
-        height:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Title_Field:
-      type: object
-      properties:
-        en:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/En'
-      additionalProperties: false
     Current:
       type: object
       properties:
@@ -363,182 +175,39 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Comment_Count:
+    Value:
       type: object
       properties:
-        predicates:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-        datatype:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Field_Franchise_Logo:
-      type: object
-      properties:
-        und:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Und1'
-      additionalProperties: false
-    FoodServicesFranchisesSelf:
-      type: object
-      properties:
-        title:
-          type:
-          - string
-          - 'null'
-        href:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Workbench_Moderation:
-      type: object
-      properties:
-        current:
-          $ref: '#/components/schemas/Current'
-        published:
-          $ref: '#/components/schemas/Published'
-        my_revision:
-          $ref: '#/components/schemas/My_Revision'
-      additionalProperties: false
-    FoodServicesFranchise:
-      type: object
-      properties:
-        id:
+        index:
           type: integer
           format: int32
-        self:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        logo:
-          $ref: '#/components/schemas/Logo'
-        combos:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Combo'
-        individualitems:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/IndividualItem'
-        addons:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Addon'
-      additionalProperties: false
-    En1:
-      type: object
-      properties:
-        robots:
-          $ref: '#/components/schemas/Robots'
-      additionalProperties: false
-    FoodServicesFranchises:
-      type: object
-      properties:
-        data:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/FoodServicesFranchise'
-        count:
+        follow:
           type: integer
           format: int32
-        self:
-          $ref: '#/components/schemas/FoodServicesFranchisesSelf'
-      additionalProperties: false
-    Field_Combos:
-      type: object
-      properties:
-        und:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/Und'
-      additionalProperties: false
-    HoursChange:
-      type: object
-      properties:
-        value:
-          type: string
-          format: date-time
-        value2:
-          type: string
-          format: date-time
-        timezone_db:
-          type:
-          - string
-          - 'null'
-        date_type:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Und:
-      type: object
-      properties:
-        value:
-          type:
-          - string
-          - 'null'
-        revision_id:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    LocationLink:
-      type: object
-      properties:
-        url:
-          type:
-          - string
-          - 'null'
-        title: {}
-        attributes:
-          type:
-          - array
-          - 'null'
-          items: {}
-        original_title: {}
-        original_url:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Title:
-      type: object
-      properties:
-        predicates:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    Robots:
-      type: object
-      properties:
-        value:
-          $ref: '#/components/schemas/Value'
+        noindex:
+          type: integer
+          format: int32
+        nofollow:
+          type: integer
+          format: int32
+        noarchive:
+          type: integer
+          format: int32
+        nosnippet:
+          type: integer
+          format: int32
+        noodp:
+          type: integer
+          format: int32
+        noydir:
+          type: integer
+          format: int32
+        noimageindex:
+          type: integer
+          format: int32
+        notranslate:
+          type: integer
+          format: int32
       additionalProperties: false
     Rdf_Mapping:
       type: object
@@ -565,6 +234,314 @@ components:
           $ref: '#/components/schemas/Comment_Count'
         last_activity:
           $ref: '#/components/schemas/Last_Activity'
+      additionalProperties: false
+    Title:
+      type: object
+      properties:
+        predicates:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    Uid:
+      type: object
+      properties:
+        predicates:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Name:
+      type: object
+      properties:
+        predicates:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    FoodServicesOutletPhoto:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        filemime:
+          type:
+          - string
+          - 'null'
+        filesize:
+          type:
+          - string
+          - 'null'
+        width:
+          type:
+          - string
+          - 'null'
+        height:
+          type:
+          - string
+          - 'null'
+        alt:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    OutletLocation:
+      type: object
+      properties:
+        lid:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        street:
+          type:
+          - string
+          - 'null'
+        additional:
+          type:
+          - string
+          - 'null'
+        city:
+          type:
+          - string
+          - 'null'
+        province:
+          type:
+          - string
+          - 'null'
+        postal_code:
+          type:
+          - string
+          - 'null'
+        country:
+          type:
+          - string
+          - 'null'
+        latitude:
+          type:
+          - string
+          - 'null'
+        longitude:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        is_primary:
+          type:
+          - string
+          - 'null'
+        locpick:
+          $ref: '#/components/schemas/Locpick'
+        province_name:
+          type:
+          - string
+          - 'null'
+        country_name:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Combo:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        image:
+          $ref: '#/components/schemas/ComboImage'
+        options:
+          type:
+          - string
+          - 'null'
+        item:
+          type:
+          - string
+          - 'null'
+        price:
+          type:
+          - string
+          - 'null'
+        calories: {}
+      additionalProperties: false
+    ComboImage:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        url:
+          type:
+          - string
+          - 'null'
+        filemime:
+          type:
+          - string
+          - 'null'
+        filesize:
+          type:
+          - string
+          - 'null'
+        width:
+          type:
+          - string
+          - 'null'
+        height:
+          type:
+          - string
+          - 'null'
+        alt:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    HoursChange:
+      type: object
+      properties:
+        value:
+          type: string
+          format: date-time
+        value2:
+          type: string
+          format: date-time
+        timezone_db:
+          type:
+          - string
+          - 'null'
+        date_type:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FoodServicesFranchisesSelf:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        href:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    FoodServicesOutletsSelf:
+      type: object
+      properties:
+        title:
+          type:
+          - string
+          - 'null'
+        href:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Body:
+      type: object
+      properties:
+        predicates:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+      additionalProperties: false
+    Published:
+      type: object
+      properties:
+        hid:
+          type:
+          - string
+          - 'null'
+        vid:
+          type:
+          - string
+          - 'null'
+        nid:
+          type:
+          - string
+          - 'null'
+        from_state:
+          type:
+          - string
+          - 'null'
+        state:
+          type:
+          - string
+          - 'null'
+        uid:
+          type:
+          - string
+          - 'null'
+        stamp:
+          type:
+          - string
+          - 'null'
+        published:
+          type:
+          - string
+          - 'null'
+        is_current:
+          type: integer
+          format: int32
+        title:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    En1:
+      type: object
+      properties:
+        robots:
+          $ref: '#/components/schemas/Robots'
+      additionalProperties: false
+    PaymentAccepted:
+      type: object
+      properties:
+        tid:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     FranchiseMenu:
       type: object
@@ -709,7 +686,13 @@ components:
         workbench_moderation:
           $ref: '#/components/schemas/Workbench_Moderation'
       additionalProperties: false
-    Last_Activity:
+    Metatags:
+      type: object
+      properties:
+        en:
+          $ref: '#/components/schemas/En1'
+      additionalProperties: false
+    Created:
       type: object
       properties:
         predicates:
@@ -727,103 +710,34 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    ComboImage:
+    Comment_Count:
       type: object
       properties:
-        id:
+        predicates:
           type:
-          - string
+          - array
           - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        filemime:
-          type:
-          - string
-          - 'null'
-        filesize:
-          type:
-          - string
-          - 'null'
-        width:
-          type:
-          - string
-          - 'null'
-        height:
-          type:
-          - string
-          - 'null'
-        alt:
-          type:
-          - string
-          - 'null'
-        title:
+          items:
+            type: string
+        datatype:
           type:
           - string
           - 'null'
       additionalProperties: false
-    OutletLocation:
+    FoodServicesOutlets:
       type: object
       properties:
-        lid:
+        data:
           type:
-          - string
+          - array
           - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        street:
-          type:
-          - string
-          - 'null'
-        additional:
-          type:
-          - string
-          - 'null'
-        city:
-          type:
-          - string
-          - 'null'
-        province:
-          type:
-          - string
-          - 'null'
-        postal_code:
-          type:
-          - string
-          - 'null'
-        country:
-          type:
-          - string
-          - 'null'
-        latitude:
-          type:
-          - string
-          - 'null'
-        longitude:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        is_primary:
-          type:
-          - string
-          - 'null'
-        locpick:
-          $ref: '#/components/schemas/Locpick'
-        province_name:
-          type:
-          - string
-          - 'null'
-        country_name:
-          type:
-          - string
-          - 'null'
+          items:
+            $ref: '#/components/schemas/FoodServicesOutlet'
+        count:
+          type: integer
+          format: int32
+        self:
+          $ref: '#/components/schemas/FoodServicesOutletsSelf'
       additionalProperties: false
     FoodServicesOutlet:
       type: object
@@ -926,22 +840,20 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Cuisine:
+    Last_Activity:
       type: object
       properties:
-        id:
+        predicates:
+          type:
+          - array
+          - 'null'
+          items:
+            type: string
+        datatype:
           type:
           - string
           - 'null'
-        self:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-        description:
+        callback:
           type:
           - string
           - 'null'
@@ -958,50 +870,6 @@ components:
           - string
           - 'null'
         description:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    En2:
-      type: object
-      properties:
-        entity_type:
-          type:
-          - string
-          - 'null'
-        entity_id:
-          type:
-          - string
-          - 'null'
-        revision_id:
-          type:
-          - string
-          - 'null'
-        language:
-          type:
-          - string
-          - 'null'
-        source:
-          type:
-          - string
-          - 'null'
-        uid:
-          type:
-          - string
-          - 'null'
-        status:
-          type:
-          - string
-          - 'null'
-        translate:
-          type:
-          - string
-          - 'null'
-        created:
-          type:
-          - string
-          - 'null'
-        changed:
           type:
           - string
           - 'null'
@@ -1042,20 +910,15 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    IndividualItem:
+    Workbench_Moderation:
       type: object
       properties:
-        name:
-          type:
-          - string
-          - 'null'
-        photo:
-          $ref: '#/components/schemas/IndividualItemPhoto'
-        price:
-          type:
-          - string
-          - 'null'
-        calories: {}
+        current:
+          $ref: '#/components/schemas/Current'
+        published:
+          $ref: '#/components/schemas/Published'
+        my_revision:
+          $ref: '#/components/schemas/My_Revision'
       additionalProperties: false
     OpeningHour:
       type: object
@@ -1077,20 +940,167 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Created:
+    FoodServicesFranchises:
       type: object
       properties:
-        predicates:
+        data:
           type:
           - array
           - 'null'
           items:
-            type: string
-        datatype:
+            $ref: '#/components/schemas/FoodServicesFranchise'
+        count:
+          type: integer
+          format: int32
+        self:
+          $ref: '#/components/schemas/FoodServicesFranchisesSelf'
+      additionalProperties: false
+    IndividualItemPhoto:
+      type: object
+      properties:
+        id:
           type:
           - string
           - 'null'
-        callback:
+        url:
+          type:
+          - string
+          - 'null'
+        filemime:
+          type:
+          - string
+          - 'null'
+        filesize:
+          type:
+          - string
+          - 'null'
+        width:
+          type:
+          - string
+          - 'null'
+        height:
+          type:
+          - string
+          - 'null'
+        alt:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Title_Field:
+      type: object
+      properties:
+        en:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/En'
+      additionalProperties: false
+    En:
+      type: object
+      properties:
+        value:
+          type:
+          - string
+          - 'null'
+        format: {}
+        safe_value:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Robots:
+      type: object
+      properties:
+        value:
+          $ref: '#/components/schemas/Value'
+      additionalProperties: false
+    Und1:
+      type: object
+      properties:
+        fid:
+          type:
+          - string
+          - 'null'
+        uid:
+          type:
+          - string
+          - 'null'
+        filename:
+          type:
+          - string
+          - 'null'
+        uri:
+          type:
+          - string
+          - 'null'
+        filemime:
+          type:
+          - string
+          - 'null'
+        filesize:
+          type:
+          - string
+          - 'null'
+        status:
+          type:
+          - string
+          - 'null'
+        timestamp:
+          type:
+          - string
+          - 'null'
+        uuid:
+          type:
+          - string
+          - 'null'
+        rdf_mapping:
+          type:
+          - array
+          - 'null'
+          items: {}
+        focal_point:
+          type:
+          - string
+          - 'null'
+        alt:
+          type:
+          - string
+          - 'null'
+        title:
+          type:
+          - string
+          - 'null'
+        width:
+          type:
+          - string
+          - 'null'
+        height:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Cuisine:
+      type: object
+      properties:
+        id:
+          type:
+          - string
+          - 'null'
+        self:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        description:
           type:
           - string
           - 'null'
@@ -1142,157 +1152,64 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    Metatags:
+    Field_Combos:
       type: object
       properties:
-        en:
-          $ref: '#/components/schemas/En1'
+        und:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Und'
+      additionalProperties: false
+    Path:
+      type: object
+      properties:
+        pid:
+          type:
+          - string
+          - 'null'
+        source:
+          type:
+          - string
+          - 'null'
+        alias:
+          type:
+          - string
+          - 'null'
+        language:
+          type:
+          - string
+          - 'null'
+        pathauto:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    LocationLink:
+      type: object
+      properties:
+        url:
+          type:
+          - string
+          - 'null'
+        title: {}
+        attributes:
+          type:
+          - array
+          - 'null'
+          items: {}
+        original_title: {}
+        original_url:
+          type:
+          - string
+          - 'null'
       additionalProperties: false
     Data:
       type: object
       properties:
         en:
           $ref: '#/components/schemas/En2'
-      additionalProperties: false
-    Value:
-      type: object
-      properties:
-        index:
-          type: integer
-          format: int32
-        follow:
-          type: integer
-          format: int32
-        noindex:
-          type: integer
-          format: int32
-        nofollow:
-          type: integer
-          format: int32
-        noarchive:
-          type: integer
-          format: int32
-        nosnippet:
-          type: integer
-          format: int32
-        noodp:
-          type: integer
-          format: int32
-        noydir:
-          type: integer
-          format: int32
-        noimageindex:
-          type: integer
-          format: int32
-        notranslate:
-          type: integer
-          format: int32
-      additionalProperties: false
-    PaymentAccepted:
-      type: object
-      properties:
-        tid:
-          type:
-          - string
-          - 'null'
-        name:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Logo:
-      type: object
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-        url:
-          type:
-          - string
-          - 'null'
-        filemime:
-          type:
-          - string
-          - 'null'
-        filesize:
-          type:
-          - string
-          - 'null'
-        width:
-          type:
-          - string
-          - 'null'
-        height:
-          type:
-          - string
-          - 'null'
-        alt:
-          type:
-          - string
-          - 'null'
-        title:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Combo:
-      type: object
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-        image:
-          $ref: '#/components/schemas/ComboImage'
-        options:
-          type:
-          - string
-          - 'null'
-        item:
-          type:
-          - string
-          - 'null'
-        price:
-          type:
-          - string
-          - 'null'
-        calories: {}
-      additionalProperties: false
-    Body:
-      type: object
-      properties:
-        predicates:
-          type:
-          - array
-          - 'null'
-          items:
-            type: string
-      additionalProperties: false
-    En:
-      type: object
-      properties:
-        value:
-          type:
-          - string
-          - 'null'
-        format: {}
-        safe_value:
-          type:
-          - string
-          - 'null'
-      additionalProperties: false
-    Locpick:
-      type: object
-      properties:
-        user_latitude:
-          type:
-          - string
-          - 'null'
-        user_longitude:
-          type:
-          - string
-          - 'null'
       additionalProperties: false
     Addon:
       type: object
@@ -1308,38 +1225,26 @@ components:
           - 'null'
         calories: {}
       additionalProperties: false
-    FoodServicesOutletsSelf:
+    En2:
       type: object
       properties:
-        title:
+        entity_type:
           type:
           - string
           - 'null'
-        href:
+        entity_id:
           type:
           - string
           - 'null'
-      additionalProperties: false
-    Published:
-      type: object
-      properties:
-        hid:
+        revision_id:
           type:
           - string
           - 'null'
-        vid:
+        language:
           type:
           - string
           - 'null'
-        nid:
-          type:
-          - string
-          - 'null'
-        from_state:
-          type:
-          - string
-          - 'null'
-        state:
+        source:
           type:
           - string
           - 'null'
@@ -1347,27 +1252,81 @@ components:
           type:
           - string
           - 'null'
-        stamp:
+        status:
           type:
           - string
           - 'null'
-        published:
+        translate:
           type:
           - string
           - 'null'
-        is_current:
-          type: integer
-          format: int32
-        title:
+        created:
           type:
           - string
           - 'null'
-        timestamp:
+        changed:
           type:
           - string
           - 'null'
       additionalProperties: false
-    Uid:
+    Field_Franchise_Logo:
+      type: object
+      properties:
+        und:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Und1'
+      additionalProperties: false
+    FoodServicesFranchise:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32
+        self:
+          type:
+          - string
+          - 'null'
+        name:
+          type:
+          - string
+          - 'null'
+        logo:
+          $ref: '#/components/schemas/Logo'
+        combos:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Combo'
+        individualitems:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/IndividualItem'
+        addons:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/Addon'
+      additionalProperties: false
+    Locpick:
+      type: object
+      properties:
+        user_latitude:
+          type:
+          - string
+          - 'null'
+        user_longitude:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Changed:
       type: object
       properties:
         predicates:
@@ -1376,7 +1335,33 @@ components:
           - 'null'
           items:
             type: string
-        type:
+        datatype:
+          type:
+          - string
+          - 'null'
+        callback:
+          type:
+          - string
+          - 'null'
+      additionalProperties: false
+    Translations:
+      type: object
+      properties:
+        original:
+          type:
+          - string
+          - 'null'
+        data:
+          $ref: '#/components/schemas/Data'
+      additionalProperties: false
+    Und:
+      type: object
+      properties:
+        value:
+          type:
+          - string
+          - 'null'
+        revision_id:
           type:
           - string
           - 'null'
@@ -1399,7 +1384,22 @@ components:
           - string
           - 'null'
       additionalProperties: false
-    IndividualItemPhoto:
+    IndividualItem:
+      type: object
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+        photo:
+          $ref: '#/components/schemas/IndividualItemPhoto'
+        price:
+          type:
+          - string
+          - 'null'
+        calories: {}
+      additionalProperties: false
+    Logo:
       type: object
       properties:
         id:
