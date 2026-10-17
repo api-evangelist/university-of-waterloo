@@ -230,67 +230,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    SiteBlogPost:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID
-          format: int32
-        uniqueKey:
-          type:
-          - string
-          - 'null'
-          description: Unique Id of this post item
-        title:
-          type:
-          - string
-          - 'null'
-          description: Title of the blog post
-        postedDate:
-          type:
-          - string
-          - 'null'
-          description: Content created or posted date
-          format: date-time
-        updatedDate:
-          type:
-          - string
-          - 'null'
-          description: Content updated date
-          format: date-time
-        itemUri:
-          type:
-          - string
-          - 'null'
-          description: URI to the item in WCMS
-        audience:
-          type:
-          - string
-          - 'null'
-          description: Intended audience tag(s)
-        content:
-          type:
-          - string
-          - 'null'
-          description: Blog post content, often with HTML markup
-        delegatedAuthorName:
-          type:
-          - string
-          - 'null'
-          description: Display name of the delegated author for this blog post
-        delegatedAuthorUri:
-          type:
-          - string
-          - 'null'
-          description: Link to the WCMS profiel of the delegated author
-        publisherUsername:
-          type:
-          - string
-          - 'null'
-          description: Username of the person publishing the content, not necessarily the author
-      additionalProperties: false
-      description: Model representing a WCMS blog post item
     SiteEvent:
       type: object
       properties:
@@ -389,6 +328,113 @@ components:
           description: Description content for the event, often includes HTML markup
       additionalProperties: false
       description: Model representing a WCMS Event item
+    SiteBlogPost:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this post item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the blog post
+        postedDate:
+          type:
+          - string
+          - 'null'
+          description: Content created or posted date
+          format: date-time
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Content updated date
+          format: date-time
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: URI to the item in WCMS
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Intended audience tag(s)
+        content:
+          type:
+          - string
+          - 'null'
+          description: Blog post content, often with HTML markup
+        delegatedAuthorName:
+          type:
+          - string
+          - 'null'
+          description: Display name of the delegated author for this blog post
+        delegatedAuthorUri:
+          type:
+          - string
+          - 'null'
+          description: Link to the WCMS profiel of the delegated author
+        publisherUsername:
+          type:
+          - string
+          - 'null'
+          description: Username of the person publishing the content, not necessarily the author
+      additionalProperties: false
+      description: Model representing a WCMS blog post item
+    SiteNews:
+      type: object
+      properties:
+        siteId:
+          type: integer
+          description: Unique, numeric site ID of the Site this news originates from
+          format: int32
+        uniqueKey:
+          type:
+          - string
+          - 'null'
+          description: Unique Id of this news item
+        title:
+          type:
+          - string
+          - 'null'
+          description: Title of the news item
+        postedDate:
+          type:
+          - string
+          - 'null'
+          description: Content created or posted date
+          format: date-time
+        updatedDate:
+          type:
+          - string
+          - 'null'
+          description: Content updated date
+          format: date-time
+        itemUri:
+          type:
+          - string
+          - 'null'
+          description: URI to the news item in WCMS
+        audience:
+          type:
+          - string
+          - 'null'
+          description: Intended audience tag(s)
+        content:
+          type:
+          - string
+          - 'null'
+          description: News item content, often with HTML markup
+      additionalProperties: false
+      description: Model representing News data associated to a Site in the WCMS
     Site:
       type: object
       properties:
@@ -438,52 +484,6 @@ components:
           description: The tag describing the association of the owner department, such as academic, research, and more.
       additionalProperties: false
       description: Model representing a Site on the Waterloo CMS
-    SiteNews:
-      type: object
-      properties:
-        siteId:
-          type: integer
-          description: Unique, numeric site ID of the Site this news originates from
-          format: int32
-        uniqueKey:
-          type:
-          - string
-          - 'null'
-          description: Unique Id of this news item
-        title:
-          type:
-          - string
-          - 'null'
-          description: Title of the news item
-        postedDate:
-          type:
-          - string
-          - 'null'
-          description: Content created or posted date
-          format: date-time
-        updatedDate:
-          type:
-          - string
-          - 'null'
-          description: Content updated date
-          format: date-time
-        itemUri:
-          type:
-          - string
-          - 'null'
-          description: URI to the news item in WCMS
-        audience:
-          type:
-          - string
-          - 'null'
-          description: Intended audience tag(s)
-        content:
-          type:
-          - string
-          - 'null'
-          description: News item content, often with HTML markup
-      additionalProperties: false
-      description: Model representing News data associated to a Site in the WCMS
   securitySchemes:
     apiKey:
       type: apiKey
