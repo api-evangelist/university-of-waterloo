@@ -1,18 +1,24 @@
-generated: '2026-07-11'
+generated: '2026-10-20'
 method: probed
 source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
 hosts:
 - host: uwaterloo.ca
   https: true
   tls_version: TLSv1.2
-  cert_expires: Aug  3 00:36:52 2026 GMT
+  cert_expires: Nov 10 20:02:56 2026 GMT
   hsts: true
   hsts_max_age: 31622400
 - host: openapi.data.uwaterloo.ca
   https: true
   tls_version: TLSv1.3
-  cert_expires: Dec 13 23:59:59 2026 GMT
+  cert_expires: Apr  5 23:59:59 2027 GMT
   hsts: null
+- host: uwaterloo.atlassian.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb  6 23:59:59 2027 GMT
+  hsts: true
+  hsts_max_age: 63072000
 domains:
 - domain: uwaterloo.ca
   dnssec: false
@@ -20,3 +26,13 @@ domains:
   spf: true
   dmarc: true
   dmarc_policy: none
+- domain: atlassian.net
+  dnssec: false
+  caa:
+  - 0 issuewild "digicert.com; account=c2eb0f50ca113d7543d58a10f523d0469ff922f115e5e4e9056f3d5f87d3356c"
+  - 0 issue "amazon.com"
+  - 0 issue "digicert.com; account=c2eb0f50ca113d7543d58a10f523d0469ff922f115e5e4e9056f3d5f87d3356c"
+  - 0 issuewild "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

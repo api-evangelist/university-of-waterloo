@@ -3,7 +3,7 @@ specificationVersion: '0.1'
 provider: University of Waterloo
 providerId: university-of-waterloo
 generated: '2026-09-01'
-method: derived
+method: none
 source: >-
   https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json (fetched 2026-09-01) — the live
   first-party contract — plus live probes of https://openapi.data.uwaterloo.ca/v3/.

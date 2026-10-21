@@ -53,3 +53,6 @@ vocabulary:
     - term: apiKey
       definition: Custom API key passed via the x-api-key request header for authentication.
       tags: [authentication, security]
+generated: '2026-10-20'
+method: derived
+source: openapi/_original/university-of-waterloo-open-data-api.yaml

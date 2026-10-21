@@ -1,0 +1,354 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-data-model.py
+source:
+- openapi/university-of-waterloo-academicorganizations-api-openapi.yml
+- openapi/university-of-waterloo-account-api-openapi.yml
+- openapi/university-of-waterloo-classschedules-api-openapi.yml
+- openapi/university-of-waterloo-courses-api-openapi.yml
+- openapi/university-of-waterloo-examschedules-api-openapi.yml
+- openapi/university-of-waterloo-foodservices-api-openapi.yml
+- openapi/university-of-waterloo-holidaydates-api-openapi.yml
+- openapi/university-of-waterloo-importantdates-api-openapi.yml
+- openapi/university-of-waterloo-locations-api-openapi.yml
+- openapi/university-of-waterloo-subjects-api-openapi.yml
+- openapi/university-of-waterloo-terms-api-openapi.yml
+- openapi/university-of-waterloo-wcms-api-openapi.yml
+notation: has_one = property $ref; has_many = array of $ref; belongs_to = <entity>_id field
+summary:
+  entities: 70
+  entities_in_spec: 70
+  relationships: 43
+entities:
+- name: AcademicOrganization
+  fields: 5
+  description: An Academic Organization at Waterloo is similar to a department
+- name: Addon
+  fields: 4
+- name: Body
+  fields: 1
+- name: Changed
+  fields: 3
+- name: Class
+  fields: 16
+  description: Represents an Academic class, which is a scheduled instance of a Course
+- name: ClassInstructor
+  fields: 10
+  description: A person instructing a Class
+- name: ClassSchedule
+  fields: 13
+  description: Data describing scheduling and availability data for a Class
+- name: Closed
+  fields: 4
+- name: Combo
+  fields: 6
+- name: ComboImage
+  fields: 8
+- name: Comment_Count
+  fields: 2
+- name: Course
+  fields: 19
+  description: An academic Course at Waterloo, a Course can be scheduled to become a Class
+- name: Created
+  fields: 3
+- name: Cuisine
+  fields: 4
+- name: Current
+  fields: 11
+- name: Data
+  fields: 1
+- name: En
+  fields: 3
+- name: En1
+  fields: 1
+- name: En2
+  fields: 10
+- name: Exam
+  fields: 10
+  description: Represents a scheduled Exam for a Class
+- name: Feature
+  fields: 3
+  description: Feature of location collection
+- name: Field_Combos
+  fields: 1
+- name: Field_Franchise_Logo
+  fields: 1
+- name: FoodServicesFranchise
+  fields: 7
+- name: FoodServicesFranchises
+  fields: 3
+- name: FoodServicesFranchisesSelf
+  fields: 2
+- name: FoodServicesOutlet
+  fields: 21
+- name: FoodServicesOutletImage
+  fields: 8
+- name: FoodServicesOutletPhoto
+  fields: 8
+- name: FoodServicesOutlets
+  fields: 3
+- name: FoodServicesOutletsSelf
+  fields: 2
+- name: FranchiseMenu
+  fields: 41
+- name: Geometry
+  fields: 2
+  description: Represents Geometry data of the Feature
+- name: HoursChange
+  fields: 4
+- name: ImportantDate
+  fields: 10
+  description: An Important Date is an event at a time that has significance to the Waterloo community
+- name: ImportantDateDetails
+  fields: 6
+  description: Details about terms, dates, and special notes for an Important Date
+- name: IndividualItem
+  fields: 4
+- name: IndividualItemPhoto
+  fields: 8
+- name: Last_Activity
+  fields: 3
+- name: Location
+  fields: 7
+  description: Model representing a Location for the Buildings dataset
+- name: LocationGeo
+  fields: 2
+  description: Model representing a Location for the Buildings dataset in GEO JSON format
+- name: LocationLink
+  fields: 5
+- name: Locpick
+  fields: 2
+- name: Logo
+  fields: 8
+- name: Metatags
+  fields: 1
+- name: My_Revision
+  fields: 11
+- name: Name
+  fields: 1
+- name: OpeningHour
+  fields: 4
+- name: OutletLocation
+  fields: 15
+- name: OutletType
+  fields: 3
+- name: PaidHoliday
+  fields: 2
+  description: Data object representing a University of Waterloo paid holiday
+- name: Path
+  fields: 5
+- name: PaymentAccepted
+  fields: 2
+- name: Published
+  fields: 11
+- name: Rdf_Mapping
+  fields: 9
+- name: Robots
+  fields: 1
+- name: Site
+  fields: 9
+  description: Model representing a Site on the Waterloo CMS
+- name: SiteBlogPost
+  fields: 11
+  description: Model representing a WCMS blog post item
+- name: SiteEvent
+  fields: 18
+  description: Model representing a WCMS Event item
+- name: SiteNews
+  fields: 8
+  description: Model representing News data associated to a Site in the WCMS
+- name: Subject
+  fields: 5
+  description: An academic Subject at Waterloo describes an area that a Course can be in
+- name: Term
+  fields: 7
+  description: An academic Term at Waterloo, a defined period of time that is used by classes and similar
+- name: Title
+  fields: 1
+- name: Title_Field
+  fields: 1
+- name: Translations
+  fields: 2
+- name: Uid
+  fields: 2
+- name: Und
+  fields: 2
+- name: Und1
+  fields: 15
+- name: Value
+  fields: 10
+- name: Workbench_Moderation
+  fields: 3
+relationships:
+- from: ClassInstructor
+  to: Course
+  type: belongs_to
+  via: courseId
+- from: ClassSchedule
+  to: Course
+  type: belongs_to
+  via: courseId
+- from: Class
+  to: Course
+  type: belongs_to
+  via: courseId
+- from: Rdf_Mapping
+  to: Title
+  type: has_one
+  via: title
+- from: Rdf_Mapping
+  to: Created
+  type: has_one
+  via: created
+- from: Rdf_Mapping
+  to: Changed
+  type: has_one
+  via: changed
+- from: Rdf_Mapping
+  to: Body
+  type: has_one
+  via: body
+- from: Rdf_Mapping
+  to: Uid
+  type: has_one
+  via: uid
+- from: Rdf_Mapping
+  to: Name
+  type: has_one
+  via: name
+- from: Rdf_Mapping
+  to: Comment_Count
+  type: has_one
+  via: comment_count
+- from: Rdf_Mapping
+  to: Last_Activity
+  type: has_one
+  via: last_activity
+- from: FoodServicesOutlets
+  to: FoodServicesOutletsSelf
+  type: has_one
+  via: self
+- from: Data
+  to: En2
+  type: has_one
+  via: en
+- from: IndividualItem
+  to: IndividualItemPhoto
+  type: has_one
+  via: photo
+- from: Metatags
+  to: En1
+  type: has_one
+  via: en
+- from: FoodServicesOutlet
+  to: FoodServicesOutletPhoto
+  type: has_one
+  via: photo
+- from: FoodServicesOutlet
+  to: LocationLink
+  type: has_one
+  via: locationlink
+- from: FoodServicesFranchise
+  to: Logo
+  type: has_one
+  via: logo
+- from: OutletLocation
+  to: Locpick
+  type: has_one
+  via: locpick
+- from: Workbench_Moderation
+  to: Current
+  type: has_one
+  via: current
+- from: Workbench_Moderation
+  to: Published
+  type: has_one
+  via: published
+- from: Workbench_Moderation
+  to: My_Revision
+  type: has_one
+  via: my_revision
+- from: FoodServicesFranchises
+  to: FoodServicesFranchisesSelf
+  type: has_one
+  via: self
+- from: Robots
+  to: Value
+  type: has_one
+  via: value
+- from: Translations
+  to: Data
+  type: has_one
+  via: data
+- from: Combo
+  to: ComboImage
+  type: has_one
+  via: image
+- from: FranchiseMenu
+  to: Field_Combos
+  type: has_one
+  via: field_combos
+- from: FranchiseMenu
+  to: Field_Franchise_Logo
+  type: has_one
+  via: field_franchise_logo
+- from: FranchiseMenu
+  to: Title_Field
+  type: has_one
+  via: title_field
+- from: FranchiseMenu
+  to: Metatags
+  type: has_one
+  via: metatags
+- from: FranchiseMenu
+  to: Rdf_Mapping
+  type: has_one
+  via: rdf_mapping
+- from: FranchiseMenu
+  to: Path
+  type: has_one
+  via: path
+- from: FranchiseMenu
+  to: Translations
+  type: has_one
+  via: translations
+- from: FranchiseMenu
+  to: Workbench_Moderation
+  type: has_one
+  via: workbench_moderation
+- from: En1
+  to: Robots
+  type: has_one
+  via: robots
+- from: ImportantDateDetails
+  to: ImportantDate
+  type: belongs_to
+  via: importantDateId
+- from: ImportantDateDetails
+  to: Term
+  type: belongs_to
+  via: termId
+- from: Feature
+  to: Location
+  type: has_one
+  via: properties
+- from: Feature
+  to: Geometry
+  type: has_one
+  via: geometry
+- from: SiteEvent
+  to: Site
+  type: belongs_to
+  via: siteId
+- from: SiteEvent
+  to: Location
+  type: belongs_to
+  via: locationId
+- from: SiteBlogPost
+  to: Site
+  type: belongs_to
+  via: siteId
+- from: SiteNews
+  to: Site
+  type: belongs_to
+  via: siteId

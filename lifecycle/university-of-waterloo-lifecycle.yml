@@ -94,3 +94,6 @@ gaps:
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+versioning: Path-versioned (/v3/); release notes use date-based names (YYYY.MM.DD.n) in the UWAPI Confluence blog.
+deprecation: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2020/09/17/34163165086
+status_page: https://status.uwaterloo.ca/

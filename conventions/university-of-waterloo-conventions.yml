@@ -1,0 +1,33 @@
+name: University of Waterloo Open Data API conventions
+generated: '2026-10-20'
+method: derived
+source: openapi/_original/university-of-waterloo-open-data-api.yaml; https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog
+auth:
+  style: apiKey header
+  header: x-api-key
+  see: authentication/university-of-waterloo-authentication.yml
+idempotency:
+  coverage: na
+  note: Data surface is read-only GET; the only writes are POST /v3/Account/Register and /v3/Account/Confirm (key
+    self-service), with no idempotency key documented.
+pagination:
+  style: none
+  note: No pagination parameters in the contract; latest* WCMS endpoints take a {maxItems} path parameter.
+versioning:
+  style: path
+  current: v3
+  note: v2 retired (shutdown announced 2021-01-08).
+  see: lifecycle/university-of-waterloo-lifecycle.yml
+rate_limit_signaling:
+  limit_text: The current limit allows for 120 requests per minute.
+  source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+  see: rate-limits/university-of-waterloo-rate-limits.yml
+formats:
+- application/json
+- GeoJSON (/geojson variants of Locations)
+- iCalendar (/v3/HolidayDates/paidholidays/ics)
+reversibility:
+  status: na
+  note: Read-only data API; no write surface on institutional data.
+dry_run_mode:
+  status: na

@@ -1,0 +1,15 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for terms-api
+  version: 1.0.0
+extends: openapi/university-of-waterloo-terms-api-openapi.yml
+x-generated: '2026-10-20'
+x-method: generated
+actions:
+- target: $.info
+  update:
+    x-rate-limit: 120 requests per minute (UWAPI release note 2026-01-23)
+    x-api-evangelist-provider: university-of-waterloo
+- target: $.info
+  update:
+    x-docs: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview

@@ -1,0 +1,226 @@
+generated: '2026-10-20'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/university-of-waterloo-academicorganizations-api-openapi.yml
+- openapi/university-of-waterloo-account-api-openapi.yml
+- openapi/university-of-waterloo-classschedules-api-openapi.yml
+- openapi/university-of-waterloo-courses-api-openapi.yml
+- openapi/university-of-waterloo-examschedules-api-openapi.yml
+- openapi/university-of-waterloo-foodservices-api-openapi.yml
+- openapi/university-of-waterloo-holidaydates-api-openapi.yml
+- openapi/university-of-waterloo-importantdates-api-openapi.yml
+- openapi/university-of-waterloo-locations-api-openapi.yml
+- openapi/university-of-waterloo-subjects-api-openapi.yml
+- openapi/university-of-waterloo-terms-api-openapi.yml
+- openapi/university-of-waterloo-wcms-api-openapi.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.crossref.org, api.ror.org, api.atlassian.net, api.uwaterloo.ca;
+  verdict opaque (https://api.ror.org/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate tools
+  below are derived from the 48 operation(s) in the provider''s own OpenAPI (40 listed); they describe what a server WOULD expose, not one that
+  exists.'
+tools:
+- name: get_v3_academic_organizations
+  operationId: getV3AcademicOrganizations
+  method: GET
+  path: /v3/AcademicOrganizations
+  description: Gets all Academic Organization data
+- name: post_v3_account_register
+  operationId: postV3AccountRegister
+  method: POST
+  path: /v3/Account/Register
+  description: Use this method to request an API key and begin your registration process
+- name: get_v3_class_schedules_by_term_code
+  operationId: getV3ClassSchedulesByTermCode
+  method: GET
+  path: /v3/ClassSchedules/{termCode}
+  description: Get the Course IDs that have one or more active and associated schedules in the…
+- name: get_v3_courses_by_term_code
+  operationId: getV3CoursesByTermCode
+  method: GET
+  path: /v3/Courses/{termCode}
+  description: Get all Course data for a Term
+- name: get_v3_exam_schedules
+  operationId: getV3ExamSchedules
+  method: GET
+  path: /v3/ExamSchedules
+  description: Returns Exam Schedule data for the current Term
+- name: get_v3_food_services_outlets
+  operationId: getV3FoodServicesOutlets
+  method: GET
+  path: /v3/FoodServices/outlets
+  description: Get all food service Outlet data
+- name: get_v3_holiday_dates_paidholidays
+  operationId: getV3HolidayDatesPaidholidays
+  method: GET
+  path: /v3/HolidayDates/paidholidays
+  description: Retrieves data for all paid holidays as published by Human Resources
+- name: get_v3_important_dates
+  operationId: getV3ImportantDates
+  method: GET
+  path: /v3/ImportantDates
+  description: Returns all current data for Important Dates
+- name: get_v3_locations
+  operationId: getV3Locations
+  method: GET
+  path: /v3/Locations
+  description: Get all building location data
+- name: get_v3_subjects
+  operationId: getV3Subjects
+  method: GET
+  path: /v3/Subjects
+  description: Gets all Subject data
+- name: get_v3_terms
+  operationId: getV3Terms
+  method: GET
+  path: /v3/Terms
+  description: Gets all Term data that is effective at the current time
+- name: get_v3_wcms
+  operationId: getV3Wcms
+  method: GET
+  path: /v3/Wcms
+  description: Retrieves information about all active and published WCMS sites
+- name: get_v3_academic_organizations_by_organization_code
+  operationId: getV3AcademicOrganizationsByOrganizationCode
+  method: GET
+  path: /v3/AcademicOrganizations/{organizationCode}
+  description: Gets Academic Organization data for a specific entry by the Organization code
+- name: get_v3_account_by_email
+  operationId: getV3AccountByEmail
+  method: GET
+  path: /v3/Account/{email}
+  description: Use this method to see if an email has already been registered for an API key
+- name: get_v3_class_schedules_by_term_code_by_course_id
+  operationId: getV3ClassSchedulesByTermCodeByCourseId
+  method: GET
+  path: /v3/ClassSchedules/{termCode}/{courseId}
+  description: Get Class data for a scheduled Course by Course ID, in a specific Term
+- name: get_v3_courses_by_term_code_by_course_id
+  operationId: getV3CoursesByTermCodeByCourseId
+  method: GET
+  path: /v3/Courses/{termCode}/{courseId}
+  description: Get Course catalog data filtered by Term and Course ID, multiple Courses are…
+- name: get_v3_exam_schedules_by_code
+  operationId: getV3ExamSchedulesByCode
+  method: GET
+  path: /v3/ExamSchedules/{code}
+  description: Returns Exam Schedule data for the requested Term
+- name: get_v3_food_services_outlets_by_id
+  operationId: getV3FoodServicesOutletsById
+  method: GET
+  path: /v3/FoodServices/outlets/{id}
+  description: Get specific food services Outlet data by Id
+- name: get_v3_holiday_dates_paidholidays_by_year
+  operationId: getV3HolidayDatesPaidholidaysByYear
+  method: GET
+  path: /v3/HolidayDates/paidholidays/{year}
+  description: Retrieves data for paid holidays associated to the given year as published by…
+- name: get_v3_important_dates_by_year
+  operationId: getV3ImportantDatesByYear
+  method: GET
+  path: /v3/ImportantDates/{year}
+  description: Returns important date data related to academic year
+- name: get_v3_locations_geojson
+  operationId: getV3LocationsGeojson
+  method: GET
+  path: /v3/Locations/geojson
+  description: Get all building location data as GEO JSON
+- name: get_v3_subjects_by_code
+  operationId: getV3SubjectsByCode
+  method: GET
+  path: /v3/Subjects/{code}
+  description: Gets Subject data filtered by Subject code
+- name: get_v3_terms_current
+  operationId: getV3TermsCurrent
+  method: GET
+  path: /v3/Terms/current
+  description: Gets the current Term data
+- name: get_v3_wcms_by_id
+  operationId: getV3WcmsById
+  method: GET
+  path: /v3/Wcms/{id}
+  description: Retrieves information about a specific WCMS site by Site Id
+- name: get_v3_account_by_email_notify
+  operationId: getV3AccountByEmailNotify
+  method: GET
+  path: /v3/Account/{email}/notify
+  description: Use this method to have us re-send the confirmation email to an account pending…
+- name: get_v3_class_schedules_by_term_code_by_subject_by_catalog_nu
+  operationId: getV3ClassSchedulesByTermCodeBySubjectByCatalogNumber
+  method: GET
+  path: /v3/ClassSchedules/{termCode}/{subject}/{catalogNumber}
+  description: Get Class data for a scheduled Course by Subject and catalog number, in a…
+- name: get_v3_courses_by_term_code_by_course_id_by_offer_number
+  operationId: getV3CoursesByTermCodeByCourseIdByOfferNumber
+  method: GET
+  path: /v3/Courses/{termCode}/{courseId}/{offerNumber}
+  description: Get Course catalog data filtered by Term, Course ID, and offer number
+- name: get_v3_food_services_outlets_by_name
+  operationId: getV3FoodServicesOutletsByName
+  method: GET
+  path: /v3/FoodServices/outlets/{name}
+  description: Get specific food services Outlet data by Outlet name
+- name: get_v3_holiday_dates_paidholidays_ics
+  operationId: getV3HolidayDatesPaidholidaysIcs
+  method: GET
+  path: /v3/HolidayDates/paidholidays/ics
+  description: Retrieves data for all paid holidays as published by Human Resources, as an ICS…
+- name: get_v3_locations_by_location_code
+  operationId: getV3LocationsByLocationCode
+  method: GET
+  path: /v3/Locations/{locationCode}
+  description: Gets building by matched building code, case insensitive
+- name: get_v3_subjects_associatedto_by_organization_code
+  operationId: getV3SubjectsAssociatedtoByOrganizationCode
+  method: GET
+  path: /v3/Subjects/associatedto/{organizationCode}
+  description: Gets Subject data for Subjects associated to an Academic Organization by…
+- name: get_v3_terms_by_code
+  operationId: getV3TermsByCode
+  method: GET
+  path: /v3/Terms/{code}
+  description: Gets Term data for a specific Term filtered by code
+- name: get_v3_wcms_latestnews_by_max_items
+  operationId: getV3WcmsLatestnewsByMaxItems
+  method: GET
+  path: /v3/Wcms/latestnews/{maxItems}
+  description: Retrieves the latest news items across all WCMS sites, ordered by posted date
+- name: get_v3_account_by_email_by_api_key_reset
+  operationId: getV3AccountByEmailByApiKeyReset
+  method: GET
+  path: /v3/Account/{email}/{apiKey}/reset
+  description: User this method to put your account in pending confirmation status and…
+- name: get_v3_courses_by_term_code_by_subject
+  operationId: getV3CoursesByTermCodeBySubject
+  method: GET
+  path: /v3/Courses/{termCode}/{subject}
+  description: Get Course catalog data filtered by Term and Subject code
+- name: get_v3_food_services_franchises
+  operationId: getV3FoodServicesFranchises
+  method: GET
+  path: /v3/FoodServices/franchises
+  description: Get all food service Franchise data
+- name: get_v3_locations_by_location_code_geojson
+  operationId: getV3LocationsByLocationCodeGeojson
+  method: GET
+  path: /v3/Locations/{locationCode}/geojson
+  description: Gets building by matched building code, case insensitive, as GEO JSON
+- name: get_v3_wcms_latestevents_by_max_items
+  operationId: getV3WcmsLatesteventsByMaxItems
+  method: GET
+  path: /v3/Wcms/latestevents/{maxItems}
+  description: Retrieves the latest events items across all WCMS sites, ordered by event start…
+- name: post_v3_account_confirm
+  operationId: postV3AccountConfirm
+  method: POST
+  path: /v3/Account/Confirm
+  description: Use this method to confirm your email and activate your account
+- name: get_v3_courses_by_term_code_by_subject_by_catalog_number
+  operationId: getV3CoursesByTermCodeBySubjectByCatalogNumber
+  method: GET
+  path: /v3/Courses/{termCode}/{subject}/{catalogNumber}
+  description: Get Course catalog data filtered by Term, Subject, and catalog number

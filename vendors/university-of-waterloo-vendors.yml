@@ -1,0 +1,68 @@
+generated: '2026-10-20'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: aws-api-gateway
+  name: Amazon API Gateway
+  area: api-gateway
+  host: api.ror.org
+  evidence: header:x-amz-apigw-id
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: cloudfront
+  name: Amazon CloudFront
+  area: cdn
+  host: uwaterloo.atlassian.net
+  evidence: header:x-amz-cf-id
+  signal: header
+  confidence: high
+  kin_score: []
+- vendor: fastly
+  name: Fastly
+  area: cdn
+  host: uwaterloo.ca
+  evidence: header:x-served-by:cache-
+  signal: header
+  confidence: high
+  kin_score: []
+reliance:
+  areas_vendor_served:
+  - api-gateway
+  - cdn
+  vendor_count: 3
+  areas_observed: 12
+  share_of_observable_areas: 0.167
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: custom'
+- uwaterloo.ca (Website)
+- uwaterloo.ca (DeveloperPortal)
+- uwaterloo.atlassian.net (Documentation)
+- openapi.data.uwaterloo.ca (APIReference)
+- uwaterloo.atlassian.net (GettingStarted)
+- uwaterloo.atlassian.net (SignUp)
+- status.uwaterloo.ca (StatusPage)
+- uwaterloo.atlassian.net (Support)
+- openapi.data.uwaterloo.ca (baseURL)
+- dspacemainprd01.lib.uwaterloo.ca (baseURL)
+- idp.uwaterloo.ca (baseURL)
+- borealisdata.ca (baseURL)
+- api.crossref.org (baseURL)
+- api.ror.org (baseURL)
+- status.uwaterloo.ca (baseURL)

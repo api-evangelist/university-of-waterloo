@@ -1,3 +1,4 @@
+name: University of Waterloo API Rate Limits
 specification: API Commons Rate Limits
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
@@ -7,6 +8,7 @@ created: '2026-06-03'
 modified: '2026-09-01'
 generated: '2026-09-01'
 method: searched
+source: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
 reconciled: true
 tags:
 - Education
@@ -32,6 +34,7 @@ responseCodes:
   throttled: 429
 limits:
 - name: Open Data API v3
+  limit_text: The current limit allows for 120 requests per minute.
   scope: api-key
   metric: requests-per-minute
   limit: 120

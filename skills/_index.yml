@@ -1,0 +1,15 @@
+name: University of Waterloo agent skills
+generated: '2026-10-20'
+method: generated
+skills:
+- name: lookup-course-offerings
+  file: university-of-waterloo-lookup-course-offerings.md
+  operations:
+  - getV3TermsCurrent
+  - getV3CoursesByTermCodeBySubject
+  - getV3ClassSchedulesByTermCodeBySubjectByCatalogNumber
+- name: find-campus-location
+  file: university-of-waterloo-find-campus-location.md
+  operations:
+  - getV3LocationsSearchByLocationName
+  - getV3LocationsByLocationCodeGeojson

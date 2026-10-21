@@ -106,6 +106,91 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Class:
+      type: object
+      properties:
+        courseId:
+          type:
+          - string
+          - 'null'
+          description: Course identifier number, not unique
+        courseOfferNumber:
+          type: integer
+          description: Course offer number identifier for this class
+          format: int32
+        sessionCode:
+          type:
+          - string
+          - 'null'
+          description: Session code for this class
+        classSection:
+          type: integer
+          description: Number identifying the section of this class
+          format: int32
+        termCode:
+          type:
+          - string
+          - 'null'
+          description: Waterloo academic term code
+        classNumber:
+          type: integer
+          description: Class number identifier for this class
+          format: int32
+        courseComponent:
+          type:
+          - string
+          - 'null'
+          description: Course component code for this class
+        associatedClassCode:
+          type: integer
+          description: Associated class code for this class
+          format: int32
+        maxEnrollmentCapacity:
+          type: integer
+          description: Indicates the maximum number of students that can enroll in this class
+          format: int32
+        enrolledStudents:
+          type: integer
+          description: Indicates the current number of students enrolled in this class
+          format: int32
+        enrollConsentCode:
+          type:
+          - string
+          - 'null'
+          description: Code describing whether No, Instructor, or Department consent to enroll is required. Overrides Course level information if different.
+        enrollConsentDescription:
+          type:
+          - string
+          - 'null'
+          description: Description of the enroll requirement. Overrides Course level information if different.
+          readOnly: true
+        dropConsentCode:
+          type:
+          - string
+          - 'null'
+          description: Code describing whether No, Instructor, or Department consent to drop is required. Overrides Course level information if different.
+        dropConsentDescription:
+          type:
+          - string
+          - 'null'
+          description: Description of the drop requirement. Overrides Course level information if different.
+          readOnly: true
+        scheduleData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ClassSchedule'
+          description: Schedule data for this class
+        instructorData:
+          type:
+          - array
+          - 'null'
+          items:
+            $ref: '#/components/schemas/ClassInstructor'
+          description: Instructor data for this class
+      additionalProperties: false
+      description: Represents an Academic class, which is a scheduled instance of a Course
     ClassInstructor:
       type: object
       properties:
@@ -225,91 +310,6 @@ components:
           description: REMOVED for privacy. Building and room name for the location of this class schedule
       additionalProperties: false
       description: Data describing scheduling and availability data for a Class
-    Class:
-      type: object
-      properties:
-        courseId:
-          type:
-          - string
-          - 'null'
-          description: Course identifier number, not unique
-        courseOfferNumber:
-          type: integer
-          description: Course offer number identifier for this class
-          format: int32
-        sessionCode:
-          type:
-          - string
-          - 'null'
-          description: Session code for this class
-        classSection:
-          type: integer
-          description: Number identifying the section of this class
-          format: int32
-        termCode:
-          type:
-          - string
-          - 'null'
-          description: Waterloo academic term code
-        classNumber:
-          type: integer
-          description: Class number identifier for this class
-          format: int32
-        courseComponent:
-          type:
-          - string
-          - 'null'
-          description: Course component code for this class
-        associatedClassCode:
-          type: integer
-          description: Associated class code for this class
-          format: int32
-        maxEnrollmentCapacity:
-          type: integer
-          description: Indicates the maximum number of students that can enroll in this class
-          format: int32
-        enrolledStudents:
-          type: integer
-          description: Indicates the current number of students enrolled in this class
-          format: int32
-        enrollConsentCode:
-          type:
-          - string
-          - 'null'
-          description: Code describing whether No, Instructor, or Department consent to enroll is required. Overrides Course level information if different.
-        enrollConsentDescription:
-          type:
-          - string
-          - 'null'
-          description: Description of the enroll requirement. Overrides Course level information if different.
-          readOnly: true
-        dropConsentCode:
-          type:
-          - string
-          - 'null'
-          description: Code describing whether No, Instructor, or Department consent to drop is required. Overrides Course level information if different.
-        dropConsentDescription:
-          type:
-          - string
-          - 'null'
-          description: Description of the drop requirement. Overrides Course level information if different.
-          readOnly: true
-        scheduleData:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ClassSchedule'
-          description: Schedule data for this class
-        instructorData:
-          type:
-          - array
-          - 'null'
-          items:
-            $ref: '#/components/schemas/ClassInstructor'
-          description: Instructor data for this class
-      additionalProperties: false
-      description: Represents an Academic class, which is a scheduled instance of a Course
   securitySchemes:
     apiKey:
       type: apiKey

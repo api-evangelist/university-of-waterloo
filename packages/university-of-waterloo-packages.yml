@@ -1,0 +1,10 @@
+name: University of Waterloo packages
+generated: '2026-10-20'
+method: none
+source: https://registry.npmjs.org/uwaterloo-api
+packages: []
+rejected:
+- name: uwaterloo-api
+  registry: npm
+  reason: 'official: false as written'
+note: 'no first-party package: every candidate a model listed was unowned (harvest-packages.py --audit)'

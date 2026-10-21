@@ -1,6 +1,8 @@
 ---
 aid: university-of-waterloo
+
 name: University of Waterloo
+
 description: >-
   The University of Waterloo is a public research university in Waterloo, Ontario, Canada, known for
   cooperative education and for strength in mathematics, engineering and computer science. Unusually
@@ -17,9 +19,13 @@ description: >-
   is a Statuspage tenancy — both recorded here as relationships, not as Waterloo engineering. There
   is no unified developer portal spanning the three programmes; documentation is split between a Confluence
   space, a GitHub wiki and a Swagger UI.
+
 x-type: university
+
 x-category: Public Research University
+
 type: Index
+
 deliveryModel:
   model: saas
   license_evidence:
@@ -37,6 +43,7 @@ deliveryModel:
   - repository-not-product
   generated: '2026-09-25'
   method: derived
+
 accessModel:
   pricing: free
   onboarding: self-serve
@@ -53,10 +60,15 @@ accessModel:
   - security
   generated: '2026-09-03'
   method: derived
+
 position: Consuming
+
 access: 3rd-Party
+
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/university-of-waterloo.png
+
 url: https://raw.githubusercontent.com/api-evangelist/university-of-waterloo/refs/heads/main/apis.yml
+
 tags:
   - Education
   - Higher Education
@@ -70,9 +82,13 @@ tags:
   - Identity Federation
   - Research Repository
   - Campus Life
+
 created: '2026-06-03'
+
 modified: '2026-09-01'
+
 specificationVersion: '0.23'
+
 x-coverage:
   state: covered
   reason: covered
@@ -112,6 +128,122 @@ x-coverage:
     - url: https://uwaterloo.ca/news/rss.xml
       status: 403
   checked: '2026-09-01'
+
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+
+common:
+  - type: Deprecation
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2020/09/17/34163165086
+  - type: AgentSkill
+    url: skills/_index.yml
+  - type: ChangeLog
+    url: changelog/university-of-waterloo-changelog.yml
+  - type: Conventions
+    url: conventions/university-of-waterloo-conventions.yml
+  - type: Overlay
+    url: overlays/university-of-waterloo-academicorganizations-api-overlay.yaml
+  - type: SecurityTxt
+    url: well-known/university-of-waterloo-api-security.txt
+  - type: Spectral
+    url: rules/university-of-waterloo-rules.yml
+  - type: Spectral
+    url: rules/university-of-waterloo-jsonschema-spectral-rules.yml
+  - type: DataModel
+    url: data-model/university-of-waterloo-data-model.yml
+  - type: Security
+    url: https://soc.uwaterloo.ca
+  - type: SecurityTxt
+    url: well-known/university-of-waterloo-uwaterloo-security.txt
+  - type: SecurityTxt
+    url: well-known/university-of-waterloo-status-security.txt
+  - type: SecurityTxt
+    url: well-known/university-of-waterloo-security.txt
+  - type: Hosts
+    url: hosts/university-of-waterloo-hosts.yml
+  - type: IntegrationEdges
+    url: integrations/university-of-waterloo-integration-edges.yml
+  - type: Vendors
+    url: vendors/university-of-waterloo-vendors.yml
+  - type: Website
+    url: https://uwaterloo.ca/
+  - type: DeveloperPortal
+    url: https://uwaterloo.ca/api/
+  - type: Documentation
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
+  - type: APIReference
+    url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
+  - type: Swagger
+    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
+  - type: GettingStarted
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+  - type: SignUp
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
+  - type: TermsOfService
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019780998/Terms+of+Service+SourceAPI
+  - type: AcceptableUsePolicy
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781061/Acceptable+Use+Policy+SourceAPI
+  - type: PrivacyPolicy
+    url: https://uwaterloo.ca/privacy/
+  - type: Compliance
+    url: >-
+      https://uwaterloo.ca/secretariat-general-counsel/policies-procedures-guidelines/policy-46-information-management
+  - type: StatusPage
+    url: https://status.uwaterloo.ca/
+  - type: ChangeLog
+    url: >-
+      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+  - type: Roadmap
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779689/Roadmap+-+OpenAPI
+  - type: Support
+    url: https://uwaterloo.atlassian.net/servicedesk/customer/portal/115
+  - type: IssueTracker
+    url: https://github.com/uWaterloo/Datasets/issues
+  - type: GitHubOrganization
+    url: https://github.com/uWaterloo
+  - type: SourceCode
+    url: https://github.com/uWaterloo/Datasets
+  - type: WellKnown
+    url: https://uwaterloo.ca/.well-known/security.txt
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/university-of-waterloo/
+  - type: Blog
+    url: https://uwaterloo.ca/news/
+  - type: OpenData
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779691/Datasets+OpenAPI
+  - type: CourseCatalog
+    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34006663321/Course+Schedule
+  - type: ResearchRepository
+    url: https://uwspace.uwaterloo.ca/
+  - type: IdentityFederation
+    url: https://idp.uwaterloo.ca/idp/shibboleth
+  - type: AIPolicy
+    url: https://uwaterloo.ca/artificial-intelligence-institute/
+  - type: Conformance
+    url: conformance/university-of-waterloo-conformance.yml
+  - type: Lifecycle
+    url: lifecycle/university-of-waterloo-lifecycle.yml
+  - type: CapabilityMap
+    url: capabilities/university-of-waterloo-capability-edges.yml
+    name: University of Waterloo Business Capability Map
+  - type: AgenticAccess
+    url: agentic-access/university-of-waterloo-agentic-access.yml
+  - type: VulnerabilityDisclosure
+    url: security/university-of-waterloo-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/university-of-waterloo-domain-security.yml
+  - type: Authentication
+    url: authentication/university-of-waterloo-authentication.yml
+  - type: Plans
+    url: plans/university-of-waterloo-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/university-of-waterloo-rate-limits.yml
+  - type: FinOps
+    url: finops/university-of-waterloo-finops.yml
+  - type: Review
+    url: review.yml
+
 apis:
   - aid: university-of-waterloo:university-of-waterloo-academicorganizations-api
     name: University of Waterloo AcademicOrganizations API
@@ -150,10 +282,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -199,10 +327,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -250,10 +374,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -299,10 +419,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -348,10 +464,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -399,10 +511,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -448,10 +556,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -497,10 +601,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -548,10 +648,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -597,10 +693,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -646,10 +738,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -695,10 +783,6 @@ apis:
         url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
       - type: GettingStarted
         url: https://github.com/uWaterloo/OpenData/wiki/Home---Getting-Started
-      - type: ErrorCatalog
-        url: errors/university-of-waterloo-errors.yml
-      - type: OAuthScopes
-        url: scopes/university-of-waterloo-scopes.yml
       - type: Lifecycle
         url: lifecycle/university-of-waterloo-lifecycle.yml
       - type: RateLimits
@@ -931,88 +1015,8 @@ apis:
         url: https://status.uwaterloo.ca/api/v2/summary.json
       - type: Documentation
         url: https://status.uwaterloo.ca/api/v2/
-common:
-  - type: Website
-    url: https://uwaterloo.ca/
-  - type: DeveloperPortal
-    url: https://uwaterloo.ca/api/
-  - type: Documentation
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/overview
-  - type: APIReference
-    url: https://openapi.data.uwaterloo.ca/swagger/v1/swagger.json
-  - type: Swagger
-    url: https://openapi.data.uwaterloo.ca/api-docs/index.html
-  - type: GettingStarted
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: SignUp
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34025641600/Getting+Started+-+OpenAPI
-  - type: TermsOfService
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019780998/Terms+of+Service+SourceAPI
-  - type: AcceptableUsePolicy
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019781061/Acceptable+Use+Policy+SourceAPI
-  - type: PrivacyPolicy
-    url: https://uwaterloo.ca/privacy/
-  - type: Compliance
-    url: >-
-      https://uwaterloo.ca/secretariat-general-counsel/policies-procedures-guidelines/policy-46-information-management
-  - type: StatusPage
-    url: https://status.uwaterloo.ca/
-  - type: ChangeLog
-    url: >-
-      https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
-  - type: Roadmap
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779689/Roadmap+-+OpenAPI
-  - type: Support
-    url: https://uwaterloo.atlassian.net/servicedesk/customer/portal/115
-  - type: IssueTracker
-    url: https://github.com/uWaterloo/Datasets/issues
-  - type: GitHubOrganization
-    url: https://github.com/uWaterloo
-  - type: SourceCode
-    url: https://github.com/uWaterloo/Datasets
-  - type: WellKnown
-    url: https://uwaterloo.ca/.well-known/security.txt
-  - type: LinkedIn
-    url: https://www.linkedin.com/school/university-of-waterloo/
-  - type: Blog
-    url: https://uwaterloo.ca/news/
-  - type: OpenData
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34019779691/Datasets+OpenAPI
-  - type: CourseCatalog
-    url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/pages/34006663321/Course+Schedule
-  - type: ResearchRepository
-    url: https://uwspace.uwaterloo.ca/
-  - type: IdentityFederation
-    url: https://idp.uwaterloo.ca/idp/shibboleth
-  - type: AIPolicy
-    url: https://uwaterloo.ca/artificial-intelligence-institute/
-  - type: Conformance
-    url: conformance/university-of-waterloo-conformance.yml
-  - type: ErrorCatalog
-    url: errors/university-of-waterloo-errors.yml
-  - type: Lifecycle
-    url: lifecycle/university-of-waterloo-lifecycle.yml
-  - type: OAuthScopes
-    url: scopes/university-of-waterloo-scopes.yml
-  - type: CapabilityMap
-    url: capabilities/university-of-waterloo-capability-edges.yml
-    name: University of Waterloo Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/university-of-waterloo-agentic-access.yml
-  - type: VulnerabilityDisclosure
-    url: security/university-of-waterloo-vulnerability-disclosure.yml
-  - type: DomainSecurity
-    url: security/university-of-waterloo-domain-security.yml
-  - type: Authentication
-    url: authentication/university-of-waterloo-authentication.yml
-  - type: Plans
-    url: plans/university-of-waterloo-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/university-of-waterloo-rate-limits.yml
-  - type: FinOps
-    url: finops/university-of-waterloo-finops.yml
-  - type: Review
-    url: review.yml
-maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-10-20'
+  status: enriched
+  artifacts_added: 19
+  pass: local-v5

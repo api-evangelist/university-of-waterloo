@@ -1,0 +1,45 @@
+name: University of Waterloo Open Data API changelog
+generated: '2026-10-20'
+method: searched
+source: https://uwaterloo.atlassian.net/wiki/rest/api/content?spaceKey=UWAPI&type=blogpost
+url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog
+scheme: date-based release names (YYYY.MM.DD.n) under major version v3
+current_version: v3
+entries:
+- version: '2026-01-23'
+  date: '2026-01-23'
+  breaking: false
+  highlights:
+  - Key registration re-enabled without email confirmation
+  - Request limit of 120 requests per minute added
+  - Caching on semi-static endpoints
+  url: https://uwaterloo.atlassian.net/wiki/spaces/UWAPI/blog/2026/01/23/44869681282/Open+Data+API+Functional+Changes
+- version: 2025.11.20
+  date: '2025-11-20'
+  breaking: false
+  highlights:
+  - Registrations disabled for new keys while sustainability is evaluated
+  - More course requirement data; extra location coding on classes
+  - WCMS events recurRule repurposed to a JSON array of instance data
+- version: '2025-08-14'
+  date: '2025-08-14'
+  breaking: false
+  highlights:
+  - API moved from an on-campus host to an Azure cloud instance for an SSL certificate policy
+- version: 2023.09.18
+  date: '2023-09-18'
+  breaking: true
+  highlights:
+  - Instructor names and class location removed from responses at data steward direction
+  - Updated to latest supported dotnet runtime
+- version: 2021.12.13.1
+  date: '2021-12-13'
+  breaking: true
+  highlights:
+  - /v3/Courses/{termCode}/{courseId} now returns an array; new /v3/Courses/{termCode}/{courseId}/{offerNumber}
+    returns a single course
+- version: 2021.11.17.1
+  date: '2021-11-17'
+  breaking: false
+  highlights:
+  - Release note posted in UWAPI space
